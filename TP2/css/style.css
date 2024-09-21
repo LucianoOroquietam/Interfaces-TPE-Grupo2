@@ -1,0 +1,50 @@
+:root{
+
+     /*Paleta de colores*/
+
+    --primary-color: #1B2838;
+    --primary-color-2: #21526D;
+    --primary-color-3: #79ADCB;
+
+    --secondary-color: #1173BA;
+    --secondary-color-2: #1A9FFF;
+    --secondary-color-3: #89CEFF;
+
+    --acent-color: #4C6B22;
+    --acent-color-2: #4F8B20;
+    --acent-color-3: #59BF40;
+    --acent-color-4: #86E46E;
+
+    --white-color: #CCD8E3;
+
+
+    --black-color: #000000;
+    --black-color-2: #1E1E1E;
+    --black-color-3:#343436;
+    --black-color-4: #424345;
+
+    /*Fuentes*/
+
+    /* Tamaños de Noto Sans */
+    --font-size-h1-large: 40px;
+    --font-size-h1-medium: 36px;
+    --font-size-h1-small: 32px;
+
+    --font-size-h2-large: 24px;
+    --font-size-h2-small: 20px;
+
+    --font-size-h3-large: 16px;
+    --font-size-h3-medium: 14px;
+    --font-size-h3-small: 12px;
+    --font-size-h3-xsmall: 10px;
+
+    /* Tamaños de Montserrat */
+    --font-size-montserrat-large: 40px;
+    --font-size-montserrat-small: 32px;
+    
+}
+
+
+body{
+    background-color: var(--primary-color);
+}
