@@ -1,6 +1,18 @@
+/* Resetear márgenes y padding, y ajustar box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configurar el tamaño base para que 1rem = 1px (opcionalmente 62.5% para 1rem = 10px) */
+html {
+    font-size: 62.5%;
+}
+
 :root{
 
-     /*Paleta de colores*/
+    /*Paleta de colores*/
 
     --primary-color: #1B2838;
     --primary-color-2: #21526D;
@@ -26,21 +38,21 @@
     /*Fuentes*/
 
     /* Tamaños de Noto Sans */
-    --font-size-h1-large: 40px;
-    --font-size-h1-medium: 36px;
-    --font-size-h1-small: 32px;
+    --font-size-h1-large: 4rem;
+    --font-size-h1-medium: 3.6rem;
+    --font-size-h1-small: 3.2rem;
 
-    --font-size-h2-large: 24px;
-    --font-size-h2-small: 20px;
+    --font-size-h2-large: 2.4rem;
+    --font-size-h2-small: 2rem;
 
-    --font-size-h3-large: 16px;
-    --font-size-h3-medium: 14px;
-    --font-size-h3-small: 12px;
-    --font-size-h3-xsmall: 10px;
+    --font-size-h3-large: 1.6rem;
+    --font-size-h3-medium: 1.4rem;
+    --font-size-h3-small: 1.2rem;
+    --font-size-h3-xsmall: 1rem;
 
     /* Tamaños de Montserrat */
-    --font-size-montserrat-large: 40px;
-    --font-size-montserrat-small: 32px;
+    --font-size-montserrat-large: 4rem;
+    --font-size-montserrat-small: 3.2rem;
     
 }
 
@@ -48,3 +60,4 @@
 body{
     background-color: var(--primary-color);
 }
+
