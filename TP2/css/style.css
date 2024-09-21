@@ -10,7 +10,7 @@ html {
     font-size: 62.5%;
 }
 
-:root{
+:root {
 
     /*Paleta de colores*/
 
@@ -32,7 +32,7 @@ html {
 
     --black-color: #000000;
     --black-color-2: #1E1E1E;
-    --black-color-3:#343436;
+    --black-color-3: #343436;
     --black-color-4: #424345;
 
     /*Fuentes*/
@@ -53,11 +53,127 @@ html {
     /* Tamaños de Montserrat */
     --font-size-montserrat-large: 4rem;
     --font-size-montserrat-small: 3.2rem;
-    
+
 }
 
 
-body{
+body {
+    font-family: var(--font-size-h2-large);
     background-color: var(--primary-color);
 }
 
+
+footer {
+    background-color: var(--black-color-3);
+    color: var(--white-color);
+    padding: 4rem 2rem;
+
+}
+
+footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 20rem;
+    margin: 2rem;
+}
+
+.footer-section h3 {
+    font-size: var(--font-size-h2-small);
+    margin-bottom: 1.4rem;
+    border-bottom: 0.2rem solid var(--white-color);
+    padding-bottom: 5px;
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: var(--font-size-h3-large);
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 1rem;
+}
+
+.footer-section ul li a {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: var(--white-color);
+}
+
+footer .social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+footer .social-icons li {
+    display: inline-block;
+}
+
+footer .social-icons a {
+    color: var(--white-color);
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+footer .social-icons a:hover {
+    color: var(--white-color);
+}
+
+.footer-section form {
+    display: flex;
+}
+
+.footer-section form input {
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+    flex-grow: 1;
+}
+
+
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--white-color);
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: var(--font-size-h3-large);
+    font-weight: bold;
+}
+
+.footer-bottom ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+}
+
+.footer-bottom ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+.footer-bottom ul li a {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.footer-bottom ul li a:hover {
+    color: var(--white-color);
+}
