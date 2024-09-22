@@ -37,6 +37,10 @@ html {
 
     /*Fuentes*/
 
+    --font-family-noto-sans: 'Noto Sans', sans-serif;
+    --font-family-montserrat:'Montserrat', sans-serif;
+
+
     /* Tamaños de Noto Sans */
     --font-size-h1-large: 4rem;
     --font-size-h1-medium: 3.6rem;
@@ -52,13 +56,12 @@ html {
 
     /* Tamaños de Montserrat */
     --font-size-montserrat-large: 4rem;
-    --font-size-montserrat-small: 3.2rem;
-
+    --font-size-montserrat-small: 3.2rem; 
 }
 
 
 body {
-    font-family: var(--font-size-h2-large);
+    font-family: var(--font-family-noto-sans);
     background-color: var(--primary-color);
 }
 
@@ -84,14 +87,31 @@ footer .container {
 
 .footer-section h3 {
     font-size: var(--font-size-h2-small);
+    font-family: var(--font-family-montserrat);
     margin-bottom: 1.4rem;
     border-bottom: 0.2rem solid var(--white-color);
     padding-bottom: 5px;
 }
+.img-logo-footer{
+    width: 5rem;
+    height: 5rem;
+}
 
+.logo-footer{
+    display: flex;
+    justify-content: center;
+    justify-items:center;
+    gap: 2rem;
+}
+
+.footer-section .logo-footer p{
+    font-size: var(--font-size-h1-small);
+    font-family: var(--font-family-montserrat);
+    font-weight: bold;
+}
 .footer-section p,
 .footer-section ul {
-    font-size: var(--font-size-h3-large);
+    font-size: var(--font-size-h3-medium);
     line-height: 1.6;
 }
 
@@ -167,6 +187,7 @@ footer .social-icons a:hover {
 .footer-bottom ul li {
     display: inline;
     margin: 0 1rem;
+    font-size: var(--font-size-h3-medium);
 }
 
 .footer-bottom ul li a {
