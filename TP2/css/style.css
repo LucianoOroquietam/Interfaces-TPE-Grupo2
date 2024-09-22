@@ -8,6 +8,7 @@
 /* Configurar el tamaño base para que 1rem = 1px (opcionalmente 62.5% para 1rem = 10px) */
 html {
     font-size: 62.5%;
+    min-height: 100%;
 }
 
 :root {
@@ -65,136 +66,196 @@ body {
     background-color: var(--primary-color);
 }
 
-
-footer {
-    background-color: var(--black-color-3);
-    color: var(--white-color);
-    padding: 4rem 2rem;
-
-}
-
-footer .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.footer-section {
-    flex: 1;
-    min-width: 20rem;
-    margin: 2rem;
-}
-
-.footer-section h3 {
-    font-size: var(--font-size-h2-small);
-    font-family: var(--font-family-montserrat);
-    margin-bottom: 1.4rem;
-    border-bottom: 0.2rem solid var(--white-color);
-    padding-bottom: 5px;
-}
-.img-logo-footer{
-    width: 5rem;
-    height: 5rem;
-}
-
-.logo-footer{
-    display: flex;
-    justify-content: center;
-    justify-items:center;
-    gap: 2rem;
-}
-
-.footer-section .logo-footer p{
-    font-size: var(--font-size-h1-small);
-    font-family: var(--font-family-montserrat);
-    font-weight: bold;
-}
-.footer-section p,
-.footer-section ul {
-    font-size: var(--font-size-h3-medium);
-    line-height: 1.6;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin-bottom: 1rem;
-}
-
-.footer-section ul li a {
-    color: var(--white-color);
-    text-decoration: none;
-}
-
-.footer-section ul li a:hover {
-    color: var(--white-color);
-}
-
-footer .social-icons {
-    display: flex;
-    gap: 1rem;
-}
-
-footer .social-icons li {
-    display: inline-block;
-}
-
-footer .social-icons a {
-    color: var(--white-color);
-    font-size: 2rem;
-    text-decoration: none;
-}
-
-footer .social-icons a:hover {
-    color: var(--white-color);
-}
-
-.footer-section form {
-    display: flex;
-}
-
-.footer-section form input {
-    padding: 1rem;
-    border: none;
-    border-radius: 0.5rem;
-    margin-right: 1rem;
-    flex-grow: 1;
+/*Header*/
+header{
+    background-color: var(--primary-color-2);
 }
 
 
-.footer-bottom {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid var(--white-color);
-    text-align: center;
+
+@media (min-width: 901px) {
+    .container-main {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center; 
+        padding: .5rem;
+    }
+    .container-header__menu-hamburguesa{
+        width: 4rem;
+        height: 5rem;
+        margin-left: 1rem;
+    }
+    .container-header__logo-header{
+        width: 5rem;
+        height: 5rem;
+    }
+    
+    .container-header{
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+    
+    header .container-header h1{
+        font-family: var(--font-family-montserrat);
+        font-weight: bold;
+        font-size: var(--font-size-h1-small);
+        color: var(--white-color);
+    }
+    
+    .container-search__btn{
+        border-radius: 2rem;
+        height: 3.5rem;
+        width: 50rem;
+        margin-left: -55rem;
+        font-size: var(--font-size-h3-large);
+        padding: 2rem;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-image: url(../img/iconos/Search.svg);
+        background-repeat: no-repeat;
+        background-position: right;
+        cursor: pointer;
+    }
+    
+    .container-carrito-perfil__cart-img{
+        margin-right: 2rem;
+    }
+    
+    .container-carrito-perfil__state-user{
+        transform: translate(-1.5rem,-3.5rem);
+    }
+    
+    
+    ul.nav{
+        display: none;
+    }
+    
+    /*Footer*/
+    footer {
+        background-color: var(--black-color-3);
+        color: var(--white-color);
+        padding: 4rem 2rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    
+    }
+    
+    footer .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .footer-section {
+        flex: 1;
+        min-width: 20rem;
+        margin: 2rem;
+    }
+    
+    .footer-section h3 {
+        font-size: var(--font-size-h2-small);
+        font-family: var(--font-family-montserrat);
+        margin-bottom: 1.4rem;
+        border-bottom: 0.2rem solid var(--white-color);
+        padding-bottom: 5px;
+    }
+    .img-logo-footer{
+        width: 5rem;
+        height: 5rem;
+    }
+    
+    .logo-footer{
+        display: flex;
+        justify-content: center;
+        justify-items:center;
+        gap: 2rem;
+    }
+    
+    .footer-section .logo-footer p{
+        font-size: var(--font-size-h1-small);
+        font-family: var(--font-family-montserrat);
+        font-weight: bold;
+    }
+    .footer-section p,
+    .footer-section ul {
+        font-size: var(--font-size-h3-medium);
+        line-height: 1.6;
+    }
+    
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .footer-section ul li {
+        margin-bottom: 1rem;
+    }
+    
+    .footer-section ul li a {
+        color: var(--white-color);
+        text-decoration: none;
+    }
+    
+    .footer-section ul li a:hover {
+        color: var(--white-color);
+    }
+    
+    footer .social-icons {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    footer .social-icons li {
+        display: inline-block;
+    }
+    
+    footer .social-icons a {
+        color: var(--white-color);
+        font-size: 2rem;
+        text-decoration: none;
+    }
+    
+    footer .social-icons a:hover {
+        color: var(--white-color);
+    }
+    
+    
+    
+    .footer-bottom {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid var(--white-color);
+        text-align: center;
+    }
+    
+    .footer-bottom p {
+        margin: 0;
+        font-size: var(--font-size-h3-large);
+        font-weight: bold;
+    }
+    
+    .footer-bottom ul {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0 0;
+    }
+    
+    .footer-bottom ul li {
+        display: inline;
+        margin: 0 1rem;
+        font-size: var(--font-size-h3-medium);
+    }
+    
+    .footer-bottom ul li a {
+        color: var(--white-color);
+        text-decoration: none;
+    }
+    
+    .footer-bottom ul li a:hover {
+        color: var(--white-color);
+    }
 }
 
-.footer-bottom p {
-    margin: 0;
-    font-size: var(--font-size-h3-large);
-    font-weight: bold;
-}
-
-.footer-bottom ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0;
-}
-
-.footer-bottom ul li {
-    display: inline;
-    margin: 0 1rem;
-    font-size: var(--font-size-h3-medium);
-}
-
-.footer-bottom ul li a {
-    color: var(--white-color);
-    text-decoration: none;
-}
-
-.footer-bottom ul li a:hover {
-    color: var(--white-color);
-}
