@@ -186,6 +186,7 @@ header .nav--active {
     margin-bottom: 1.5rem;
 }
 
+
 .nav__item a {
     color: var(--white-color);
     text-decoration: none;
@@ -193,6 +194,117 @@ header .nav--active {
 }
 
 /*footer mobile*/
+
+/*Botones*/
+
+.button {
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: var(--font-family-noto-sans);
+}
+
+.button__green{
+    width: 20rem;
+    height: 7rem;
+    border-radius: 10px;
+    background-color: var(--acent-color-3);
+    font-size: var(--font-size-h1-small);
+    color: var(--black-color);
+    font-weight: bold;
+}
+
+.button__blue { 
+    width: 28rem;
+    height: 4rem;
+    border-radius: 20px;
+    background-color: var(--secondary-color-2); 
+    font-size: var(--font-size-h3-large);
+    color: var(--white-color);
+    font-weight: bold;
+}
+
+.button__compartir {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+/*Juego*/
+
+.game {
+    margin-top: 10rem;
+    margin-left: 7.5%;
+    margin-bottom: 5rem;
+    width: 85%;
+    height: 60rem;
+    background-color: var(--black-color);
+}
+
+.game__four-in-line {
+    
+}
+
+.game__four-in-line-img {
+    width: 60%;
+    height: 60rem;
+    margin-left: 20%;
+    filter: brightness(0.5);
+}
+
+.game .game__four-in-line button {
+    transform: translate(-53rem, -30rem);
+}
+
+.information {
+    width: 80%;
+    height: 50rem;
+    margin-left: 10%;
+    text-align: left;
+    font-size: 1rem;
+    background-color: var(--primary-color-2);    
+    font-family: 'Noto Sans';
+}
+
+.information-game {
+    margin-left: 2rem;
+    font-family: var(--font-family-noto-sans);
+    font-size: var(--font-size-h3-large);
+    color: var(--white-color);
+}
+
+.information-tutorial, .information-description {
+    margin-top: 2.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    color: var(--white-color);
+}
+
+.information-tutorial__title, .information-description__title {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-family-noto-sans);
+    font-size: var(--font-size-h2-large);
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
+
+.information-tutorial__title-icon, .information-description__title-icon {
+    margin-right: 1rem;
+    height: 3rem;
+    width: 3rem;
+}
+
+.information-tutorial__text, .information-description__text {
+    font-family: var(--font-family-noto-sans);
+    font-size: var(--font-size-h3-large);
+}
+
+.highlighted {
+    font-weight: bold;
+}
+
+/*Footer*/
+
 
 footer {
     background-color: var(--black-color-3);
