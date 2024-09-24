@@ -70,9 +70,6 @@ body {
 
 /*Header mobile*/
 
-
-
-
 header {
     background-color: var(--primary-color-2);
     display: flex;
@@ -116,9 +113,11 @@ header .container-header h1 {
     justify-content: space-between;
     align-items: center;
     padding: .5rem;
+    position: relative;
 }
 
 .container-header {
+    position: relative;
     display: flex;
     gap: 1.5rem;
     align-items: center;
@@ -130,7 +129,6 @@ header .container-header h1 {
 }
 
 .container-search__btn,
-.nav,
 .container-carrito-perfil__cart-img {
     display: none;
 }
@@ -149,6 +147,49 @@ header .container-header h1 {
     height: 1rem;
     background-color: var(--acent-color-3);
     border-radius: 50%;
+}
+
+
+/*Menu desplegable*/
+
+header .nav--active {
+    left: 0;
+}
+
+.nav {
+    /*  position: absolute;
+    margin-top: 2rem;
+    margin-left: -2.5rem;
+     */
+    position: fixed;
+    top: 5.9rem;
+    left: -100%;
+    width: 25rem;
+    height: 100vh;
+    background-color: var(--primary-color-2);
+    transition: left 0.5s ease-in-out;
+}
+
+
+.nav__list {
+    position: absolute;
+    padding: 2rem;
+    margin: 1rem;
+    line-height: 2.5;
+}
+
+
+.nav__item {
+    list-style: none;
+    font-family: var(--font-family-noto-sans);
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.nav__item a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: var(--font-size-h3-large);
 }
 
 /*footer mobile*/
@@ -234,12 +275,21 @@ footer .container {
 
 @media (min-width: 901px) {
 
+
+    /*menu desplegable*/
+    .nav {
+   
+        top: 8rem;
+      
+    }
+
     /*Header desktop*/
 
 
     header .container-header h1 {
         font-size: var(--font-size-h1-small);
     }
+
     .container-header__lupa-header {
         display: none;
     }
@@ -282,7 +332,7 @@ footer .container {
     .container-carrito-perfil__user-img {
         width: 5rem;
         margin-left: 0rem;
-        
+
     }
 
 
@@ -310,7 +360,7 @@ footer .container {
         display: inline-block;
     }
 
- 
+
 
     .container-carrito-perfil__cart-img,
     .container-carrito-perfil__user-img,
