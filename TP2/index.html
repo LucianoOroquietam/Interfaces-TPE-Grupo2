@@ -1,17 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <title>Game Box</title>
 </head>
+
 <body>
+
+    <header class="container-main">
+        <div class="container-header">
+            <img id="menu-hamburguesa" class="container-header__menu-hamburguesa" src="img/iconos/menu hamburguesa.png"
+                alt="menu hamburguesa">
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html">Inicio</a></li>
+                    <li class="nav__item"><a href="#para-ti">Juegos Para Ti</a></li>
+                    <li class="nav__item"><a href="#destacado">Destacado</a></li>
+                    <li class="nav__item"><a href="#puzzle">Puzzle</a></li>
+                    <li class="nav__item"><a href="#ofertas">Ofertas</a></li>
+                    <li class="nav__item"><a href="#carrera">Carrera</a></li>
+                    <li class="nav__item"><a href="#accion">Acción</a></li>
+                </ul>
+            </nav>
+            <img class="container-header__lupa-header" src="img/iconos/lupa.svg" alt="lupa-busqueda">
+            <h1>GameBox</h1>
+            <img class="container-header__logo-header" src="img/iconos/logo.png" alt="logo">
+        </div>
+
+
+
+        <div class="container-search">
+            <input class="container-search__btn" placeholder="Buscar Juego"></input>
+        </div>
+
+
+        <div class="container-carrito-perfil">
+            <img id="cart-buy" class="container-carrito-perfil__cart-img" src="img/iconos/Set iconos.svg" alt="carrito compras">
     
+            <img class="container-carrito-perfil__user-img" src="img/iconos/advincula.svg" alt="perfil usuario"
+                srcset="">
+            <div class="container-carrito-perfil__state-user"></div>
+        </div>
+
+
+    </header>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h3>Sobre Nosotros</h3>
+                <p>
+                    Game Box es la plataforma lider en mini juegos . Ofrecemos una gran diversidad de juegos y contenido
+                    para los estusiastas de los mini juegos.
+                </p>
+            </div>
+            <div class="footer-section">
+                <div class="footer-section__links">
+                    <h3>Otras Páginas</h3>
+                    <ul>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Soporte</a></li>
+                        <li><a href="#">Mapa del Sitio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-section">
+                <div class="footer-section__logo-footer">
+                    <img class="img-logo-footer" src="img/iconos/logo.png" alt="logo">
+                    <p>GameBox</p>
+                </div>
+
+            </div>
+
+            <div class="footer-section">
+                <h3>Contactanos</h3>
+                <p><i class="icon-phone"></i> +54 (0) 2281 578909</p>
+                <p><i class="icon-email"></i> gamebox@gmail.com</p>
+            </div>
+
+            <div class="footer-section">
+                <div class="footer-section__reviews">
+                    <h3>Reseñas de Clientes</h3>
+                    <p>“Excelente servicio y gran variedad de videojuegos“ - Miquela</p>
+                    <p>"La mejor plataforma para videojuegos” - Pikachu65</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Todos los derechos reservados - Game Box</p>
+            <ul>
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Política de Cookies</a></li>
+                <li><a href="#">Aviso Legal</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
     <script src="js/main.js"></script>
+    <script src="js/menu-desplegable.js"></script>
+
 </body>
+
 </html>
