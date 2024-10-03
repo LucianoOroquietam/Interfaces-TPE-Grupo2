@@ -16,7 +16,6 @@ html {
 body {
     font-family: var(--font-family-noto-sans);
     background-color: var(--primary-color);
-    overflow: hidden;
 }
 
 :root {
@@ -161,7 +160,7 @@ header .nav--active {
     margin-top: 2rem;
     margin-left: -2.5rem;
      */
-    position: fixed;
+    position: absolute;
     top: 5.9rem;
     left: -100%;
     width: 25rem;
@@ -205,7 +204,7 @@ header .nav--active {
     border: none;
 }
 
-.button__green{
+.button__green {
     width: 20rem;
     height: 7rem;
     border-radius: 10px;
@@ -215,11 +214,11 @@ header .nav--active {
     font-weight: bold;
 }
 
-.button__blue { 
+.button__blue {
     width: 28rem;
     height: 4rem;
     border-radius: 20px;
-    background-color: var(--secondary-color-2); 
+    background-color: var(--secondary-color-2);
     font-size: var(--font-size-h3-large);
     color: var(--white-color);
     font-weight: bold;
@@ -235,7 +234,7 @@ header .nav--active {
     width: 10rem;
     height: 4rem;
     border-radius: 10px;
-    background-color: var(--secondary-color-2); 
+    background-color: var(--secondary-color-2);
     font-size: var(--font-size-h3-large);
     color: var(--white-color);
     font-weight: bold;
@@ -248,7 +247,7 @@ header .nav--active {
     margin-left: 7.5%;
     margin-bottom: .5rem;
     font-family: var(--font-family-noto-sans);
-    font-size: var(--font-size-h2-small);    
+    font-size: var(--font-size-h2-small);
 }
 
 .breadcrum .breadcrum__four-in-line {
@@ -257,7 +256,7 @@ header .nav--active {
 }
 
 .breadcrum a {
-    color: var(--white-color);   
+    color: var(--white-color);
 }
 
 .breadcrum ul {
@@ -297,7 +296,7 @@ header .nav--active {
     height: 50rem;
     margin-left: 10%;
     text-align: left;
-    background-color: var(--primary-color-2);    
+    background-color: var(--primary-color-2);
     font-family: 'Noto Sans';
 }
 
@@ -308,14 +307,16 @@ header .nav--active {
     color: var(--white-color);
 }
 
-.information-tutorial, .information-description {
+.information-tutorial,
+.information-description {
     margin-top: 2.5rem;
     margin-left: 2rem;
     margin-right: 2rem;
     color: var(--white-color);
 }
 
-.information-tutorial__title, .information-description__title {
+.information-tutorial__title,
+.information-description__title {
     display: flex;
     align-items: center;
     font-family: var(--font-family-noto-sans);
@@ -324,13 +325,15 @@ header .nav--active {
     margin-bottom: .5rem;
 }
 
-.information-tutorial__title-icon, .information-description__title-icon {
+.information-tutorial__title-icon,
+.information-description__title-icon {
     margin-right: 1rem;
     height: 3rem;
     width: 3rem;
 }
 
-.information-tutorial__text, .information-description__text {
+.information-tutorial__text,
+.information-description__text {
     font-family: var(--font-family-noto-sans);
     font-size: var(--font-size-h3-large);
 }
@@ -405,14 +408,15 @@ header .nav--active {
     margin-right: 2rem;
 }
 
-.comments__rate-submit img, button {
+.comments__rate-submit img,
+button {
     margin: .3rem;
 }
 
 .comments__users {
     width: 70%;
     height: 15rem;
-    margin-left: 15%; 
+    margin-left: 15%;
 }
 
 .comments__users-coment {
@@ -443,7 +447,7 @@ header .nav--active {
     font-size: var(--font-size-h3-small);
 }
 
-.comments__users-coment-rate img{
+.comments__users-coment-rate img {
     width: 2rem;
     height: 2rem;
     margin-right: .2rem;
@@ -540,9 +544,11 @@ footer .container {
 
     /*menu desplegable*/
     .nav {
-   
+
         top: 8rem;
-      
+        margin-left: -1rem;
+        height: 50vh;
+
     }
 
     /*Header desktop*/
@@ -641,6 +647,10 @@ footer .container {
     footer {
         padding: 4rem 2rem;
         line-height: 1.6;
+    }
+
+    .footer-juego{
+        position: relative;
     }
 
     footer .container {
