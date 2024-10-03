@@ -465,7 +465,7 @@ footer {
     color: var(--white-color);
     padding: 1rem;
     text-align: center;
-    position: relative;
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
@@ -647,6 +647,10 @@ footer .container {
     footer {
         padding: 4rem 2rem;
         line-height: 1.6;
+    }
+
+    .footer-juego{
+        position: relative;
     }
 
     footer .container {
