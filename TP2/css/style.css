@@ -153,7 +153,14 @@ header .container-header h1 {
 /*Menu desplegable*/
 
 header .nav--active {
-    left: 0;
+    left: -.6rem;
+}
+
+.menu-hamburguesa__menu-desplegado{
+    background-image: url(../img/equis.png);
+}
+.container-header__equis__menu-hamburguesa{
+    display: none;
 }
 
 .nav {
@@ -161,11 +168,13 @@ header .nav--active {
     margin-top: 2rem;
     margin-left: -2.5rem;
      */
+     
     position: absolute;
-    top: 5.9rem;
-    left: -100%;
+    z-index: 1;
+    top: 5.4rem;
+    left: -102%;
     width: 25rem;
-    height: 100vh;
+    height: 50vh;
     background-color: var(--primary-color-2);
     transition: left 0.5s ease-in-out;
 }
@@ -196,7 +205,6 @@ header .nav--active {
 
 /*Galeria mobile*/
 
-/*Galeria*/
 .slider-wrapper {
     margin: 0rem;
     position: relative;
@@ -555,6 +563,7 @@ footer {
     display: flex;
     flex-direction: column;
     line-height: 2;
+    
 }
 
 footer .container {
@@ -625,7 +634,17 @@ footer .container {
     .slides-container {
         height: calc(8vh - -2rem);
     }
+    .container-header{
+        gap: 3rem;
+    }
 }
+
+@media (min-width:424px) and (max-width: 767px) {
+    .container-header{
+        gap: 4rem;
+    }
+}
+
 @media (min-width: 901px) {
 
 

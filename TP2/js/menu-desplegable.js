@@ -1,15 +1,16 @@
 
 
 const menuHamburguesa = document.getElementById('menu-hamburguesa');
+//const menuEquis = document.getElementById('menu-equis');
 const menuCarrito = document.getElementById('cart-buy');
 const nav = document.querySelector('.nav');
 const navItems = document.querySelectorAll('.nav__item a'); // Seleccionamos los enlaces dentro del menu
 
 // Evento click sobre el icono menu hamburguesa
 menuHamburguesa.addEventListener('click', () => {
+    menuHamburguesa.classList.toggle('menu-desplegable--active')
     nav.classList.toggle('nav--active'); 
 });
-
 
 // cerrar menu desplegable cuando hacemos click por fuera
 document.addEventListener('click', (event) => {
