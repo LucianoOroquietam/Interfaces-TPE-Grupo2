@@ -633,15 +633,17 @@ footer .container {
     }
 
     .nav {
-
         height: 76%;
-
     }
 }
 
-@media (min-width:392px) and (max-width: 767px) {
+@media (min-width:390px) and (max-width: 767px) {
     .slides-container {
         height: calc(10vh - -2rem);
+    }
+
+    .nav {
+        height: 72%;
     }
 }
 
@@ -655,15 +657,18 @@ footer .container {
     }
 
     .nav {
-
         height: 69%;
+    }
+}
 
+@media (min-width:430px) and (max-width: 767px) {
+
+    .nav {
+        height: 65%;
     }
 }
 
 @media (min-width: 901px) {
-
-
     /*Galeria*/
     .slider-wrapper {
         margin: 0rem;
