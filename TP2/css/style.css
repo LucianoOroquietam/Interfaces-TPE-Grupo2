@@ -109,15 +109,12 @@ header .container-header h1 {
 }
 
 .container-main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: .5rem;
-    position: relative;
+    /*position: relative;*/
 }
 
 .container-header {
-    position: relative;
+    /*position: relative;*/
     display: flex;
     gap: 1.5rem;
     align-items: center;
@@ -153,28 +150,24 @@ header .container-header h1 {
 /*Menu desplegable*/
 
 header .nav--active {
-    left: -.6rem;
+    left: 0rem;
 }
 
-.menu-hamburguesa__menu-desplegado{
+.menu-hamburguesa__menu-desplegado {
     background-image: url(../img/equis.png);
 }
-.container-header__equis__menu-hamburguesa{
+
+.container-header__equis__menu-hamburguesa {
     display: none;
 }
 
 .nav {
-    /*  position: absolute;
-    margin-top: 2rem;
-    margin-left: -2.5rem;
-     */
-     
     position: absolute;
     z-index: 1;
     top: 5.4rem;
-    left: -102%;
-    width: 25rem;
-    height: 50vh;
+    left: -100%;
+    width: 100%;
+    height: 84%;
     background-color: var(--primary-color-2);
     transition: left 0.5s ease-in-out;
 }
@@ -212,7 +205,7 @@ header .nav--active {
 }
 
 .slides-container {
-    height: calc(10vh - 2rem);
+    height: calc(12vh - 2rem);
     width: 100%;
     display: flex;
     overflow: hidden;
@@ -258,14 +251,14 @@ header .nav--active {
 
 .slide {
     width: 100%;
-    height:100%;
+    height: 100%;
     flex: 1 0 100%;
 }
 
 .slide:nth-child(1) {
     background-image: url(../img/galeria/dbz.svg);
     background-size: cover;
-    
+
 }
 
 .slide:nth-child(2) {
@@ -557,13 +550,13 @@ footer {
     padding: 1rem;
     text-align: center;
     position: absolute;
-    bottom: 0;
+
     left: 0;
     right: 0;
     display: flex;
     flex-direction: column;
     line-height: 2;
-    
+
 }
 
 footer .container {
@@ -632,23 +625,40 @@ footer .container {
 
 @media (min-width:374px) and (max-width: 767px) {
     .slides-container {
-        height: calc(8vh - -2rem);
+        height: calc(9vh - -2rem);
     }
-    .container-header{
+
+    .container-header {
         gap: 3rem;
+    }
+
+    .nav {
+
+        height: 76%;
+
     }
 }
 
 @media (min-width:424px) and (max-width: 767px) {
-    .container-header{
+    .slides-container {
+        height: calc(11vh - -2rem);
+    }
+
+    .container-header {
         gap: 4rem;
+    }
+
+    .nav {
+
+        height: 69%;
+
     }
 }
 
 @media (min-width: 901px) {
 
 
-/*Galeria*/
+    /*Galeria*/
     .slider-wrapper {
         margin: 0rem;
         position: relative;
@@ -702,13 +712,13 @@ footer .container {
 
     .slide {
         width: 100%;
-        height:100%;
+        height: 100%;
         flex: 1 0 100%;
     }
 
     .slide:nth-child(1) {
         background-image: url(../img/galeria/dbz.svg);
-        
+
     }
 
     .slide:nth-child(2) {
