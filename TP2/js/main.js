@@ -47,3 +47,4 @@ prevButton.addEventListener("click", () => {
 
 // Iniciar el movimiento automático al cargar la página
 autoScrollTimeout = setTimeout(moveToNextSlide, 3000); 
+
