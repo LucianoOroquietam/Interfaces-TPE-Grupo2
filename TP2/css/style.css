@@ -985,7 +985,7 @@ footer .container {
         padding: 1rem;
         overflow: hidden;
         margin: auto;
-        transition: transform 0.4s ease; /* Animación suave */
+        transition: transform 0.4s ease;
     }
     
     
@@ -1039,7 +1039,7 @@ footer .container {
 
 
     .scrolling-card {
-        position: relative; /* Esto permite que el badge se posicione relativo a la tarjeta */
+        position: relative; 
         flex: 0 0 auto;
         margin: 11rem 1rem 11rem 1rem;
         text-align: center;
@@ -1083,17 +1083,17 @@ footer .container {
     
     .scrolling-button-left,
     .scrolling-button-right {
-        font-size: 24px; /* Tamaño de la flecha */
-        background-color: transparent; /* Fondo transparente */
-        border: none; /* Sin borde */
-        cursor: pointer; /* Cursor de mano al pasar por encima */
-        margin: 0 15px; /* Espacio entre los botones */
-        transition: transform 0.3s; /* Transición al hacer hover */
+        font-size: 24px; 
+        background-color: transparent; 
+        border: none; 
+        cursor: pointer; 
+        margin: 0 15px; 
+        transition: transform 0.3s; 
     }
     
     .scrolling-button-left:hover,
     .scrolling-button-right:hover {
-        transform: scale(1.2); /* Aumentar el tamaño al pasar el mouse */
+        transform: scale(1.2); 
     }
 
 
