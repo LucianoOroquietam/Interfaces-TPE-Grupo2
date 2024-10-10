@@ -967,9 +967,63 @@ footer .container {
         display: block;
     }
 
+
+
+    /*Carrusel Grande Desktop*/
+
     .container-carrusel{
         border: 2px solid rgb(235, 231, 231);
         margin-top: 0;
+    }
+
+
+    .scrolling-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: 1rem;
+        overflow: hidden;
+        margin: auto;
+        transition: transform 0.4s ease; /* Animación suave */
+    }
+    
+    
+    
+    .game-image {
+        width: 100%;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+    
+    .game-info {
+        padding: 1rem;
+        background: rgb(26,90,126);
+        background: linear-gradient(90deg, rgba(26,90,126,1) 0%, rgba(26,90,126,1) 0%, rgba(35,127,167,1) 100%);
+        color: white;
+    }
+    
+
+    .game-title {
+        margin: 1rem 0;
+    }
+    
+    .game-price {
+        background-color: #1155cc;
+        padding: 5px;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    .buy-button {
+        background-color: #00cc66;
+        border: none;
+        color: white;
+        padding: 1rem;
+        border-radius: .5rem;
+        cursor: pointer;
     }
 
 
@@ -977,26 +1031,33 @@ footer .container {
         color: #1173BA;
     }
 
-    .scrolling-card img {
-        width: 460px;
-        height: 390px;
+
+    .scrolling-card img, .scrolling-card {
+        width: 46rem;
+        height: 39rem;
     }
 
-    .scrolling-container {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        margin: 2rem;
-    }
 
     .scrolling-card {
+        position: relative; /* Esto permite que el badge se posicione relativo a la tarjeta */
         flex: 0 0 auto;
-        border: solid 1px rgb(255, 246, 246);
-        margin: 10px;
-        width: 460px;
-        height: 390px;
+        margin: 11rem 1rem 11rem 1rem;
         text-align: center;
+        border-radius: 1rem;
+    }
+    
+    .discount-badge {
+        position: absolute;
+        top: 1rem; 
+        left: 1rem; 
+        background-color: #4CAF50; 
+        color: #D3DDE6; 
+        padding: .5rem 1.5rem; 
+        border-radius: 0 2rem 2rem 0; 
+        font-size: 1.8rem; 
+        font-weight: bold;
+        z-index: 10; 
+        transform: rotate(-15deg); 
     }
 
     .scrolling-card h2 {
@@ -1007,12 +1068,35 @@ footer .container {
         display: none;
     }
 
+
+    .skew1{
+        
+        transform: skewX(-10deg);
+    }
+
     .scrolling-buttons-container {
         display: flex;
-        justify-content: space-between;
-        font-size: 25px;
-        margin-left: 25px;
-        margin-right: 25px;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
     }
+    
+    .scrolling-button-left,
+    .scrolling-button-right {
+        font-size: 24px; /* Tamaño de la flecha */
+        background-color: transparent; /* Fondo transparente */
+        border: none; /* Sin borde */
+        cursor: pointer; /* Cursor de mano al pasar por encima */
+        margin: 0 15px; /* Espacio entre los botones */
+        transition: transform 0.3s; /* Transición al hacer hover */
+    }
+    
+    .scrolling-button-left:hover,
+    .scrolling-button-right:hover {
+        transform: scale(1.2); /* Aumentar el tamaño al pasar el mouse */
+    }
+
+
+    
 
 }
