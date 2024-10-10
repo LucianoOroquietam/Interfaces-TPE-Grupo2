@@ -15,14 +15,14 @@
                 <!-- Welcome -->
                 <div class="col-md-4 split-left welcome">
                     <div class="h-100">
+                        <img src="../img/iconos/logo.png" alt="" class="container-header__logo-header">
                         <div class="text-center">
                             <h1>Bienvenidos</h1>
                         </div>
                         <h3>Para unirte a nuestra pagina de mini juegos por favor ingresa con tus datos</h3>
-                        <h4>¿Usted no está registrado?</h4>
-                        <div class="d-flex flex-column justify-content-center align-items-center">
-                            <p>¡Gracias por visitarnos! Regístrate para disfrutar de todos nuestros servicios.</p>
-                            <button type="button" class="btn btn-primary">Registrarse</button>
+                        <div class="form-login-btn-register">
+                            <h4>¿Usted no está registrado?</h4>
+                            <button type="button" class="">Registrarse</button>
                         </div>
                     </div>
                 </div>
@@ -46,7 +46,15 @@
                                 <input type="checkbox" class="form-check-input" id="remember" name="remember">
                                 <label class="form-check-label" for="remember">Recordarme</label>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+                            <div class="captcha-container">
+                                <form id="captcha-form">
+                                    <div class="captcha-box">
+                                        <input type="checkbox" id="captcha-checkbox" />
+                                        <label for="captcha-checkbox">No soy un robot</label>
+                                    </div>
+                                </form>
+                            </div>
+                            <a href="../index.html"><button type="submit" class="btn btn-primary w-100">Ingresar</button></a>
                             </form>
                         </div>
                         <div class="text-center">

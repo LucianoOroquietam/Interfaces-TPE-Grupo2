@@ -1004,6 +1004,66 @@ footer .social-icons a:hover {
     display: none;
 }
 
+
+.footer-bottom ul li a:hover {
+    color: var(--white-color);
+}
+
+/*Form*/
+
+.form {
+    background-image: url('../img/form/Fondo_form.png');
+    background-size: 110%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.form .welcome, .form .welcome div {
+    background-color: var(--primary-color-2);
+}
+
+.form .login {
+    background-color: var(--primary-color-3);
+}
+
+.form h1 {
+    font-family: var(--font-size-montserrat-large);
+}
+
+.form .container-login {
+    border-radius: 80px;
+    
+}
+
+.form-login-btn-register {
+    display: flex;
+}
+
+.form-label, .form-check, .welcome p, form.btn-primary {
+    font-family: var(--font-family-noto-sans);
+}
+
+.login, .welcome {
+    min-height: 70vh;
+}
+
+/*Captcha*/
+.captcha-container {
+    background-color: var(--white-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.captcha-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 .footer-section__reviews {
     display: none;
 }
@@ -1017,6 +1077,24 @@ footer .social-icons a:hover {
 .footer-section__logo-footer p {
     display: none;
 }
+
+/* Animación al mover el carrusel hacia la izquierda */
+.enMovimientoI {
+    transform: skewX(10deg);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Animación al mover el carrusel hacia la derecha */
+.enMovimientoD {
+    transform: skewX(-10deg);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Reseteo del skew cuando se quita la clase */
+.carrousel_slide {
+    transform: skewX(0deg);
+}
+
 
 @media (min-width:374px) and (max-width: 767px) {
     .slides-container {
