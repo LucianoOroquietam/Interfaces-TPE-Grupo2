@@ -1,3 +1,4 @@
+
 /*variables globales*/
 
 /* Resetear márgenes y padding, y ajustar box-sizing */
@@ -30,10 +31,6 @@ body {
     --secondary-color: #1173BA;
     --secondary-color-2: #1A9FFF;
     --secondary-color-3: #89CEFF;
-
-    --orange-1:#F5A201;
-    --orange-2:#FFBA42;
-    --orange-3:#FFD35C;
 
     --acent-color: #4C6B22;
     --acent-color-2: #4F8B20;
@@ -311,11 +308,9 @@ header .nav--active {
 }
 
 .button__compartir {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20rem;
-    gap: 1rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
 }
 
 .button__submit {
@@ -328,17 +323,11 @@ header .nav--active {
     font-weight: bold;
 }
 
-.share{
-    padding-top: 2rem;
-    margin-left: 2rem;
-    margin-bottom: 2rem;
-}
-
 /*Juego*/
 
 .breadcrum {
-    margin-top: 3rem;
-    margin-left: 18.5%;
+    margin-top: 10rem;
+    margin-left: 7.5%;
     margin-bottom: .5rem;
     font-family: var(--font-family-noto-sans);
     font-size: var(--font-size-h2-small);
@@ -363,27 +352,19 @@ header .nav--active {
     margin-left: 7.5%;
     margin-bottom: 3rem;
     width: 85%;
-    height: 70rem;
-    
-}
-
-.game__four-in-line {
-    position: relative;
-    
+    height: 60rem;
+    background-color: var(--black-color);
 }
 
 .game__four-in-line-img {
-    width: 80%;
-    height: 70rem;
-    margin-left: 10%;
+    width: 60%;
+    height: 60rem;
+    margin-left: 20%;
     filter: brightness(0.5);
 }
 
 .game .game__four-in-line button {
-    position: absolute;
-    right: 43%;
-    top: 45%;
-    background-color: var(--orange-1);
+    transform: translate(-53rem, -30rem);
 }
 
 .video {
@@ -507,7 +488,6 @@ header .nav--active {
     justify-content: end;
     align-items: center;
     margin-top: 2rem;
-    margin-left: 25rem;
     margin-right: 2rem;
 }
 
@@ -992,8 +972,27 @@ footer .container {
 
     /*Carrusel Grande Desktop*/
 
+    .carrusel-wrapper{
+        position: relative;
+        justify-content: space-between;
+    }
+
+    .scrolling-buttons-container{
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 50%;
+        left: 5.5%;
+        width: 88%;
+        z-index: 20;
+        transform: translateY(23%);
+    }
+
+    .carrusel-small .scrolling-buttons-container{
+        transform: translateY(32.2%);
+    }
+
     .container-carrusel{
-        border: 2px solid rgb(235, 231, 231);
         margin-top: 0;
     }
 
@@ -1007,6 +1006,7 @@ footer .container {
         overflow: hidden;
         margin: auto;
         transition: transform 0.4s ease;
+        width: 83%;
     }
     
     
@@ -1018,6 +1018,7 @@ footer .container {
     }
     
     .game-info {
+        margin-top: -.5rem;
         padding: 1rem;
         background: rgb(26,90,126);
         background: linear-gradient(90deg, rgba(26,90,126,1) 0%, rgba(26,90,126,1) 0%, rgba(35,127,167,1) 100%);
@@ -1048,25 +1049,59 @@ footer .container {
     }
 
 
-    div span {
-        color: #1173BA;
-    }
-
-
     .scrolling-card img, .scrolling-card {
         width: 46rem;
         height: 39rem;
     }
 
-
     .scrolling-card {
-        position: relative; 
+        position: relative; /* Esto permite que el badge se posicione relativo a la tarjeta */
         flex: 0 0 auto;
         margin: 11rem 1rem 11rem 1rem;
         text-align: center;
         border-radius: 1rem;
     }
     
+
+    /*carrusel small*/
+
+    .scrolling-container-small{
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: 1rem;
+        overflow: hidden;
+        margin: auto;
+        transition: transform 0.4s ease;
+        width: 83%;
+    }
+
+    .scrolling-container-small .scrolling-card{
+        height: 10rem;
+    }
+
+   .scrolling-container-small .scrolling-card{
+        width: 25rem;
+        height: 33.3rem;
+    }
+
+    .scrolling-container-small .scrolling-card img{
+        width: 25rem;
+        height: 24.6rem;
+    }
+
+
+    .scrolling-card-small {
+        position: relative; 
+        flex: 0 0 auto;
+        margin: 11rem 1rem 11rem 1rem;
+        text-align: center;
+        border-radius: 1rem;
+    }
+
+    /*detalle card*/
+
     .discount-badge {
         position: absolute;
         top: 1rem; 
@@ -1090,33 +1125,55 @@ footer .container {
     }
 
 
+    .scrolling-button-left,
+    .scrolling-button-right {
+        cursor: pointer; 
+        transition: transform 0.3s; 
+        z-index: 20;
+    }
+
+    .scrolling-button-left, .scrolling-button-right{
+        height: 51.4rem;
+        width: 7rem;
+        padding-top: 23rem;
+    }
+
+    .scrolling-button-left-small, .scrolling-button-right-small{
+        height: 36.4rem;
+        width: 7rem;
+        padding-top: 15.5rem;
+    }
+
+    .scrolling-button-right, .scrolling-button-right-small{
+        background: rgb(76,113,158);
+        background: linear-gradient(90deg, rgba(76,113,158,1) 0%, rgba(27,40,56,1) 100%);
+        padding-left: 1rem;
+    }
+
+    .scrolling-button-left, .scrolling-button-left-small{
+        background: rgb(26,90,126);
+        background: linear-gradient(90deg, rgba(26,90,126,1) 0%, rgba(27,40,56,1) 0%, rgba(76,113,158,1) 100%);
+        padding-left: 1rem;
+    }
+    
+
+    img.carrito-compra{
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .carrusel-small img.carrito-compra{
+        width: 3rem;
+        height: 3rem;
+    }
+
+
+    /*js*/
+
     .skew1{
         
         transform: skewX(-10deg);
     }
-
-    .scrolling-buttons-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 10px 0;
-    }
-    
-    .scrolling-button-left,
-    .scrolling-button-right {
-        font-size: 24px; 
-        background-color: transparent; 
-        border: none; 
-        cursor: pointer; 
-        margin: 0 15px; 
-        transition: transform 0.3s; 
-    }
-    
-    .scrolling-button-left:hover,
-    .scrolling-button-right:hover {
-        transform: scale(1.2); 
-    }
-
 
     
 
