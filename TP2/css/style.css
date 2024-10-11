@@ -1011,42 +1011,124 @@ footer .social-icons a:hover {
 
 /*Form*/
 
-.form {
-    background-image: url('../img/form/Fondo_form.png');
-    background-size: 110%;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
+.container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
-.form .welcome, .form .welcome div {
+.content {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.split-left, .login {
+    padding: 40px;
+}
+
+.split-left {
+    width: 40%;
     background-color: var(--primary-color-2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
 
-.form .login {
-    background-color: var(--primary-color-3);
+.logo {
+    max-width: 80px;
+    margin-bottom: 20px;
 }
 
-.form h1 {
-    font-family: var(--font-size-montserrat-large);
+.welcome h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 
-.form .container-login {
-    border-radius: 80px;
-    
+.welcome h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
 }
+
+.line-div {
+    width: 50%;
+    height: 2px;
+    background-color: var(--white-color);
+    margin: 20px 0;
+}
+
+.line-div {
+    width: 100%;
+    position: relative;
+    border-top: 1px solid var(--white-color);
+    box-sizing: border-box;
+    height: 1px;
+}   
 
 .form-login-btn-register {
+    text-align: center;
+}
+
+.btn-register {
+    display: inline-block;
+    color: var(--white-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.login {
+    width: 60%;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.form-label, .form-check, .welcome p, form.btn-primary {
-    font-family: var(--font-family-noto-sans);
+.login-content {
+    max-width: 400px;
+    margin: 0 auto;
 }
 
-.login, .welcome {
-    min-height: 70vh;
+.text-center {
+    text-align: center;
+    margin-bottom: 20px;
 }
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-check input {
+    margin-right: 10px;
+}
+
+
 
 /*Captcha*/
 .captcha-container {
