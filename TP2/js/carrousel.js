@@ -3,8 +3,8 @@ const carruseles = document.querySelectorAll(".carrusel-wrapper");
 
 carruseles.forEach((carrusel) => {
     // Obtenemos los botones y el contenedor del carrusel específico
-    const rightBtn = carrusel.querySelector(".scrolling-buttons-container span:nth-child(1)"); // Botón derecho
-    const leftBtn = carrusel.querySelector(".scrolling-buttons-container span:nth-child(2)"); // Botón izquierdo
+   const rightBtn = carrusel.querySelector(".scrolling-buttons-container span:nth-child(2)"); // Botón derecho
+   const leftBtn = carrusel.querySelector(".scrolling-buttons-container span:nth-child(1)"); // Botón izquierdo
     const content = carrusel.nextElementSibling; // El contenedor de las tarjetas
     const cardWidth = content.querySelector(".scrolling-card").offsetWidth; // Ancho de una tarjeta
 
@@ -12,7 +12,11 @@ carruseles.forEach((carrusel) => {
     const scrollRight = () => {
         const maxScrollLeft = content.scrollWidth - content.clientWidth; // Máximo desplazamiento horizontal
         if (content.scrollLeft + cardWidth >= maxScrollLeft) {
-            content.scrollLeft = maxScrollLeft; // Si llega al final, lo detenemos al final
+            content.scrollLeft = 0;
+            content.classList.add("skew1");
+            setTimeout(() => {
+                content.classList.remove("skew1");
+            }, 350);
         } else {
             content.classList.add("skew1");
             setTimeout(() => {

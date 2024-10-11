@@ -971,8 +971,23 @@ footer .container {
 
     /*Carrusel Grande Desktop*/
 
+    .carrusel-wrapper{
+        position: relative;
+        justify-content: space-between;
+    }
+
+    .scrolling-buttons-container{
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 50%;
+        left: 5.5%;
+        width: 88%;
+        z-index: 20;
+        transform: translateY(23%);
+    }
+
     .container-carrusel{
-        border: 2px solid rgb(235, 231, 231);
         margin-top: 0;
     }
 
@@ -985,7 +1000,8 @@ footer .container {
         padding: 1rem;
         overflow: hidden;
         margin: auto;
-        transition: transform 0.4s ease; /* Animación suave */
+        transition: transform 0.4s ease;
+        width: 83%;
     }
     
     
@@ -1024,11 +1040,6 @@ footer .container {
         padding: 1rem;
         border-radius: .5rem;
         cursor: pointer;
-    }
-
-
-    div span {
-        color: #1173BA;
     }
 
 
@@ -1074,26 +1085,37 @@ footer .container {
         transform: skewX(-10deg);
     }
 
-    .scrolling-buttons-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 10px 0;
-    }
-    
+  
     .scrolling-button-left,
     .scrolling-button-right {
-        font-size: 24px; /* Tamaño de la flecha */
-        background-color: transparent; /* Fondo transparente */
-        border: none; /* Sin borde */
-        cursor: pointer; /* Cursor de mano al pasar por encima */
-        margin: 0 15px; /* Espacio entre los botones */
-        transition: transform 0.3s; /* Transición al hacer hover */
+        cursor: pointer; 
+        transition: transform 0.3s; 
+        z-index: 20;
+    }
+
+    .scrolling-button-left, .scrolling-button-right{
+      
+        height: 51.4rem;
+        width: 7rem;
+        padding-top: 23rem;
+    }
+
+    .scrolling-button-right{
+        background: rgb(76,113,158);
+        background: linear-gradient(90deg, rgba(76,113,158,1) 0%, rgba(27,40,56,1) 100%);
+        padding-left: 1rem;
+    }
+
+    .scrolling-button-left{
+        background: rgb(26,90,126);
+        background: linear-gradient(90deg, rgba(26,90,126,1) 0%, rgba(27,40,56,1) 0%, rgba(76,113,158,1) 100%);
+        padding-left: 1rem;
     }
     
-    .scrolling-button-left:hover,
-    .scrolling-button-right:hover {
-        transform: scale(1.2); /* Aumentar el tamaño al pasar el mouse */
+
+    img.carrito-compra{
+        width: 5rem;
+        height: 5rem;
     }
 
 
