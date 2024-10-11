@@ -12,7 +12,9 @@ carruseles.forEach((carrusel) => {
         const maxScrollLeft = content.scrollWidth - content.clientWidth; // Máximo desplazamiento horizontal
         if (content.scrollLeft + cardWidth >= maxScrollLeft) {
             content.scrollLeft = maxScrollLeft;
-            content.scrollLeft = 0;
+            if(content.scrollLeft >= maxScrollLeft ){
+                content.scrollLeft = 0;
+            }
             content.classList.add("skew1");
             setTimeout(() => {
                 content.classList.remove("skew1");

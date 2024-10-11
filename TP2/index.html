@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,10 +49,27 @@
         <div class="container-carrito-perfil">
             <img id="cart-buy" class="container-carrito-perfil__cart-img" src="img/iconos/Set iconos.svg"
                 alt="carrito compras">
-
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#">Mi perfil</a></li>
+                    <li class="nav__item"><a href="#">Mi carrito</a></li>
+                    <li class="nav__item"><a href="#">Favoritos</a></li>
+                    <li class="nav__item"><a href="#">Configuracion</a></li>
+                    <li class="nav__item"><a href="#">Cerrar Sesion</a></li>
+                </ul>
+            </nav>
             <img class="container-carrito-perfil__user-img" src="img/iconos/advincula.svg" alt="perfil usuario"
                 srcset="">
             <div class="container-carrito-perfil__state-user"></div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#">4 en linea</a></li>
+                    <li class="nav__item"><a href="#">Jewells</a></li>
+                    <li class="nav__item"><a href="#">Spades</a></li>
+                    <li class="nav__item"><a href="#">Subtotal</a></li>
+                    <li class="nav__item"><a href="#">Cerrar Sesion</a></li>
+                </ul>
+            </nav>
         </div>
 
 
@@ -76,172 +92,582 @@
 
 
     <section>
+        <h1>Ofertas</h1>
         <div class="carrusel-wrapper">
             <div class="scrolling-buttons-container">
-                <span class="scrolling-button-left"><img src="img/detalle card/flecha-izquierda-carrusel.png" alt=""></span>
-                <span class="scrolling-button-right"><img src="img/detalle card/flecha-derecha-carrusel.png" alt=""></span>
-               
+                <span class="scrolling-button-left"><img src="img/detalle card/flecha-izquierda-carrusel.png"
+                        alt=""></span>
+                <span class="scrolling-button-right"><img src="img/detalle card/flecha-derecha-carrusel.png"
+                        alt=""></span>
+
             </div>
         </div>
-    
-    
         <div class="scrolling-container">
-            
+
             <div class="scrolling-card">
                 <img src="img/ofertas/0AwPiIkb0URZCNbL.jpg" alt="">
                 <div class="game-info">
                     <span class="discount-badge">-50%</span>
                     <h3 class="game-title">Flames & Fortune</h3>
-                    <p class="game-price">AR$ 6.600</p>
-                    <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+
                 </div>
             </div>
-    
+
             <div class="scrolling-card">
-                <img src="img/ofertas/cover_16x9-1719334258708.png" alt="">
+                <img src="img/ofertas/dbzsz.jpg" alt="">
                 <div class="game-info">
                     <span class="discount-badge">-50%</span>
-                    <h3 class="game-title">Flames & Fortune</h3>
-                    <p class="game-price">AR$ 6.600</p>
-                    <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
-                </div>
-            </div>
-            <div class="scrolling-card">
-                <img src="img/ofertas/ejhdWUf5WMbFjgsg.jpg" alt="">
-                <div class="game-info">
-                    <span class="discount-badge">-50%</span>
-                    <h3 class="game-title">Flames & Fortune</h3>
-                    <p class="game-price">AR$ 6.600</p>
-                    <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
-                </div>
-            </div>
-            <div class="scrolling-card">
-                <img src="img/4_en_linea.png" alt="">
-                <div class="game-info">
-                    <span class="discount-badge">-50%</span>
-                    <h3 class="game-title">Flames & Fortune</h3>
-                    <p class="game-price">AR$ 6.600</p>
-                    <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    <h3 class="game-title">Dragon Ball Sparking Zero</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
                 </div>
             </div>
             <div class="scrolling-card">
-                <img src="img/4_en_linea.png" alt="">
+                <img src="img/teardown.jpg" alt="">
                 <div class="game-info">
                     <span class="discount-badge">-50%</span>
-                    <h3 class="game-title">Flames & Fortune</h3>
-                    <p class="game-price">AR$ 6.600</p>
-                    <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    <h3 class="game-title">Teardown</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
                 </div>
             </div>
             <div class="scrolling-card">
-                <img src="img/4_en_linea.png" alt="">
+                <img src="img/ofertas/spotlight_image_english.jpg" alt="">
                 <div class="game-info">
                     <span class="discount-badge">-50%</span>
-                    <h3 class="game-title">Flames & Fortune</h3>
-                    <p class="game-price">AR$ 6.600</p>
-                    <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    <h3 class="game-title">Power Bash Simulator</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/ofertas/spotlight_image_spanish.jpg" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Kingdom Two Crows</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/puzzle/4 en linea.jpg" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">4 en linea</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
                 </div>
             </div>
         </div>
 
-        
+
     </section>
 
 
 
-<section class="carrusel-small">
-    <div class="carrusel-wrapper">
-        <div class="scrolling-buttons-container">
-            <span class="scrolling-button-left-small"><img src="img/detalle card/flecha-izquierda-carrusel.png" alt=""></span>
-            <span class="scrolling-button-right-small"><img src="img/detalle card/flecha-derecha-carrusel.png" alt=""></span>
+    <section class="carrusel-small">
+        <h1>Juegos para ti</h1>
+        <div class="carrusel-wrapper">
+            <div class="scrolling-buttons-container">
+                <span class="scrolling-button-left-small"><img src="img/detalle card/flecha-izquierda-carrusel.png"
+                        alt=""></span>
+                <span class="scrolling-button-right-small"><img src="img/detalle card/flecha-derecha-carrusel.png"
+                        alt=""></span>
+            </div>
         </div>
-    </div>
+        <div class="scrolling-container-small">
+            <div class="scrolling-card">
+                <img src="img/juegos para ti/B1hOtBNqxF8lMWF2.jpg" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
 
-    <div class="scrolling-container-small">
-        <div class="scrolling-card">
-            <img src="img/juegos para ti/B1hOtBNqxF8lMWF2.jpg" alt="">
-            <div class="game-info">
-                <span class="discount-badge">-50%</span>
-                <h3 class="game-title">Flames & Fortune</h3>
-                <p class="game-price">AR$ 6.600</p>
-                <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+            <div class="scrolling-card">
+                <img src="img/juegos para ti/cover-1678290947532.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/juegos para ti/oZ8noqVf5qW6PqyO.jpg" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/juegos para ti/xG1W8F8AHSeEY2Su.jpg" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
             </div>
         </div>
+        <h1>Acción</h1>
+        <div class="carrusel-wrapper">
+            <div class="scrolling-buttons-container">
+                <span class="scrolling-button-left-small"><img src="img/detalle card/flecha-izquierda-carrusel.png"
+                        alt=""></span>
+                <span class="scrolling-button-right-small"><img src="img/detalle card/flecha-derecha-carrusel.png"
+                        alt=""></span>
+            </div>
+        </div>
+        <div class="scrolling-container-small">
+            <div class="scrolling-card">
+                <img src="img/juegos para ti/B1hOtBNqxF8lMWF2.jpg" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
 
-        <div class="scrolling-card">
-            <img src="img/juegos para ti/cover-1678290947532.png" alt="">
-            <div class="game-info">
-                <span class="discount-badge">-50%</span>
-                <h3 class="game-title">Flames & Fortune</h3>
-                <p class="game-price">AR$ 6.600</p>
-                <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+            <div class="scrolling-card">
+                <img src="img/juegos para ti/cover-1678290947532.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/juegos para ti/oZ8noqVf5qW6PqyO.jpg" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/juegos para ti/xG1W8F8AHSeEY2Su.jpg" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="scrolling-card">
-            <img src="img/juegos para ti/oZ8noqVf5qW6PqyO.jpg" alt="">
-            <div class="game-info">
-                <span class="discount-badge">-50%</span>
-                <h3 class="game-title">Flames & Fortune</h3>
-                <p class="game-price">AR$ 6.600</p>
-                <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+        <h1>Puzzle</h1>
+        <div class="carrusel-wrapper">
+            <div class="scrolling-buttons-container">
+                <span class="scrolling-button-left-small"><img src="img/detalle card/flecha-izquierda-carrusel.png"
+                        alt=""></span>
+                <span class="scrolling-button-right-small"><img src="img/detalle card/flecha-derecha-carrusel.png"
+                        alt=""></span>
             </div>
         </div>
-        <div class="scrolling-card">
-            <img src="img/juegos para ti/xG1W8F8AHSeEY2Su.jpg" alt="">
-            <div class="game-info">
-                <span class="discount-badge">-50%</span>
-                <h3 class="game-title">Flames & Fortune</h3>
-                <p class="game-price">AR$ 6.600</p>
-                <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+        <div class="scrolling-container-small">
+            <div class="scrolling-card">
+                <img src="img/juegos para ti/B1hOtBNqxF8lMWF2.jpg" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="scrolling-card">
+                <img src="img/juegos para ti/cover-1678290947532.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/juegos para ti/oZ8noqVf5qW6PqyO.jpg" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/juegos para ti/xG1W8F8AHSeEY2Su.jpg" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="scrolling-card">
-            <img src="img/4_en_linea.png" alt="">
-            <div class="game-info">
-                <span class="discount-badge">-50%</span>
-                <h3 class="game-title">Flames & Fortune</h3>
-                <p class="game-price">AR$ 6.600</p>
-                <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+        <h1>Carrera</h1>
+        <div class="carrusel-wrapper">
+            <div class="scrolling-buttons-container">
+                <span class="scrolling-button-left-small"><img src="img/detalle card/flecha-izquierda-carrusel.png"
+                        alt=""></span>
+                <span class="scrolling-button-right-small"><img src="img/detalle card/flecha-derecha-carrusel.png"
+                        alt=""></span>
             </div>
         </div>
-        <div class="scrolling-card">
-            <img src="img/4_en_linea.png" alt="">
-            <div class="game-info">
-                <span class="discount-badge">-50%</span>
-                <h3 class="game-title">Flames & Fortune</h3>
-                <p class="game-price">AR$ 6.600</p>
-                <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+        <div class="scrolling-container-small">
+            <div class="scrolling-card">
+                <img src="img/juegos para ti/B1hOtBNqxF8lMWF2.jpg" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="scrolling-card">
+                <img src="img/juegos para ti/cover-1678290947532.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/juegos para ti/oZ8noqVf5qW6PqyO.jpg" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/juegos para ti/xG1W8F8AHSeEY2Su.jpg" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="scrolling-card">
+                <img src="img/4_en_linea.png" alt="">
+                <div class="game-info">
+                    <span class="discount-badge">-50%</span>
+                    <h3 class="game-title">Flames & Fortune</h3>
+                    <div class="details-card-container">
+                        <p class="game-offer">13.200</p>
+                        <p class="game-price">AR$ 6.600</p>
+                        <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="scrolling-card">
-            <img src="img/4_en_linea.png" alt="">
-            <div class="game-info">
-                <span class="discount-badge">-50%</span>
-                <h3 class="game-title">Flames & Fortune</h3>
-                <p class="game-price">AR$ 6.600</p>
-                <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
-            </div>
-        </div>
-        <div class="scrolling-card">
-            <img src="img/4_en_linea.png" alt="">
-            <div class="game-info">
-                <span class="discount-badge">-50%</span>
-                <h3 class="game-title">Flames & Fortune</h3>
-                <p class="game-price">AR$ 6.600</p>
-                <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
-            </div>
-        </div>
-        <div class="scrolling-card">
-            <img src="img/4_en_linea.png" alt="">
-            <div class="game-info">
-                <span class="discount-badge">-50%</span>
-                <h3 class="game-title">Flames & Fortune</h3>
-                <p class="game-price">AR$ 6.600</p>
-                <img class="carrito-compra" src="img/detalle card/Add Shopping Cart.png" alt="">
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <footer>
         <div class="container">
