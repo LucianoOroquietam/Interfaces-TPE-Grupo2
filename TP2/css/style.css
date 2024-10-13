@@ -31,9 +31,9 @@ body {
     --primary-color-5: #1A9FFF;
     --primary-color-6: #89CEFF;
 
-    --secondary-color-4: #F5A201;
-    --secondary-color-5: #FFBA42;
-    --secondary-color-6: #FFD35C;
+    --secondary-color-1: #F5A201;
+    --secondary-color-2: #FFBA42;
+    --secondary-color-3: #FFD35C;
 
 
 
@@ -195,6 +195,7 @@ header .nav--active {
 }
 
 
+
 .nav__item {
     list-style: none;
     font-family: var(--font-family-noto-sans);
@@ -272,6 +273,7 @@ header .nav--active {
     font-family: var(--font-family-noto-sans);
     cursor: pointer;
     border: none;
+    position: relative;
 }
 
 .button__green {
@@ -298,7 +300,7 @@ header .nav--active {
     width: 28rem;
     height: 4rem;
     border-radius: 20px;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color-4);
     font-size: var(--font-size-h3-large);
     color: var(--white-color);
     font-weight: bold;
@@ -1917,6 +1919,38 @@ footer .social-icons a:hover {
     .form-login button img, .form-register button img {
         height: 3rem;
     }
+
+    .button {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .button__lightblue {
+        z-index: 2;
+        position: relative;
+    }
+
+    .button__lightblue::after {
+        content: '';
+        width: 100%;
+        height: 30rem;
+        background: var(--primary-color-6);
+        position: absolute;
+        z-index: 0;
+        top:-300px;
+        left:0;
+        transition: .3s ease-in-out all;
+        border-radius: 0px 0px 300px 300px;
+    }
+
+    .button__lightblue:hover::after {
+        top:0;
+    }
+
+    .button span {
+        z-index: 100;
+    }
+    
 
 }
 
