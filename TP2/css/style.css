@@ -1822,7 +1822,7 @@ footer .social-icons a:hover {
     }
 
     .form-login-btn-register a, .form-login-btn-login a {
-        margin-top:.5rem;
+        margin-top:0;
         margin-left: 0;
         padding-left: 0.5rem;
     }
@@ -1950,6 +1950,35 @@ footer .social-icons a:hover {
     .button span {
         z-index: 100;
     }
+
+    .button__submit:hover {
+        transform: scale(1.05);
+        border-color: #fff9;
+      }
+      
+      .button__submit:hover .icon {
+        transform: translate(4px);
+      }
+      
+      .button__submit:hover::before {
+        animation: shine 1.5s ease-out infinite;
+      }
+      
+      .button__submit::before {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 100%;
+        background-image: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0) 30%,
+          rgba(255, 255, 255, 0.8),
+          rgba(255, 255, 255, 0) 70%
+        );
+        top: 0;
+        left: -100px;
+        opacity: 0.6;
+      }
     
 
 }
