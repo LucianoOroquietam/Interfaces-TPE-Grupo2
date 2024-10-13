@@ -14,6 +14,11 @@ menuHamburguesa.addEventListener('click', () => {
     body.classList.toggle('transparent-background');
 });
 
+
+menuCarrito.addEventListener('click', () =>{
+    menuCarrito.classList.toggle('btn-play-container');
+} )
+
 // cerrar menu desplegable cuando hacemos click por fuera
 document.addEventListener('click', (event) => {
     if (!nav.contains(event.target) && !menuHamburguesa.contains(event.target)) {
