@@ -15,10 +15,7 @@ menuHamburguesa.addEventListener('click', () => {
 });
 
 
-menuCarrito.addEventListener('click', () =>{
-    menuCarrito.classList.toggle('btn-play-container');
-    nav.classList.toggle();
-} )
+
 
 // cerrar menu desplegable cuando hacemos click por fuera
 document.addEventListener('click', (event) => {
