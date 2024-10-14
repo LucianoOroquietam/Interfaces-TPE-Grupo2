@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     console.log("El archivo JS se ha cargado correctamente");
     
-    const imgs = document.querySelectorAll('.carrito-compra');
+    const imgs = document.querySelectorAll('.carrito-compra-toggle');
 
         console.log("Imágenes encontradas correctamente en el DOM");
         
