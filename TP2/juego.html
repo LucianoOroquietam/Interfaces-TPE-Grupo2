@@ -18,47 +18,94 @@
 <body>
 
 	<header class="container-main">
-		<div class="container-header">
-			<img id="menu-hamburguesa" class="container-header__menu-hamburguesa" src="img/iconos/menu hamburguesa.png"
-				alt="menu hamburguesa">
-			<nav class="nav">
-				<ul class="nav__list">
-					<li class="nav__item"><a href="index.html">Inicio</a></li>
-					<li class="nav__item"><a href="juego.html">4 en linea</a></li>
-					<li class="nav__item"><a href="#para-ti">Juegos Para Ti</a></li>
-					<li class="nav__item"><a href="#destacado">Destacado</a></li>
-					<li class="nav__item"><a href="#puzzle">Puzzle</a></li>
-					<li class="nav__item"><a href="#ofertas">Ofertas</a></li>
-					<li class="nav__item"><a href="#carrera">Carrera</a></li>
-					<li class="nav__item"><a href="#accion">Acción</a></li>
-				</ul>
-			</nav>
-			<img class="container-header__lupa-header" src="img/iconos/lupa.svg" alt="lupa-busqueda">
-			<a href="index.html">
-				<h1>GameBox</h1>
-				<img class="container-header__logo-header" src="img/iconos/logo.png" alt="logo">
-			</a>
-		</div>
+        <div class="container-header">
+            <img id="menu-hamburguesa" class="container-header__menu-hamburguesa menu-desplegado--active"
+                src="img/iconos/menu hamburguesa.png" alt="menu hamburguesa">
+            <img class="container-header__equis__menu-hamburguesa menu-desplegable--active" src="img/equis.png" alt="">
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <button class="btn-menu">
+                            <a href="index.html">Inicio</a>
+                        </button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="btn-menu">
+                            <a href="juego.html">4 en línea</a>
+                        </button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="btn-menu">
+                            <a href="#para-ti">Juegos Para Ti</a>
+                        </button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="btn-menu">
+                            <a href="#puzzle">Puzzle</a>
+                        </button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="btn-menu">
+                            <a href="#ofertas">Ofertas</a>
+                        </button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="btn-menu">
+                            <a href="#carrera">Carrera</a>
+                        </button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="btn-menu">
+                            <a href="#accion">Acción</a>
+                        </button>
+                    </li>
+                    
+                </ul>
+            </nav>
+            <img class="container-header__lupa-header" src="img/iconos/lupa.svg" alt="lupa-busqueda">
+            <a href="index.html">
+                <h1>GameBox</h1>
+                <img class="container-header__logo-header" src="img/iconos/logo.png" alt="logo">
+            </a>
+        </div>
 
 
 
-		<div class="container-search">
-			<input class="container-search__btn" placeholder="Buscar Juego"></input>
-		</div>
+        <div class="container-search">
+            <input class="container-search__btn" placeholder="Buscar Juego"></input>
+        </div>
 
 
-		<div class="container-carrito-perfil">
-			<img id="cart-buy" class="container-carrito-perfil__cart-img" src="img/iconos/Set iconos.svg"
-				alt="carrito compras">
+        <div class="container-carrito-perfil">
+            <img id="cart-buy" class="container-carrito-perfil__cart-img carrito-desplegable" src="img/iconos/Set iconos.svg"
+                alt="carrito compras">
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#">Mi perfil</a></li>
+                    <li class="nav__item"><a href="#">Mi carrito</a></li>
+                    <li class="nav__item"><a href="#">Favoritos</a></li>
+                    <li class="nav__item"><a href="#">Configuracion</a></li>
+                    <li class="nav__item"><a href="#">Cerrar Sesion</a></li>
+                </ul>
+            </nav>
+            <img class="container-carrito-perfil__user-img" src="img/iconos/advincula.svg" alt="perfil usuario"
+                srcset="">
+            <div class="container-carrito-perfil__state-user"></div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#">4 en linea</a></li>
+                    <li class="nav__item"><a href="#">Jewells</a></li>
+                    <li class="nav__item"><a href="#">Spades</a></li>
+                    <li class="nav__item"><a href="#">Subtotal</a></li>
+                    <li class="nav__item"><a href="#">Cerrar Sesion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-			<img class="container-carrito-perfil__user-img" src="img/iconos/advincula.svg" alt="perfil usuario"
-				srcset="">
-			<div class="container-carrito-perfil__state-user"></div>
-		</div>
 
 
-	</header>
-
+    <main class="background-menu">
 
 	<div class="breadcrum">
 		<ul>
@@ -292,7 +339,7 @@
 		</div>
 	</footer>
 
-
+</main>
 	<script src="js/menu-desplegable.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/popup.js"></script>

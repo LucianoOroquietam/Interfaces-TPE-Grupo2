@@ -297,15 +297,13 @@ header .nav--active {
     border: none;
 }
 
-.game__four-in-line{
-    position: relative;
-    margin-bottom: 2rem;
-}
+
+
 
 .button__orange {
     position: absolute;
-    top: 37rem;
-    left: 48rem;
+    top: 32rem;
+    left: 38rem;
     width: 24rem;
     height: 9rem;
     border-radius: 1rem;
@@ -519,6 +517,10 @@ footer .container {
 }
 
 
+.cambiarImgCarrito{
+    background-image: url(../img/Agregar.png)
+}
+
 /*Carrusel Grande Desktop*/
 
 .carrusel-wrapper {
@@ -539,6 +541,10 @@ footer .container {
 
 .carrusel-small .scrolling-buttons-container {
     transform: translateY(32.2%);
+}
+
+.carrusel-small{
+    margin-top: 10rem;
 }
 
 .container-carrusel {
@@ -699,6 +705,26 @@ footer .container {
     z-index: 10;
 }
 
+.free {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--secondary-color-1);
+    color: var(--white-color);
+    padding: 1.5rem;
+    border-radius: 0 2rem 2rem 0;
+    font-size: var(--font-size-h3-large);
+    font-weight: bold;
+    z-index: 10;
+}
+
+
+
+.link-img {
+    display: block; /* Hace que el enlace ocupe todo el ancho disponible */
+    background-color: #59BF40; /* Color de fondo para el enlace */
+}
+
 .scrolling-card h2 {
     color: #89CEFF;
 }
@@ -721,12 +747,15 @@ footer .container {
 img.carrito-compra {
     width: 4rem;
     height: 4rem;
+    cursor: pointer;
+    z-index: 100;
 }
 
 .carrusel-small img.carrito-compra {
     width: 3.5rem;
     height: 3.5rem;
     margin-top: 2rem;
+    cursor: pointer;
 }
 
 .scrolling-container,
@@ -894,9 +923,18 @@ section {
 
     /*Juego*/
 
+    .game__four-in-line{
+        position: relative;
+        margin-bottom: 2rem;
+    }
+
+    .game__four-in-line-img{
+        width: 100rem;
+    }
+
     .breadcrum {
         margin-top: 5rem;
-        margin-left: 18.9%;
+        margin-left: 23.9%;
         margin-bottom: .5rem;
         font-family: var(--font-family-noto-sans);
         font-size: var(--font-size-h2-small);
@@ -918,7 +956,7 @@ section {
     }
 
     .game {
-        margin-left: 36rem;
+        margin-left: 45rem;
     }
 
     .video {
@@ -927,6 +965,8 @@ section {
         gap: 4rem;
         margin-bottom: 4rem;
     }
+
+
 
     .information {
         width: 80%;
@@ -2103,6 +2143,8 @@ section {
         }
     }
 
+
+
 }
 
 /* Media query específica para pantallas de 1366px de ancho */
@@ -2119,6 +2161,47 @@ section {
         width: 17rem;
         height: 6rem;
     }
+
+    div.game{
+        margin-left: 32rem;
+    }
+
+    .game__four-in-line-img{
+        width: 70rem;
+    }
+
+    .button__orange {
+        top: 22rem;
+        left: 27rem;
+        width: 19rem;
+        height: 7rem;
+        background-position: 14rem;
+    }
+    .breadcrum {
+        font-size: var(--font-size-h3-large);
+    }
+
+    .video img{
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .information-description{
+        line-height: 2rem;
+    }
+
+    .comments__rate{
+        height: 19rem;
+        width: 50rem;
+    }
+    .comments__rate-submit{
+        margin-top: 4.5rem;
+    }
+    .nav{
+        margin-left: 0;
+        
+    }
+    
 }
 
 
