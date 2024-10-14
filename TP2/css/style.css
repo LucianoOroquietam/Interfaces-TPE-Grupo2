@@ -820,6 +820,8 @@ section {
 
 
 
+
+
 @media (min-width: 901px) {
     /*Pop up*/
     /* Estilos básicos del popup */
@@ -2102,25 +2104,21 @@ section {
     }
 
 }
-@media (min-width: 1300px){
+
+/* Media query específica para pantallas de 1366px de ancho */
+@media (min-width: 1366px) and (max-width: 1366px) {
     .slides-container {
+        /* Estilos específicos para pantallas de 1366px */
         height: calc(45vh - -2rem);
         width: auto;
     }
     .slide .btn-content {
-        top: 27rem;
+        /* Estilos específicos */
+        top: 24rem;
         left: 112rem;
-        width: 20rem;
-        height: 7rem;
+        width: 17rem;
+        height: 6rem;
     }
-    
-    .slides-container .slide div.btn-play-container  {
-        width: .5rem;
-        height: .5rem;
-    }
-
-
 }
-
 
 
