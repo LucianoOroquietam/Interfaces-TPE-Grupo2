@@ -818,21 +818,6 @@ section {
     }
 }
 
-@media (min-width: 768px) and (max-width: 1366px) {
-    .slide .btn-content {
-        top: 24.5rem;
-        right: 3rem;
-        width: 20rem;
-        height: 7rem;
-    }
-    
-    .slides-container .slide div.btn-play-container  {
-        width: 1rem;
-        height: 1rem;
-    }
-
-
-}
 
 
 @media (min-width: 901px) {
@@ -2000,7 +1985,7 @@ section {
 
     .btn-play-container {
         display: flex;
-        position: fixed;
+        position: relative;
     }
 
     .btn-content {
@@ -2117,3 +2102,25 @@ section {
     }
 
 }
+@media (min-width: 1300px){
+    .slides-container {
+        height: calc(45vh - -2rem);
+        width: auto;
+    }
+    .slide .btn-content {
+        top: 27rem;
+        left: 112rem;
+        width: 20rem;
+        height: 7rem;
+    }
+    
+    .slides-container .slide div.btn-play-container  {
+        width: .5rem;
+        height: .5rem;
+    }
+
+
+}
+
+
+
