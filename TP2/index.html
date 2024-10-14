@@ -18,845 +18,870 @@
 
 <body>
 
-    <header class="container-main">
-        <div class="container-header">
-            <img id="menu-hamburguesa" class="container-header__menu-hamburguesa menu-desplegado--active"
-                src="img/iconos/menu hamburguesa.png" alt="menu hamburguesa">
-            <img class="container-header__equis__menu-hamburguesa menu-desplegable--active" src="img/equis.png" alt="">
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <button class="btn-menu">
-                            <a href="index.html">Inicio</a>
-                        </button>
-                    </li>
-                    <li class="nav__item">
-                        <button class="btn-menu">
-                            <a href="juego.html">4 en línea</a>
-                        </button>
-                    </li>
-                    <li class="nav__item">
-                        <button class="btn-menu">
-                            <a href="#para-ti">Juegos Para Ti</a>
-                        </button>
-                    </li>
-                    <li class="nav__item">
-                        <button class="btn-menu">
-                            <a href="#puzzle">Puzzle</a>
-                        </button>
-                    </li>
-                    <li class="nav__item">
-                        <button class="btn-menu">
-                            <a href="#ofertas">Ofertas</a>
-                        </button>
-                    </li>
-                    <li class="nav__item">
-                        <button class="btn-menu">
-                            <a href="#carrera">Carrera</a>
-                        </button>
-                    </li>
-                    <li class="nav__item">
-                        <button class="btn-menu">
-                            <a href="#accion">Acción</a>
-                        </button>
-                    </li>
 
-                </ul>
-            </nav>
-            <img class="container-header__lupa-header" src="img/iconos/lupa.svg" alt="lupa-busqueda">
-            <a href="index.html">
-                <h1>GameBox</h1>
-                <img class="container-header__logo-header" src="img/iconos/logo.png" alt="logo">
-            </a>
+    <div class="loading-container">
+        <div class="loading-animation"></div>
+        <div class="loading-text">Cargando...</div>
+        <div class="loading-progress">
+            <div class="loading-bar"></div>
         </div>
+        <div class="loading-percentage">0%</div>
+    </div>
 
 
 
-        <div class="container-search">
-            <input class="container-search__btn" placeholder="Buscar Juego"></input>
-        </div>
+    <div class="content-show hidden">
+
+        <header class="container-main">
+            <div class="container-header">
+                <img id="menu-hamburguesa" class="container-header__menu-hamburguesa menu-desplegado--active"
+                    src="img/iconos/menu hamburguesa.png" alt="menu hamburguesa">
+                <img class="container-header__equis__menu-hamburguesa menu-desplegable--active" src="img/equis.png"
+                    alt="">
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <button class="btn-menu">
+                                <a href="index.html">Inicio</a>
+                            </button>
+                        </li>
+                        <li class="nav__item">
+                            <button class="btn-menu">
+                                <a href="juego.html">4 en línea</a>
+                            </button>
+                        </li>
+                        <li class="nav__item">
+                            <button class="btn-menu">
+                                <a href="#para-ti">Juegos Para Ti</a>
+                            </button>
+                        </li>
+                        <li class="nav__item">
+                            <button class="btn-menu">
+                                <a href="#puzzle">Puzzle</a>
+                            </button>
+                        </li>
+                        <li class="nav__item">
+                            <button class="btn-menu">
+                                <a href="#ofertas">Ofertas</a>
+                            </button>
+                        </li>
+                        <li class="nav__item">
+                            <button class="btn-menu">
+                                <a href="#carrera">Carrera</a>
+                            </button>
+                        </li>
+                        <li class="nav__item">
+                            <button class="btn-menu">
+                                <a href="#accion">Acción</a>
+                            </button>
+                        </li>
+
+                    </ul>
+                </nav>
+                <img class="container-header__lupa-header" src="img/iconos/lupa.svg" alt="lupa-busqueda">
+                <a href="index.html">
+                    <h1>GameBox</h1>
+                    <img class="container-header__logo-header" src="img/iconos/logo.png" alt="logo">
+                </a>
+            </div>
 
 
-        <div class="container-carrito-perfil">
-            <img id="cart-buy" class="container-carrito-perfil__cart-img carrito-desplegable"
-                src="img/iconos/Set iconos.svg" alt="carrito compras">
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#">Mi perfil</a></li>
-                    <li class="nav__item"><a href="#">Mi carrito</a></li>
-                    <li class="nav__item"><a href="#">Favoritos</a></li>
-                    <li class="nav__item"><a href="#">Configuracion</a></li>
-                    <li class="nav__item"><a href="#">Cerrar Sesion</a></li>
+
+            <div class="container-search">
+                <input class="container-search__btn" placeholder="Buscar Juego"></input>
+            </div>
+
+
+            <div class="container-carrito-perfil">
+                <img id="cart-buy" class="container-carrito-perfil__cart-img carrito-desplegable"
+                    src="img/iconos/Set iconos.svg" alt="carrito compras">
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#">Mi perfil</a></li>
+                        <li class="nav__item"><a href="#">Mi carrito</a></li>
+                        <li class="nav__item"><a href="#">Favoritos</a></li>
+                        <li class="nav__item"><a href="#">Configuracion</a></li>
+                        <li class="nav__item"><a href="#">Cerrar Sesion</a></li>
+                    </ul>
+                </nav>
+                <img class="container-carrito-perfil__user-img" src="img/iconos/advincula.svg" alt="perfil usuario"
+                    srcset="">
+                <div class="container-carrito-perfil__state-user"></div>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#">4 en linea</a></li>
+                        <li class="nav__item"><a href="#">Jewells</a></li>
+                        <li class="nav__item"><a href="#">Spades</a></li>
+                        <li class="nav__item"><a href="#">Subtotal</a></li>
+                        <li class="nav__item"><a href="#">Cerrar Sesion</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+
+
+        <main class="background-menu">
+
+            <section class="slider-wrapper">
+                <button class="slide-arrow" id="slide-arrow-prev">
+
+                </button>
+                <button class="slide-arrow" id="slide-arrow-next">
+
+                </button>
+                <ul class="slides-container" id="slides-container">
+                    <li class="slide">
+                        <div class="btn-play-container">
+                            <a class="btn-content" href="#">
+                                <span class="btn-title">Jugar</span>
+                                <span class="icon-arrow">
+                                    <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <path id="arrow-icon-one"
+                                                d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z"
+                                                fill="#FFFFFF"></path>
+                                            <path id="arrow-icon-two"
+                                                d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z"
+                                                fill="#FFFFFF"></path>
+                                            <path id="arrow-icon-three"
+                                                d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z"
+                                                fill="#FFFFFF"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="slide">
+                        <div class="btn-play-container">
+                            <a class="btn-content" href="#">
+                                <span class="btn-title">Jugar</span>
+                                <span class="icon-arrow">
+                                    <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <path id="arrow-icon-one"
+                                                d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z"
+                                                fill="#FFFFFF"></path>
+                                            <path id="arrow-icon-two"
+                                                d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z"
+                                                fill="#FFFFFF"></path>
+                                            <path id="arrow-icon-three"
+                                                d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z"
+                                                fill="#FFFFFF"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="slide">
+                        <div class="btn-play-container">
+                            <a class="btn-content" href="#">
+                                <span class="btn-title">Jugar</span>
+                                <span class="icon-arrow">
+                                    <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <path id="arrow-icon-one"
+                                                d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z"
+                                                fill="#FFFFFF"></path>
+                                            <path id="arrow-icon-two"
+                                                d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z"
+                                                fill="#FFFFFF"></path>
+                                            <path id="arrow-icon-three"
+                                                d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z"
+                                                fill="#FFFFFF"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                    </li>
                 </ul>
-            </nav>
-            <img class="container-carrito-perfil__user-img" src="img/iconos/advincula.svg" alt="perfil usuario"
-                srcset="">
-            <div class="container-carrito-perfil__state-user"></div>
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#">4 en linea</a></li>
-                    <li class="nav__item"><a href="#">Jewells</a></li>
-                    <li class="nav__item"><a href="#">Spades</a></li>
-                    <li class="nav__item"><a href="#">Subtotal</a></li>
-                    <li class="nav__item"><a href="#">Cerrar Sesion</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+            </section>
+
+            <section id="ofertas">
+                <h1>Ofertas</h1>
+                <div class="carrusel-wrapper">
+                    <div class="scrolling-buttons-container">
+                        <span class="scrolling-button-left"><img src="img/detalle card/flecha-izquierda-carrusel.png"
+                                alt=""></span>
+                        <span class="scrolling-button-right"><img src="img/detalle card/flecha-derecha-carrusel.png"
+                                alt=""></span>
+                    </div>
+                </div>
+                <div class="scrolling-container">
+                    <div class="scrolling-card">
+                        <img src="img/ofertas/0AwPiIkb0URZCNbL.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Flames & Fortune</h3>
+
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle" src="img/detalle card/Agregar.png"
+                                    alt="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="scrolling-card">
+                        <img src="img/ofertas/dbzsz.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Dragon Ball Sparking Zero</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/teardown.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Teardown</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle" src="img/detalle card/Agregar.png"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/ofertas/spotlight_image_english.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Power Bash Simulator</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/ofertas/spotlight_image_spanish.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Kingdom Two Crows</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/juegos para ti/detroit.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Detroit Become Human</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 
 
-    <main class="background-menu">
-
-        <section class="slider-wrapper">
-            <button class="slide-arrow" id="slide-arrow-prev">
-
-            </button>
-            <button class="slide-arrow" id="slide-arrow-next">
-
-            </button>
-            <ul class="slides-container" id="slides-container">
-                <li class="slide">
-                    <div class="btn-play-container">
-                        <a class="btn-content" href="#">
-                            <span class="btn-title">Jugar</span>
-                            <span class="icon-arrow">
-                                <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <path id="arrow-icon-one"
-                                            d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z"
-                                            fill="#FFFFFF"></path>
-                                        <path id="arrow-icon-two"
-                                            d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z"
-                                            fill="#FFFFFF"></path>
-                                        <path id="arrow-icon-three"
-                                            d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z"
-                                            fill="#FFFFFF"></path>
-                                    </g>
-                                </svg>
-                            </span>
-                        </a>
+            <section id="para-ti" class="carrusel-small">
+                <h1>Juegos para ti</h1>
+                <div class="carrusel-wrapper">
+                    <div class="scrolling-buttons-container">
+                        <span class="scrolling-button-left-small"><img
+                                src="img/detalle card/flecha-izquierda-carrusel.png" alt=""></span>
+                        <span class="scrolling-button-right-small"><img
+                                src="img/detalle card/flecha-derecha-carrusel.png" alt=""></span>
                     </div>
-                </li>
-                <li class="slide">
-                    <div class="btn-play-container">
-                        <a class="btn-content" href="#">
-                            <span class="btn-title">Jugar</span>
-                            <span class="icon-arrow">
-                                <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <path id="arrow-icon-one"
-                                            d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z"
-                                            fill="#FFFFFF"></path>
-                                        <path id="arrow-icon-two"
-                                            d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z"
-                                            fill="#FFFFFF"></path>
-                                        <path id="arrow-icon-three"
-                                            d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z"
-                                            fill="#FFFFFF"></path>
-                                    </g>
-                                </svg>
-                            </span>
-                        </a>
-                    </div>
-                </li>
-                <li class="slide">
-                    <div class="btn-play-container">
-                        <a class="btn-content" href="#">
-                            <span class="btn-title">Jugar</span>
-                            <span class="icon-arrow">
-                                <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <path id="arrow-icon-one"
-                                            d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z"
-                                            fill="#FFFFFF"></path>
-                                        <path id="arrow-icon-two"
-                                            d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z"
-                                            fill="#FFFFFF"></path>
-                                        <path id="arrow-icon-three"
-                                            d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z"
-                                            fill="#FFFFFF"></path>
-                                    </g>
-                                </svg>
-                            </span>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </section>
-
-        <section id="ofertas">
-            <h1>Ofertas</h1>
-            <div class="carrusel-wrapper">
-                <div class="scrolling-buttons-container">
-                    <span class="scrolling-button-left"><img src="img/detalle card/flecha-izquierda-carrusel.png"
-                            alt=""></span>
-                    <span class="scrolling-button-right"><img src="img/detalle card/flecha-derecha-carrusel.png"
-                            alt=""></span>
                 </div>
-            </div>
-            <div class="scrolling-container">
-                <div class="scrolling-card">
-                    <img src="img/ofertas/0AwPiIkb0URZCNbL.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Flames & Fortune</h3>
-
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle" src="img/detalle card/Agregar.png" alt="">
+                <div class="scrolling-container-small">
+                    <div class="scrolling-card">
+                        <img src="img/juegos para ti/detroit.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Detroit become human</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
                         </div>
                     </div>
 
-                </div>
+                    <div class="scrolling-card">
+                        <img src="img/juegos para ti/granblue fantasy.jpg" alt="">
+                        <div class="game-info">
+                            <span class="free">GRATIS</span>
+                            <h3 class="game-title">Granblue fantasy</h3>
+                            <div class="details-card-container">
+                                <p class="game-price">GRATIS</p>
+                                <img class="carrito-compra" src="img/detalle card/Play.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/juegos para ti/header.jpg" alt="">
+                        <div class="game-info">
 
-                <div class="scrolling-card">
-                    <img src="img/ofertas/dbzsz.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Dragon Ball Sparking Zero</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
+                            <h3 class="game-title">Headup</h3>
+                            <div class="details-card-container">
+                                <p class="game-price">AR$ 12.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/teardown.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Teardown</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle" src="img/detalle card/Agregar.png" alt="">
+                    <div class="scrolling-card">
+                        <img src="img/juegos para ti/moncage.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Moncage</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/ofertas/spotlight_image_english.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Power Bash Simulator</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/ofertas/spotlight_image_spanish.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Kingdom Two Crows</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/juegos para ti/detroit.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Detroit Become Human</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-        <section id="para-ti" class="carrusel-small">
-            <h1>Juegos para ti</h1>
-            <div class="carrusel-wrapper">
-                <div class="scrolling-buttons-container">
-                    <span class="scrolling-button-left-small"><img src="img/detalle card/flecha-izquierda-carrusel.png"
-                            alt=""></span>
-                    <span class="scrolling-button-right-small"><img src="img/detalle card/flecha-derecha-carrusel.png"
-                            alt=""></span>
-                </div>
-            </div>
-            <div class="scrolling-container-small">
-                <div class="scrolling-card">
-                    <img src="img/juegos para ti/detroit.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Detroit become human</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="scrolling-card">
-                    <img src="img/juegos para ti/granblue fantasy.jpg" alt="">
-                    <div class="game-info">
-                        <span class="free">GRATIS</span>
-                        <h3 class="game-title">Granblue fantasy</h3>
-                        <div class="details-card-container">
-                            <p class="game-price">GRATIS</p>
-                            <img class="carrito-compra" src="img/detalle card/Play.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/juegos para ti/header.jpg" alt="">
-                    <div class="game-info">
-
-                        <h3 class="game-title">Headup</h3>
-                        <div class="details-card-container">
-                            <p class="game-price">AR$ 12.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/juegos para ti/moncage.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Moncage</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/puzzle/4 en linea.jpg" alt="">
-                    <div class="game-info">
-                        <span class="free">GRATIS</span>
-                        <h3 class="game-title">4 en linea</h3>
-                        <div class="details-card-container">
-                            <p class="game-price">GRATIS</p>
-                            <img class="carrito-compra " src="img/detalle card/Play.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/juegos para ti/planet-crafter.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Planet Crafter</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/juegos para ti/stardew valley.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Stardew valley</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/juegos para ti/suicide of rachel foster.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Suicide of Rachel foster</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/juegos para ti/timberborn.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Timberborn</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h1>Acción</h1>
-            <div id="accion" class="carrusel-wrapper">
-                <div class="scrolling-buttons-container">
-                    <span class="scrolling-button-left-small"><img src="img/detalle card/flecha-izquierda-carrusel.png"
-                            alt=""></span>
-                    <span class="scrolling-button-right-small"><img src="img/detalle card/flecha-derecha-carrusel.png"
-                            alt=""></span>
-                </div>
-            </div>
-            <div class="scrolling-container-small">
-                <div class="scrolling-card">
-                    <img src="img/accion/A9GSpP2x2rb3DBA2.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Deadpool vs Capitan america</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle" src="img/detalle card/Agregar.png" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="scrolling-card">
-                    <img src="img/accion/cover-1616585352806.jpeg" alt="">
-                    <div class="game-info">
-                        <span class="free">GRATIS</span>
-                        <h3 class="game-title">Endles siege</h3>
-                        <div class="details-card-container">
-
-                            <p class="game-price">GRATIS</p>
-                            <img class="carrito-compra" src="img/detalle card/Play.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/juegos para ti/oZ8noqVf5qW6PqyO.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Prune y milo</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle" src="img/detalle card/Agregar.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/accion/cover-1652811077990.png" alt="">
-                    <div class="game-info">
-                        <span class="free">GRATIS</span>
-                        <h3 class="game-title">10 Minutes Till Dawn</h3>
-                        <div class="details-card-container">
-
-                            <p class="game-price">GRATIS</p>
-                            <img class="carrito-compra " src="img/detalle card/Play.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/accion/intvXasyFErkaIxg.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Bloc Ops</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/accion/kt9G4ZKusR0rE8HF.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Stickman World Ward</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/accion/OcARhHsXz2maCo82.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Cyberdino</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/accion/oJmB80CVxb3u06y3.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Age Of Tanks</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/accion/Tb5VJuebxyJDJ8XQ.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">LurdsedTreasure 2</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h1>Puzzle</h1>
-            <div id="puzzle" class="carrusel-wrapper">
-                <div class="scrolling-buttons-container">
-                    <span class="scrolling-button-left-small"><img src="img/detalle card/flecha-izquierda-carrusel.png"
-                            alt=""></span>
-                    <span class="scrolling-button-right-small"><img src="img/detalle card/flecha-derecha-carrusel.png"
-                            alt=""></span>
-                </div>
-            </div>
-            <div class="scrolling-container-small">
-
-                <div class="scrolling-card">
-                    <a class="link-img" href="juego.html">
+                    <div class="scrolling-card">
                         <img src="img/puzzle/4 en linea.jpg" alt="">
-                    </a>
+                        <div class="game-info">
+                            <span class="free">GRATIS</span>
+                            <h3 class="game-title">4 en linea</h3>
+                            <div class="details-card-container">
+                                <p class="game-price">GRATIS</p>
+                                <img class="carrito-compra " src="img/detalle card/Play.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/juegos para ti/planet-crafter.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Planet Crafter</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/juegos para ti/stardew valley.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Stardew valley</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/juegos para ti/suicide of rachel foster.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Suicide of Rachel foster</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/juegos para ti/timberborn.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Timberborn</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1>Acción</h1>
+                <div id="accion" class="carrusel-wrapper">
+                    <div class="scrolling-buttons-container">
+                        <span class="scrolling-button-left-small"><img
+                                src="img/detalle card/flecha-izquierda-carrusel.png" alt=""></span>
+                        <span class="scrolling-button-right-small"><img
+                                src="img/detalle card/flecha-derecha-carrusel.png" alt=""></span>
+                    </div>
+                </div>
+                <div class="scrolling-container-small">
+                    <div class="scrolling-card">
+                        <img src="img/accion/A9GSpP2x2rb3DBA2.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Deadpool vs Capitan america</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle" src="img/detalle card/Agregar.png"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
 
-                    <div class="game-info">
-                        <span class="free">GRATIS</span>
-                        <h3 class="game-title">4 En Linea</h3>
-                        <div class="details-card-container">
-                            <p class="game-price">GRATIS</p>
-                            <img class="carrito-compra" src="img/detalle card/Play.svg" alt="">
-                        </div>
-                    </div>
-                </div>
+                    <div class="scrolling-card">
+                        <img src="img/accion/cover-1616585352806.jpeg" alt="">
+                        <div class="game-info">
+                            <span class="free">GRATIS</span>
+                            <h3 class="game-title">Endles siege</h3>
+                            <div class="details-card-container">
 
-                <div class="scrolling-card">
-                    <img src="img/puzzle/8347DEqDXXYGO6EC.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Card Shuflle Short</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
+                                <p class="game-price">GRATIS</p>
+                                <img class="carrito-compra" src="img/detalle card/Play.svg" alt="">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/puzzle/cover-1636534372712.png" alt="">
-                    <div class="game-info">
-                        <h3 class="game-title">Spades</h3>
-                        <div class="details-card-container">
-                            <p class="game-price">AR$ 10.600</p>
-                            <img class="carrito-compra carrito-compra-toggle" src="img/detalle card/Agregar.png" alt="">
+                    <div class="scrolling-card">
+                        <img src="img/juegos para ti/oZ8noqVf5qW6PqyO.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Prune y milo</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle" src="img/detalle card/Agregar.png"
+                                    alt="">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/puzzle/Giq6Emo2iluWeigZ.jpg" alt="">
-                    <div class="game-info">
-                        <span class="free">GRATIS</span>
-                        <h3 class="game-title">Fill The Frigde</h3>
-                        <div class="details-card-container">
+                    <div class="scrolling-card">
+                        <img src="img/accion/cover-1652811077990.png" alt="">
+                        <div class="game-info">
+                            <span class="free">GRATIS</span>
+                            <h3 class="game-title">10 Minutes Till Dawn</h3>
+                            <div class="details-card-container">
 
-                            <p class="game-price">GRATIS</p>
-                            <img class="carrito-compra" src="img/detalle card/Play.svg" alt="">
+                                <p class="game-price">GRATIS</p>
+                                <img class="carrito-compra " src="img/detalle card/Play.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/accion/intvXasyFErkaIxg.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Bloc Ops</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/accion/kt9G4ZKusR0rE8HF.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Stickman World Ward</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/accion/OcARhHsXz2maCo82.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Cyberdino</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/accion/oJmB80CVxb3u06y3.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Age Of Tanks</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/accion/Tb5VJuebxyJDJ8XQ.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">LurdsedTreasure 2</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="scrolling-card">
-                    <img src="img/puzzle/ITQAf551zqh9LHp2.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Jewells</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
+                <h1>Puzzle</h1>
+                <div id="puzzle" class="carrusel-wrapper">
+                    <div class="scrolling-buttons-container">
+                        <span class="scrolling-button-left-small"><img
+                                src="img/detalle card/flecha-izquierda-carrusel.png" alt=""></span>
+                        <span class="scrolling-button-right-small"><img
+                                src="img/detalle card/flecha-derecha-carrusel.png" alt=""></span>
                     </div>
                 </div>
-                <div class="scrolling-card">
-                    <img src="img/puzzle/MO1HjGhgLkDQwAwr.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Mergest Kingdom</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/puzzle/p9TfRqBXZVbj3jgT.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Cake Short</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/puzzle/qeiKYbEUfMr9zgWx.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Hexa Sort</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/puzzle/Ux4GfLIYYqjFJdeQ.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Word Chef</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h1>Carrera</h1>
-            <div id="carrera" class="carrusel-wrapper">
-                <div class="scrolling-buttons-container">
-                    <span class="scrolling-button-left-small"><img src="img/detalle card/flecha-izquierda-carrusel.png"
-                            alt=""></span>
-                    <span class="scrolling-button-right-small"><img src="img/detalle card/flecha-derecha-carrusel.png"
-                            alt=""></span>
-                </div>
-            </div>
-            <div class="scrolling-container-small">
-                <div class="scrolling-card">
-                    <img src="img/carrera/e5KFnvJgwcLLQJA7.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Crazy Motocycle</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle" src="img/detalle card/Agregar.png" alt="">
-                        </div>
-                    </div>
-                </div>
+                <div class="scrolling-container-small">
 
-                <div class="scrolling-card">
-                    <img src="img/carrera/lowk5I4mPMXo3d0Q.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Rally Racer Dirt</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/carrera/TJx9NwUdIAl2Y922.jpg" alt="">
-                    <div class="game-info">
-                        <span class="free">GRATIS</span>
-                        <h3 class="game-title">Super Star Car</h3>
-                        <div class="details-card-container">
-                            <p class="game-price">GRATIS</p>
-                            <img class="carrito-compra carrito-compra-toggle" src="img/detalle card/Play.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/carrera/WstAejLivHnJ0Bwj.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Mr Racer</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/carrera/Rectangle 4 (1).png" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Parking Multiplayer</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/carrera/snow runner.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Snow Runner</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/carrera/asseto corsa.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Asseto Corsa</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/carrera/icon (15).webp" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Asphalt 9</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="scrolling-card">
-                    <img src="img/carrera/mxbikes.jpg" alt="">
-                    <div class="game-info">
-                        <span class="discount-badge">-50%</span>
-                        <h3 class="game-title">Mx Bikes</h3>
-                        <div class="details-card-container">
-                            <p class="game-offer">13.200</p>
-                            <p class="game-price">AR$ 6.600</p>
-                            <img class="carrito-compra carrito-compra-toggle"
-                                src="img/detalle card/Add Shopping Cart.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    <div class="scrolling-card">
+                        <a class="link-img" href="juego.html">
+                            <img src="img/puzzle/4 en linea.jpg" alt="">
+                        </a>
 
-        <footer>
-            <div class="container">
-                <div class="footer-section">
-                    <h3>Sobre Nosotros</h3>
-                    <p>
-                        Game Box es la plataforma lider en mini juegos . Ofrecemos una gran diversidad de juegos y
-                        contenido
-                        para los estusiastas de los mini juegos.
-                    </p>
-                </div>
-                <div class="footer-section">
-                    <div class="footer-section__links">
-                        <h3>Otras Páginas</h3>
-                        <ul>
-                            <li><a href="#">Preguntas Frecuentes</a></li>
-                            <li><a href="#">Términos y Condiciones</a></li>
-                            <li><a href="#">Soporte</a></li>
-                            <li><a href="#">Mapa del Sitio</a></li>
-                        </ul>
+                        <div class="game-info">
+                            <span class="free">GRATIS</span>
+                            <h3 class="game-title">4 En Linea</h3>
+                            <div class="details-card-container">
+                                <p class="game-price">GRATIS</p>
+                                <img class="carrito-compra" src="img/detalle card/Play.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="scrolling-card">
+                        <img src="img/puzzle/8347DEqDXXYGO6EC.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Card Shuflle Short</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/puzzle/cover-1636534372712.png" alt="">
+                        <div class="game-info">
+                            <h3 class="game-title">Spades</h3>
+                            <div class="details-card-container">
+                                <p class="game-price">AR$ 10.600</p>
+                                <img class="carrito-compra carrito-compra-toggle" src="img/detalle card/Agregar.png"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/puzzle/Giq6Emo2iluWeigZ.jpg" alt="">
+                        <div class="game-info">
+                            <span class="free">GRATIS</span>
+                            <h3 class="game-title">Fill The Frigde</h3>
+                            <div class="details-card-container">
+
+                                <p class="game-price">GRATIS</p>
+                                <img class="carrito-compra" src="img/detalle card/Play.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/puzzle/ITQAf551zqh9LHp2.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Jewells</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/puzzle/MO1HjGhgLkDQwAwr.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Mergest Kingdom</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/puzzle/p9TfRqBXZVbj3jgT.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Cake Short</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/puzzle/qeiKYbEUfMr9zgWx.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Hexa Sort</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/puzzle/Ux4GfLIYYqjFJdeQ.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Word Chef</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <h1>Carrera</h1>
+                <div id="carrera" class="carrusel-wrapper">
+                    <div class="scrolling-buttons-container">
+                        <span class="scrolling-button-left-small"><img
+                                src="img/detalle card/flecha-izquierda-carrusel.png" alt=""></span>
+                        <span class="scrolling-button-right-small"><img
+                                src="img/detalle card/flecha-derecha-carrusel.png" alt=""></span>
+                    </div>
+                </div>
+                <div class="scrolling-container-small">
+                    <div class="scrolling-card">
+                        <img src="img/carrera/e5KFnvJgwcLLQJA7.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Crazy Motocycle</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle" src="img/detalle card/Agregar.png"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="scrolling-card">
+                        <img src="img/carrera/lowk5I4mPMXo3d0Q.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Rally Racer Dirt</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/carrera/TJx9NwUdIAl2Y922.jpg" alt="">
+                        <div class="game-info">
+                            <span class="free">GRATIS</span>
+                            <h3 class="game-title">Super Star Car</h3>
+                            <div class="details-card-container">
+                                <p class="game-price">GRATIS</p>
+                                <img class="carrito-compra carrito-compra-toggle" src="img/detalle card/Play.svg"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/carrera/WstAejLivHnJ0Bwj.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Mr Racer</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/carrera/Rectangle 4 (1).png" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Parking Multiplayer</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/carrera/snow runner.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Snow Runner</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/carrera/asseto corsa.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Asseto Corsa</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/carrera/icon (15).webp" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Asphalt 9</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrolling-card">
+                        <img src="img/carrera/mxbikes.jpg" alt="">
+                        <div class="game-info">
+                            <span class="discount-badge">-50%</span>
+                            <h3 class="game-title">Mx Bikes</h3>
+                            <div class="details-card-container">
+                                <p class="game-offer">13.200</p>
+                                <p class="game-price">AR$ 6.600</p>
+                                <img class="carrito-compra carrito-compra-toggle"
+                                    src="img/detalle card/Add Shopping Cart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-
-                <div class="footer-section">
-                    <h3>Ayuda</h3>
+            <footer>
+                <div class="container">
                     <div class="footer-section">
-                        <p>Soporte</p>
-                        <p>Reportar Bug</p>
+                        <h3>Sobre Nosotros</h3>
+                        <p>
+                            Game Box es la plataforma lider en mini juegos . Ofrecemos una gran diversidad de juegos y
+                            contenido
+                            para los estusiastas de los mini juegos.
+                        </p>
+                    </div>
+                    <div class="footer-section">
+                        <div class="footer-section__links">
+                            <h3>Otras Páginas</h3>
+                            <ul>
+                                <li><a href="#">Preguntas Frecuentes</a></li>
+                                <li><a href="#">Términos y Condiciones</a></li>
+                                <li><a href="#">Soporte</a></li>
+                                <li><a href="#">Mapa del Sitio</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                    <div class="footer-section">
+                        <h3>Ayuda</h3>
+                        <div class="footer-section">
+                            <p>Soporte</p>
+                            <p>Reportar Bug</p>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <div class="footer-section__reviews">
+                            <h3>Reseñas de Clientes</h3>
+                            <p>“Excelente servicio y gran variedad de videojuegos“ - Miquela</p>
+                            <p>"La mejor plataforma para videojuegos” - Pikachu65</p>
+                        </div>
+                    </div>
+
+
+                    <div class="footer-section">
+                        <h3>Contactanos</h3>
+                        <p><i class="icon-phone"></i> +54 (0) 2281 578909</p>
+                        <p><i class="icon-email"></i> gamebox@gmail.com</p>
+                        <p>Av. Santamarina 2584, Tandil, Argentina</p>
                     </div>
                 </div>
+                <div class="footer-bottom">
+                    <div>
+                        <p>© 2024 Todos los derechos reservados - Game Box </p>
+                        <img class="img-footer-bottom" src="img/iconos/logo.png" alt="">
 
-                <div class="footer-section">
-                    <div class="footer-section__reviews">
-                        <h3>Reseñas de Clientes</h3>
-                        <p>“Excelente servicio y gran variedad de videojuegos“ - Miquela</p>
-                        <p>"La mejor plataforma para videojuegos” - Pikachu65</p>
                     </div>
+                    <ul>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Política de Cookies</a></li>
+                        <li><a href="#">Aviso Legal</a></li>
+                    </ul>
                 </div>
+            </footer>
 
 
-                <div class="footer-section">
-                    <h3>Contactanos</h3>
-                    <p><i class="icon-phone"></i> +54 (0) 2281 578909</p>
-                    <p><i class="icon-email"></i> gamebox@gmail.com</p>
-                    <p>Av. Santamarina 2584, Tandil, Argentina</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div>
-                    <p>© 2024 Todos los derechos reservados - Game Box </p>
-                    <img class="img-footer-bottom" src="img/iconos/logo.png" alt="">
-                    
-                </div>
-                <ul>
-                    <li><a href="#">Política de Privacidad</a></li>
-                    <li><a href="#">Política de Cookies</a></li>
-                    <li><a href="#">Aviso Legal</a></li>
-                </ul>
-            </div>
-        </footer>
+            <script src="js/galeria.js"></script>
+            <script src="js/menu-desplegable.js"></script>
+            <script src="js/carrousel.js"></script>
+            <script src="js/carrito-iteraccion.js"></script>
+            <script src="js/loading.js"></script>
 
+        </main>
 
-        <script src="js/galeria.js"></script>
-        <script src="js/menu-desplegable.js"></script>
-        <script src="js/carrousel.js"></script>
-        <script src="js/carrito-iteraccion.js"></script>
-
-    </main>
+    </div>
 </body>
 
 </html>
