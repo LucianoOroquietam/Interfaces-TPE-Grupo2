@@ -2419,7 +2419,7 @@ section {
     }
 
     .scrolling-buttons-container {
-        z-index: 500;
+        z-index: 100;
     }
 }
 
