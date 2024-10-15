@@ -17,6 +17,7 @@ body {
     font-family: var(--font-family-noto-sans);
     background-color: var(--primary-color);
     max-width: 256rem;
+    overflow-x: hidden;
 }
 
 :root {
@@ -2335,6 +2336,11 @@ section {
     }
 
 
+    header .nav-carrito--active{
+        top: 7rem;
+        display: block;
+    }
+
     .nav-perfil {
         top: 9rem;
         width: 12%;
@@ -2348,14 +2354,14 @@ section {
     }
 
     .cart-container {
-        display: block;
         position: absolute;
         width: 30rem;
         height: 32rem;
-        top: 7rem;
-        right: 6rem;
+        top: -100rem;
+        right: 8rem;
         background-color: var(--primary-color-2);
         padding: 2rem;
+        transition: top 0.5s ease-in-out;
     }
 
     .cart-item {
@@ -2410,6 +2416,10 @@ section {
 
     .cart-container .button{
         margin-left: 7rem;
+    }
+
+    .scrolling-buttons-container {
+        z-index: 500;
     }
 }
 
