@@ -18,7 +18,6 @@ window.addEventListener("load", () => {
             // Ocultar el contenedor de carga
             loadingContainer.style.display = "none";
             
-            content.classList.remove("hidden");
         }
     }, 50); // 50ms * 100 = 5000ms (5 segundos)
 });
