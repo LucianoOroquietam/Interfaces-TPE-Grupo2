@@ -20,7 +20,6 @@
                         <h1>Bienvenidos</h1>
                     </div>
                     <h3>Para unirte a nuestra página de mini juegos, por favor ingresa con tus datos</h3>
-                   
                 </div>
             </div>
             <!-- Register -->
@@ -76,6 +75,9 @@
                             <div class="input_error ocultar" id="password-repeat_error">
                                 <span>Ingrese su contraseña nuevamente</span>
                             </div>
+                            <div class="input_error ocultar" id="wrong-password">
+                                <span>Las contraseñas no coinciden</span>
+                            </div>
                         </div>
                         <div class="captcha-contain">
                             <div class="captcha-container">
@@ -98,7 +100,6 @@
                                 id="btnRegisterFacebook"><img src="../img/iconos/facebook.svg" alt="Facebook Logo"
                                     class="facebook-logo"><span>Registrarse con Facebook</span></button></a>
                     </form>
-
                     <div class="line-div"></div>
                     <div class="form-login-btn-login">
                         <h4>¿Usted ya tiene una cuenta?</h4>
@@ -107,6 +108,15 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div id="success-message" class="success-message ocultar">
+        <div>
+            <img src="../img/iconos/logo.png" alt="" class="logo">
+            <h1>¡Bienvenido a Game Box!</h1>
+            <img src="../img/iconos/logo.png" alt="" class="logo">
+        </div>
+        <h1>Preparese para jugar en unos segundos!</h1>
+        <img src="../img/iconos/tilde.png" alt="" srcset="">
     </div>
     <script src="../js/register.js"></script>
 </body>

@@ -1286,20 +1286,15 @@ section {
 
     .slide-arrow {
         position: absolute;
-        display: flex;
         top: 0rem;
         bottom: 0;
         margin: auto;
-        height: 4rem;
-        background-color: white;
+        width: 5rem;
+        height: 5rem;
         border: none;
-        width: 2rem;
-        font-size: 3rem;
-        padding: 0;
         cursor: pointer;
-        opacity: 0.5;
-        transition: opacity 100ms;
         display: block;
+        text-decoration: none;
     }
 
     .slide-arrow:hover,
@@ -1309,13 +1304,13 @@ section {
 
     #slide-arrow-prev {
         left: 0;
-        padding-left: 0.25rem;
+        margin-left: 1rem;
         border-radius: 0 2rem 2rem 0;
     }
 
     #slide-arrow-next {
         right: 0;
-        padding-left: 0.75rem;
+        margin-right: 1rem;
         border-radius: 2rem 0 0 2rem;
     }
 
@@ -2122,6 +2117,99 @@ section {
         margin-right: 1rem;
     }
 
+    .success-message img {
+        height: 15rem;
+
+    }
+
+    .success-message .logo {
+        width: 5rem;
+        height: 5rem;
+
+    }
+
+
+    .success-message  {
+        position: absolute;
+        top: 20%;
+        left: 40%;
+        background-color: var(--primary-color-4);
+        border-radius: 5rem;
+        z-index: 4;
+        width: 50rem;
+        height: 50rem;
+        font-size: var(--font-size-h1-large);
+        color: var(--white-color);
+        animation: wiggle 2s linear infinite;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .success-message > div {
+        display: flex;
+        justify-content: center;
+        padding-top: 12rem;
+    }
+
+    @keyframes wiggle {
+        0%, 7% {
+          transform: rotateZ(0);
+        }
+        15% {
+          transform: rotateZ(-15deg);
+        }
+        20% {
+          transform: rotateZ(10deg);
+        }
+        25% {
+          transform: rotateZ(-10deg);
+        }
+        30% {
+          transform: rotateZ(6deg);
+        }
+        35% {
+          transform: rotateZ(-4deg);
+        }
+        40%, 100% {
+          transform: rotateZ(0);
+        }
+    }
+
+    @keyframes disappear {
+        0% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: scale(0);
+        }
+    }
+
+    @keyframes appear {
+        0% {
+            opacity: 0;
+            transform: scale(0);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .appear-animation {
+        animation: appear 1.5s forwards;
+    }
+
+    .undo-animation {
+        animation: disappear 1.5s forwards; 
+    }
+
+    .content.ocultar{
+        display: none;
+    }
+
     /*Captcha*/
     .captcha-container {
         background-color: var(--white-color);
@@ -2419,8 +2507,10 @@ section {
     }
 
     .scrolling-buttons-container {
-        z-index: 100;
+        z-index: 300;
     }
+
+    
 }
 
 
