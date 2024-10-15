@@ -95,7 +95,7 @@ body {
     background-color: var(--primary-color);
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    z-index: 100000;
+    z-index: 10000;
 }
 
 .hidden {
@@ -135,7 +135,6 @@ body {
     background-color: var(--primary-color-4);
     border-radius: 10px;
     animation: progress 5s linear forwards;
-    /* Controlada con JS */
 }
 
 .loading-percentage {
@@ -790,6 +789,7 @@ footer .container {
     background: rgb(26, 90, 126);
     background: linear-gradient(90deg, rgba(26, 90, 126, 1) 0%, rgba(26, 90, 126, 1) 0%, rgba(35, 127, 167, 1) 100%);
     color: var(--white-color);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .game-title {
@@ -817,6 +817,7 @@ footer .container {
     font-size: var(--font-size-h3-small);
     font-weight: bold;
     z-index: 10;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .free {
@@ -830,8 +831,19 @@ footer .container {
     font-size: var(--font-size-h3-large);
     font-weight: bold;
     z-index: 10;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
+
+.scrolling-container img, .scrolling-container-small img{
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+img.carrito-compra{
+    box-shadow: none;
+}
 
 
 .link-img {
@@ -864,7 +876,7 @@ img.carrito-compra {
     width: 4rem;
     height: 4rem;
     cursor: pointer;
-    z-index: 100;
+    z-index: 200;
 }
 
 .carrusel-small img.carrito-compra {
@@ -1036,7 +1048,7 @@ section {
     }
 
     .hidden {
-        display: none;
+        visibility: hidden;
     }
 
     .close-btn {
@@ -2507,7 +2519,7 @@ section {
     }
 
     .scrolling-buttons-container {
-        z-index: 300;
+        z-index: 120;
     }
 
     
