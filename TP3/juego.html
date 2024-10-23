@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+		rel="stylesheet">
+	<title>Game Box</title>
+</head>
+
+<body>
+
+	<header class="container-main">
+        <div class="container-header">
+            <img id="menu-hamburguesa" class="container-header__menu-hamburguesa menu-desplegado--active"
+                src="img/iconos/menu hamburguesa.png" alt="menu hamburguesa">
+            <img class="container-header__equis__menu-hamburguesa menu-desplegable--active" src="img/equis.png" alt="">
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <button class="btn-menu">
+                            <a href="index.html">Inicio</a>
+                        </button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="btn-menu">
+                            <a href="juego.html">4 en línea</a>
+                        </button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="btn-menu">
+                            <a href="#para-ti">Juegos Para Ti</a>
+                        </button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="btn-menu">
+                            <a href="#puzzle">Puzzle</a>
+                        </button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="btn-menu">
+                            <a href="#ofertas">Ofertas</a>
+                        </button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="btn-menu">
+                            <a href="#carrera">Carrera</a>
+                        </button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="btn-menu">
+                            <a href="#accion">Acción</a>
+                        </button>
+                    </li>
+                    
+                </ul>
+            </nav>
+            <img class="container-header__lupa-header" src="img/iconos/lupa.svg" alt="lupa-busqueda">
+            <a href="index.html">
+                <h1>GameBox</h1>
+                <img class="container-header__logo-header" src="img/iconos/logo.png" alt="logo">
+            </a>
+        </div>
+
+
+
+        <div class="container-search">
+            <input class="container-search__btn" placeholder="Buscar Juego"></input>
+        </div>
+
+
+        <div class="container-carrito-perfil">
+            <img id="cart-buy" class="container-carrito-perfil__cart-img carrito-desplegable" src="img/iconos/Set iconos.svg"
+                alt="carrito compras">
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#">Mi perfil</a></li>
+                    <li class="nav__item"><a href="#">Mi carrito</a></li>
+                    <li class="nav__item"><a href="#">Favoritos</a></li>
+                    <li class="nav__item"><a href="#">Configuracion</a></li>
+                    <li class="nav__item"><a href="#">Cerrar Sesion</a></li>
+                </ul>
+            </nav>
+            <img class="container-carrito-perfil__user-img" src="img/iconos/advincula.svg" alt="perfil usuario"
+                srcset="">
+            <div class="container-carrito-perfil__state-user"></div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#">4 en linea</a></li>
+                    <li class="nav__item"><a href="#">Jewells</a></li>
+                    <li class="nav__item"><a href="#">Spades</a></li>
+                    <li class="nav__item"><a href="#">Subtotal</a></li>
+                    <li class="nav__item"><a href="#">Cerrar Sesion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <main class="background-menu">
+
+	<div class="breadcrum">
+		<ul>
+			<li><a href="index.html">Home /</a></li>
+			<li><a href="#">puzzle /</a></li>
+			<li><a class="breadcrum__four-in-line highlighted" href="#">4 en linea</a></li>
+		</ul>
+	</div>
+
+	<div class="game">
+		<div class="game__four-in-line">
+			
+			<canvas id="canvas" width="1080" height="726"></canvas>
+		<!--<img src="img/4_en_linea.svg" class="game__four-in-line-img">
+			<button class="button button__orange">Jugar</button>
+		-->
+			
+
+		</div>
+	</div>
+
+	<div class="video">
+		<img src="img/video.svg" alt="">
+		<img src="img/video.svg" alt="">
+		<img src="img/video.svg" alt="">
+	</div>
+
+	<section class="information">
+		<div class="share">
+			<button class="button button__lightblue button__compartir"> <img src="img/iconos/share.svg" alt="">
+				Compartir</button>
+		</div>
+		<div class="information-game">
+			<p>Clasificacion: <span class="highlighted">9,2</span> (200.000 votos)</p>
+			<p>Desarrollador: <span class="highlighted">GameBox</span></p>
+			<p>Publicado en: <span class="highlighted">Septiembre 2017</span></p>
+			<p>ultima actualizacion: <span class="highlighted">Septiembre 2024</span></p>
+		</div>
+
+		<div class="information-tutorial">
+			<div class="information-tutorial__title">
+				<img src="img/iconos/playcircle.png" class="information-tutorial__title-icon">
+				<p>Como Jugar</p>
+			</div>
+			<p class="information-tutorial__text">Forma una linea de 4 fichas iguales en cualquier direccion para gnaar.
+				Selecciona la ficha en la columna que queres que caiga (1 ficha por turno) . Quien gane 3 partidas sera
+				el ganador.</p>
+		</div>
+
+		<div class="information-description">
+			<div class="information-description__title">
+				<img src="img/iconos/description.svg" class="information-description__title-icon">
+				<p>Descripcion</p>
+			</div>
+			<p class="information-description__text">¡El clásico de la universidad ha llegado! En este épico duelo de
+				estrategia y astucia, <span class="highlighted">el gallito luchador</span> de la Facultad de Ciencias
+				Exactas se enfrenta al <span class="highlighted">gatito mimoso</span> de la Facultad de Ciencias
+				Económicas en una competencia que ha dividido a las facultades por generaciones. Es el duelo definitivo,
+				donde la precisión matemática se bate a duelo con la economía astuta. ¿Quién logrará alinear cuatro
+				fichas primero para ganar la codiciada <span class="highlighted">Copa de la Universidad?</span>
+				<span class="highlighted">Elige tu equipo:</span>
+				<span class="highlighted">Gallito de Exactas:</span> Famoso por su intelecto afilado y su mirada feroz,
+				el gallito de Exactas no se rinde fácilmente. ¿Serás tú quien lo guíe a la victoria?
+				Gatito de Económicas: No te dejes engañar por su ternura. Este gatito sabe jugar sus cartas como todo un
+				estratega. ¡Desafía el estatus quo y gana la copa para Económicas!
+				<span class="highlighted">¡Desafía a tus amigos, elige tu facultad y demuestra quién tiene la mejor
+					estrategia en el clásico universitario más esperado!</span>
+			</p>
+		</div>
+
+	</section>
+
+	<!-- Popup -->
+	<div id="popup" class="popup hidden">
+
+		<div class="popup-content">
+			<h1>Comparte este juego</h1>
+			<div class="popup-img-container">
+				<span class="close-btn">&times;</span>
+				<img src="img/popup/google.svg" alt="Compartir juego">
+				<img src="img/popup/icons8-instagram 1.svg" alt="">
+				<img src="img/popup/icons8-facebook 1.svg" alt="">
+				<img src="img/popup/icons8-twitterx (1) 1.svg" alt="">
+				<img src="img/popup/icons8-whatsapp 1.svg" alt="">
+			</div>
+			<div class="popup-url-container">
+				<h2>https://www.gamebox.com/4-en-linea</h2>
+				<button class="button button__lightblue">Copiar</button>
+			</div>
+		</div>
+
+	</div>
+
+	<section class="comments">
+
+		<div class="comments__title">
+			<img src="img/iconos/comments.svg">
+			<h2>Comentarios</h2>
+		</div>
+
+		<div class="comments__rate">
+			<div class="comments__rate-user">
+				<img src="img/iconos/advincula.svg ">
+				<p>Cafuncula17</p>
+			</div>
+			<p class="comments__text">¿Que piensas de este juego?</p>
+			<div class="comments__rate-submit">
+				<img src="img/comentarios/staron.svg">
+				<img src="img/comentarios/staroff.svg">
+				<img src="img/comentarios/staroff.svg">
+				<img src="img/comentarios/staroff.svg">
+				<img src="img/comentarios/staroff.svg">
+				<button class="button button__submit">
+					<div class="svg-wrapper-1">
+						<div class="svg-wrapper">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+								<path fill="none" d="M0 0h24v24H0z"></path>
+								<path fill="currentColor"
+									d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+								</path>
+							</svg>
+						</div>
+					</div>
+					<span>Enviar</span>
+
+				</button>
+			</div>
+		</div>
+
+		<div class="comments__users">
+
+			<div class="comments__users-coment">
+				<div class="comments__users-coment-title">
+					<img src="img/comentarios/miquela.png">
+					<p>Miqueila</p>
+				</div>
+				<div class="comments__users-coment-rate">
+					<img src="img/comentarios/staron.svg" alt="">
+					<img src="img/comentarios/staron.svg" alt="">
+					<img src="img/comentarios/staroff.svg" alt="">
+					<img src="img/comentarios/staroff.svg" alt="">
+					<img src="img/comentarios/staroff.svg" alt="">
+					<p>14/09/24</p>
+				</div>
+				<p class="comments__users-coment-text">Hola! el juego me parecio bueno , pero se me bugea cuando cae la
+					segunda ficha, espero alguna actualizacion para corregir el bug.</p>
+			</div>
+
+			<div class="comments__users-coment">
+				<div class="comments__users-coment-title">
+					<img src="img/comentarios/pikachu.jpeg">
+					<p>Pikachu65</p>
+				</div>
+				<div class="comments__users-coment-rate">
+					<img src="img/comentarios/staron.svg" alt="">
+					<img src="img/comentarios/staron.svg" alt="">
+					<img src="img/comentarios/staron.svg" alt="">
+					<img src="img/comentarios/staron.svg" alt="">
+					<img src="img/comentarios/staroff.svg" alt="">
+					<p>07/09/24</p>
+				</div>
+				<p class="comments__users-coment-text">Aguante la facultad de exactas y su gallito, aunque prefiero los
+					juegos de pokemones.</p>
+			</div>
+
+			<div class="comments__users-coment"></div>
+			<div class="comments__users-coment-title">
+				<img src="img/comentarios/valen.png">
+				<p>Valen16</p>
+			</div>
+			<div class="comments__users-coment-rate">
+				<img src="img/comentarios/staron.svg" alt="">
+				<img src="img/comentarios/staron.svg" alt="">
+				<img src="img/comentarios/staron.svg" alt="">
+				<img src="img/comentarios/staron.svg" alt="">
+				<img src="img/comentarios/staron.svg" alt="">
+				<p>03/09/24</p>
+			</div>
+			<p class="comments__users-coment-text">Me encanto el juego 10 de 10.</p>
+		</div>
+
+		</div>
+
+	</section>
+
+
+	<footer class="footer-juego">
+		<div class="container">
+			<div class="footer-section">
+				<h3>Sobre Nosotros</h3>
+				<p>
+					Game Box es la plataforma lider en mini juegos . Ofrecemos una gran diversidad de juegos y contenido
+					para los estusiastas de los mini juegos.
+				</p>
+			</div>
+			<div class="footer-section">
+				<div class="footer-section__links">
+					<h3>Otras Páginas</h3>
+					<ul>
+						<li><a href="#">Preguntas Frecuentes</a></li>
+						<li><a href="#">Términos y Condiciones</a></li>
+						<li><a href="#">Soporte</a></li>
+						<li><a href="#">Mapa del Sitio</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-section">
+				<div class="footer-section__logo-footer">
+					<img class="img-logo-footer" src="img/iconos/logo.png" alt="logo">
+					<p>GameBox</p>
+				</div>
+
+			</div>
+
+			<div class="footer-section">
+				<h3>Contactanos</h3>
+				<p><i class="icon-phone"></i> +54 (0) 2281 578909</p>
+				<p><i class="icon-email"></i> gamebox@gmail.com</p>
+			</div>
+
+			<div class="footer-section">
+				<div class="footer-section__reviews">
+					<h3>Reseñas de Clientes</h3>
+					<p>“Excelente servicio y gran variedad de videojuegos“ - Miquela</p>
+					<p>"La mejor plataforma para videojuegos” - Pikachu65</p>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<p>© 2024 Todos los derechos reservados - Game Box</p>
+			<ul>
+				<li><a href="#">Política de Privacidad</a></li>
+				<li><a href="#">Política de Cookies</a></li>
+				<li><a href="#">Aviso Legal</a></li>
+			</ul>
+		</div>
+	</footer>
+
+</main>
+	
+	<script src="js/menu-desplegable.js"></script>
+	<script src="js/juego/tablero.js"></script>
+	<script src="js/juego/main.js"></script>
+	<script src="js/popup.js"></script>
+</body>
+
+</html>
