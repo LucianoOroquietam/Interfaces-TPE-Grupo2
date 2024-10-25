@@ -1,15 +1,21 @@
 class Tablero {
 
-    constructor(cols, rows, cellSize,ctx) {
+    constructor(cols, rows, cellSize,ctx, backgroundImageSrc) {
         this.cols = cols;
         this.rows = rows;
         this.cellSize = cellSize;
-        this.boardWidth = 0;
-        this.boardHeight = 0;
+        this.boardWidth = cols * cellSize;;
+        this.boardHeight = rows * cellSize;
         this.boardX = 0;
         this.boardY = 0;
         this.ctx = ctx;
+        this.backgroundImage = new Image();
+        this.backgroundImage.src = backgroundImageSrc; 
 
+        // Esperar a que la imagen se cargue antes de dibujar el tablero
+        this.backgroundImage.onload = () => {
+            this.drawBoard();  // Llamar a drawBoard solo cuando la imagen este cargada
+        };
     }
 
     getBoardWidth() {
@@ -19,24 +25,28 @@ class Tablero {
         return this.boardHeight;
     }
 
-    setBoardWidth(cols, cellSize) {
-        this.boardWidth = cols * cellSize;
+    setBoardWidth(boardWidth) {
+        this.boardWidth = boardWidth;
     }
 
-    setBoardHeight(rows, cellSize) {
-        this.boardHeight = rows * cellSize;
+    setBoardHeight(boardHeight) {
+        this.boardHeight = boardHeight;
     }
 
 
     setBoardX(canvasWidth) {
-        this.boardX = (canvasWidth - this.getBoardWidth()) / 2;
+        this.boardX = (canvasWidth - this.boardWidth) / 2;
     }
 
     setBoardY(canvasWidth) {
-        this.boardY = (canvasWidth - this.getBoardHeight()) / 2;
+        this.boardY = (canvasWidth - this.boardHeight) / 2;
     }
 
     drawBoard() {
+        this.ctx.drawImage(this.backgroundImage, this.boardX, this.boardY, this.boardWidth, this.boardHeight);
+    }
+    
+    /*   drawBoard() {
         this.ctx.fillStyle = "#FFCB01"; // Color azul para el tablero
         this.ctx.fillRect(this.boardX, this.boardY, this.boardWidth, this.boardHeight);
         // Dibujar los círculos
@@ -58,7 +68,7 @@ class Tablero {
 
     }
 
-
+*/
 
 }
 
