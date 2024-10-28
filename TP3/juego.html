@@ -17,6 +17,7 @@
 
 <body>
 
+	
 	<header class="container-main">
         <div class="container-header">
             <img id="menu-hamburguesa" class="container-header__menu-hamburguesa menu-desplegado--active"
@@ -59,7 +60,6 @@
                             <a href="#accion">Acción</a>
                         </button>
                     </li>
-                    
                 </ul>
             </nav>
             <img class="container-header__lupa-header" src="img/iconos/lupa.svg" alt="lupa-busqueda">
@@ -77,32 +77,69 @@
 
 
         <div class="container-carrito-perfil">
-            <img id="cart-buy" class="container-carrito-perfil__cart-img carrito-desplegable" src="img/iconos/Set iconos.svg"
-                alt="carrito compras">
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#">Mi perfil</a></li>
-                    <li class="nav__item"><a href="#">Mi carrito</a></li>
-                    <li class="nav__item"><a href="#">Favoritos</a></li>
-                    <li class="nav__item"><a href="#">Configuracion</a></li>
-                    <li class="nav__item"><a href="#">Cerrar Sesion</a></li>
+            <img id="cart-buy" class="container-carrito-perfil__cart-img carrito-desplegable--active"
+                src="img/iconos/Set iconos.svg" alt="carrito compras">
+            <div class="cart-container">
+                <ul class="cart-list">
+                    <li class="cart-item">
+                        <span class="cart-item-title">4 en linea</span>
+                        <span class="cart-item-price">0$</span>
+                        <img src="img/img-menu-carrito/Rectangle 4.svg" class="cart-item-img" alt="Jewells">
+
+                        <button class="remove-item-btn">🗑️</button>
+                    </li>
+                    <li class="cart-item">
+                        <span class="cart-item-title">Jewells</span>
+                        <span class="cart-item-price">4000$</span>
+                        <img src="img/img-menu-carrito/Rectangle 4 (1).svg" class="cart-item-img" alt="4 en linea">
+                        <button class="remove-item-btn">🗑️</button>
+                    </li>
+                    <li class="cart-item">
+                        <span class="cart-item-title">Spades</span>
+                        <span class="cart-item-price">10.000$</span>
+                        <img src="img/img-menu-carrito/Rectangle 4 (2).svg" class="cart-item-img" alt="Spades">
+                        <button class="remove-item-btn">🗑️</button>
+                    </li>
                 </ul>
-            </nav>
-            <img class="container-carrito-perfil__user-img" src="img/iconos/advincula.svg" alt="perfil usuario"
-                srcset="">
+                <div class="cart-subtotal">
+                    <span>Subtotal: $14.000</span>
+                </div>
+                <button class="button button__submit button__lightblue">Finalizar Compra</button>
+            </div>
+            <img id="perfil" class="container-carrito-perfil__user-img" src="img/iconos/advincula.svg"
+                alt="perfil usuario" srcset="">
             <div class="container-carrito-perfil__state-user"></div>
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#">4 en linea</a></li>
-                    <li class="nav__item"><a href="#">Jewells</a></li>
-                    <li class="nav__item"><a href="#">Spades</a></li>
-                    <li class="nav__item"><a href="#">Subtotal</a></li>
-                    <li class="nav__item"><a href="#">Cerrar Sesion</a></li>
+            <nav class="nav-perfil" id="nav-perfil">
+                <ul>
+                    <li class="nav__item">
+                        <button class="btn-menu">
+                            <a href="#">Mi perfil</a>
+                        </button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="btn-menu">
+                            <a href="#">Mi carrito</a>
+                        </button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="btn-menu">
+                            <a href="#">Favoritos</a>
+                        </button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="btn-menu">
+                            <a href="#">Configuracion</a>
+                        </button>
+                    </li>
+                    <li class="nav__item">
+                        <button class="btn-menu">
+                            <a href="form/login.html">Cerrar Sesion</a>
+                        </button>
+                    </li>
                 </ul>
             </nav>
         </div>
-    </header>
-
+        </header>
 
 
     <main class="background-menu">
@@ -292,12 +329,13 @@
 	</section>
 
 
-	<footer class="footer-juego">
+	<footer>
 		<div class="container">
 			<div class="footer-section">
 				<h3>Sobre Nosotros</h3>
 				<p>
-					Game Box es la plataforma lider en mini juegos . Ofrecemos una gran diversidad de juegos y contenido
+					Game Box es la plataforma lider en mini juegos . Ofrecemos una gran diversidad de juegos y
+					contenido
 					para los estusiastas de los mini juegos.
 				</p>
 			</div>
@@ -312,18 +350,15 @@
 					</ul>
 				</div>
 			</div>
+
+
+
 			<div class="footer-section">
-				<div class="footer-section__logo-footer">
-					<img class="img-logo-footer" src="img/iconos/logo.png" alt="logo">
-					<p>GameBox</p>
+				<h3>Ayuda</h3>
+				<div class="footer-section">
+					<p>Soporte</p>
+					<p>Reportar Bug</p>
 				</div>
-
-			</div>
-
-			<div class="footer-section">
-				<h3>Contactanos</h3>
-				<p><i class="icon-phone"></i> +54 (0) 2281 578909</p>
-				<p><i class="icon-email"></i> gamebox@gmail.com</p>
 			</div>
 
 			<div class="footer-section">
@@ -333,9 +368,21 @@
 					<p>"La mejor plataforma para videojuegos” - Pikachu65</p>
 				</div>
 			</div>
+
+
+			<div class="footer-section">
+				<h3>Contactanos</h3>
+				<p><i class="icon-phone"></i> +54 (0) 2281 578909</p>
+				<p><i class="icon-email"></i> gamebox@gmail.com</p>
+				<p>Av. Santamarina 2584, Tandil, Argentina</p>
+			</div>
 		</div>
 		<div class="footer-bottom">
-			<p>© 2024 Todos los derechos reservados - Game Box</p>
+			<div>
+				<p>© 2024 Todos los derechos reservados - Game Box </p>
+				<img class="img-footer-bottom" src="img/iconos/logo.png" alt="">
+
+			</div>
 			<ul>
 				<li><a href="#">Política de Privacidad</a></li>
 				<li><a href="#">Política de Cookies</a></li>
@@ -346,12 +393,17 @@
 
 </main>
 	
-	<script src="js/menu-desplegable.js"></script>
+	
 	<script src="js/juego/tablero.js"></script>
 	<script src="js/juego/ficha.js"></script>
-
 	<script src="js/juego/main.js"></script>
+	<script src="js/juego/cell.js"></script>
+
+	<script src="js/menu-desplegable.js"></script>
 	<script src="js/popup.js"></script>
+	<script src="js/carrito-iteraccion.js"></script>
+	<script src="js/menu-carrito.js"></script>
+
 </body>
 
 </html>

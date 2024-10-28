@@ -1,5 +1,5 @@
 class Ficha {
-    constructor(posX, posY, contexto, imageSrc, posInicial, jugador) {
+    constructor(posX, posY, contexto, imageSrc, posInicial, jugador, tablero) {
         this.posInicial = posInicial;
         this.posX = posX;
         this.posY = posY;
@@ -9,15 +9,91 @@ class Ficha {
         this.colocada = false; 
         this.jugador = jugador; 
         this.tamano = 45; // Tamaño estandar de la ficha
+        this.tablero = tablero;
     }
 
-   
+
+    //metodo para testear las fichas de los jugadores y donde se posicionan
+    drawTokens() {
+        const tokenRadius = 20; 
+        const numTokens = 100; // Total de fichas
+        const pileSize = 5; // Cantidad de fichas por pila
+        const dispersion = 30; // Aumento de dispersión
+        
+        // Fichas del jugador 1 (rojo) en el lado izquierdo
+        this.contexto.fillStyle = "red";
+        for (let i = 0; i < numTokens / pileSize; i++) {
+            // Coordenadas para el puñado
+            const pileX = 30 + Math.random() * 50; // Aleatoriedad en la posición X
+            const pileY = 726 - 60 + Math.random() * 20; // Posición en la parte inferior
+    
+            // Dibujar las fichas del puñado
+            for (let j = 0; j < pileSize; j++) {
+                const offsetX = (Math.random() * dispersion) - (dispersion / 2); // Desplazamiento aleatorio en X
+                const offsetY = (Math.random() * dispersion) - (dispersion / 2); // Desplazamiento aleatorio en Y
+                this.contexto.beginPath();
+                this.contexto.arc(pileX + offsetX, pileY + offsetY, tokenRadius, 0, Math.PI * 2);
+                this.contexto.fill();
+                this.contexto.closePath();
+            }
+        }
+    
+        // Fichas del jugador 2 (amarillo) en el lado derecho
+        this.contexto.fillStyle = "yellow";
+        for (let i = 0; i < numTokens / pileSize; i++) {
+            // Coordenadas para el puñado
+            const pileX = 1080 - 50 + Math.random() * 50; 
+            const pileY = 726 - 60 + Math.random() * 20; 
+    
+            
+            for (let j = 0; j < pileSize; j++) {
+                const offsetX = (Math.random() * dispersion) - (dispersion / 2);
+                const offsetY = (Math.random() * dispersion) - (dispersion / 2); 
+                this.contexto.beginPath();
+                this.contexto.arc(pileX + offsetX, pileY + offsetY, tokenRadius, 0, Math.PI * 2);
+                this.contexto.fill();
+                this.contexto.closePath();
+            }
+        }
+    }
+
+    isInsideBoard(x, y) {
+        return (x >= this.tablero.x && x <= this.tablero.x + this.tablero.width &&
+                y >= this.tablero.y && y <= this.tablero.y + this.tablero.height);
+    }
+
+    
+    renderCircle() {
+        // Habilitar el suavizado de imagen
+        this.contexto.imageSmoothingEnabled = true;
+        this.contexto.beginPath();
+        this.contexto.arc(this.posX + this.tamano / 2, this.posY + this.tamano / 2, this.tamano / 2, 0, Math.PI * 2);
+        this.contexto.fillStyle = this.jugador === 'Jugador 1' ? 'red' : 'yellow'; // Cambiar color según el jugador
+        this.contexto.fill();
+        this.contexto.closePath();
+    }
+
+    clickedMe(x, y) {
+        if (!this.colocada) {
+            // Verifica si las coordenadas (x, y) estan dentro de los limites de la ficha
+            let inX = x > this.posX && x < this.posX + this.tamano;
+            let inY = y > this.posY && y < this.posY + this.tamano;
+
+            return inX && inY; 
+        }
+        return false;
+    }
+
     setPosition(x, y) {
-        this.posX = x;
-        this.posY = y;
+        // Lógica para verificar si la posición está dentro del tablero
+        if (!this.isInsideBoard(x, y)) {
+            this.posX = x;
+            this.posY = y;
+        }
     }
 
-   
+
+
     getPosition() {
         return { "x": this.posX, "y": this.posY };
     }
@@ -33,59 +109,17 @@ class Ficha {
 
 
     draw() {
-        this.renderCircle();
+        for(let i=0; i<20; i++){
+            this.renderCircle();
+
+        }
     }
 
     // Metodo auxiliar para renderizar un circulo de prueba
-    renderCircle() {
-        // Habilitar el suavizado de imagen
-        this.contexto.imageSmoothingEnabled = true;
-        this.contexto.beginPath();
-        this.contexto.arc(this.posX + this.tamano / 2, this.posY + this.tamano / 2, this.tamano / 2, 0, Math.PI * 2);
-        this.contexto.fillStyle = this.jugador === 'Jugador 1' ? 'red' : 'yellow'; // Cambiar color según el jugador
-        this.contexto.fill();
-        this.contexto.closePath();
-    }
-
-    /*    // Método para dibujar la ficha en el canvas
-        draw() {
-            // Verifica si la imagen ya se cargó completamente
-            if (this.image.complete) { 
-                this.renderImage(); // Llama a una función para no repetir el código de dibujo
-            } else {
-                // Si la imagen aún no se ha cargado, espera al evento onload
-                this.image.onload = () => {
-                    this.renderImage();
-                }
-            }
-        }
-    
-        // Método auxiliar para renderizar la imagen
-        renderImage() {
-            // Habilitar el suavizado de imagen, si es necesario
-            this.contexto.imageSmoothingEnabled = true;
-            // Dibujar la imagen en el canvas con un tamaño fijo
-            this.contexto.drawImage(this.image, this.posX, this.posY, this.tamano, this.tamano);
-        }
-    */
-    // Método para verificar si la ficha fue clickeada
-    clickedMe(x, y) {
-        if (!this.colocada) {
-            // Verifica si las coordenadas (x, y) estan dentro de los limites de la ficha
-            let inX = x > this.posX && x < this.posX + this.tamano;
-            let inY = y > this.posY && y < this.posY + this.tamano;
-
-            return inX && inY; // Devuelve true si fue clickeada
-        }
-        return false;
-    }
-
-    
     getColocada() {
         return this.colocada;
     }
 
-  
     setColocada(v) {
         this.colocada = v;
     }
