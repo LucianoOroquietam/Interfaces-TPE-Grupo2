@@ -1,5 +1,5 @@
 class Ficha {
-    constructor(posX, posY, contexto, imageSrc, posInicial, jugador, tablero) {
+    constructor(posX, posY, contexto, imageSrc, posInicial, jugador, tablero, radius) {
         this.posInicial = posInicial;
         this.posX = posX;
         this.posY = posY;
@@ -10,18 +10,17 @@ class Ficha {
         this.jugador = jugador; 
         this.tamano = 45; // Tamaño estandar de la ficha
         this.tablero = tablero;
+        this.radius = radius;
     }
 
 
     //metodo para testear las fichas de los jugadores y donde se posicionan
-    drawTokens() {
-        const tokenRadius = 20; 
-        const numTokens = 100; // Total de fichas
-        const pileSize = 5; // Cantidad de fichas por pila
-        const dispersion = 30; // Aumento de dispersión
+    drawTokens(numTokens) {
         
+        
+
         // Fichas del jugador 1 (rojo) en el lado izquierdo
-        this.contexto.fillStyle = "red";
+       /* this.contexto.fillStyle = "red";
         for (let i = 0; i < numTokens / pileSize; i++) {
             // Coordenadas para el puñado
             const pileX = 30 + Math.random() * 50; // Aleatoriedad en la posición X
@@ -54,7 +53,7 @@ class Ficha {
                 this.contexto.fill();
                 this.contexto.closePath();
             }
-        }
+        }*/
     }
 
     isInsideBoard(x, y) {
@@ -92,6 +91,12 @@ class Ficha {
         }
     }
 
+    isPointFigure(x,y){
+        let _x = this.posX - x; //_x es la posicion del circulo - la posicion de donde esta el mouse (x)
+        let _y = this.posY - y; // esto seria como calcular y2 - y1 e x2 - x1
+        return Math.sqrt((_x * _x) - (_y * _y)) < this.radius; //el resultado de (x2 - x1) - (y2 - y1) elevado al cuadrado 
+        //si esa distancia entre dos puntos es menor al radio del circulo es porque estoy dentro del circulo
+    }
 
 
     getPosition() {
