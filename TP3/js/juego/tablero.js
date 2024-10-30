@@ -32,6 +32,21 @@ class Tablero {
         this.cells.forEach(cell => cell.draw(this.ctx));
     }
 
+    soltarFicha(x, y) {
+        // Calcular la columna y la fila donde se soltó la ficha
+        let col = Math.floor((x - this.boardX) / this.cellSize);
+        let row = Math.floor((y - this.boardY) / this.cellSize);
+    
+        // Verificar si la celda es válida dentro de los límites del tablero
+        if (col >= 0 && col < this.cols && row >= 0 && row < this.rows) {
+            console.log(`Ficha soltada en celda: [${row}, ${col}]`);
+            // Aquí puedes añadir la lógica para colocar la ficha en el tablero
+            return { row, col };
+        } else {
+            console.log("Ficha soltada fuera del tablero.");
+            return null;
+        }
+    }
 
 
     getBoardWidth() {
