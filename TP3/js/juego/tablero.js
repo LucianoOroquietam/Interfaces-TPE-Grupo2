@@ -12,6 +12,8 @@ class Tablero {
         this.cells = [];
         this.svgSrc = svgSrc; 
         this.imageIndicador = imageIndicador;  
+
+        
     }
 
     createCells() {
@@ -40,6 +42,7 @@ class Tablero {
         }
     }
 
+
     drawBoard() {
         // Dibuja cada celda en el tablero usando el SVG
         this.cells.forEach(cell => cell.draw(this.ctx));
@@ -59,8 +62,14 @@ class Tablero {
             console.log("Ficha soltada fuera del tablero.");
             return null;
         }
+
+        
     }
 
+
+    getCells(){
+        return this.cells;
+    }
 
     getBoardWidth() {
         return this.boardWidth;

@@ -5,6 +5,7 @@ class Cell {
         this.size = size;
         this.svgImage = new Image();
         this.svgImage.src = svgSrc;
+        
     }
 
     draw(ctx) {

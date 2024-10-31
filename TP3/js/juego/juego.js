@@ -8,13 +8,12 @@ class Juego {
         this.fichasj1 = [];
         this.fichasj2 = [];
         this.numTokens = 0;
-        
+
         this.tokenWidth = 0;
         this.tokenHeight = 0;
-        
+
         this.lastClickedFigure = null;
         this.isMouseDown = false;
-
         this.turnoJugador = 1;
 
         // Precargar imagenes de las fichas
@@ -24,16 +23,19 @@ class Juego {
 
         this.imagenFichaJ1.src = '././img/ficha-gallo.jpg';
         this.imagenFichaJ2.src = '././img/ficha-gatito.jpg';
-        this.imageCell= '././img/ImgCelda.svg';
+        this.imageCell = '././img/ImgCelda.svg';
         this.imageIndicador = '././img/indicador.svg';
 
         if (this.imagenFichaJ1.complete && this.imagenFichaJ2.complete) {
-            this.drawFichas(); 
+            this.drawFichas();
         } else {
             this.imagenFichaJ1.onload = this.imagenFichaJ2.onload = () => {
-            this.drawFichas(); 
-        };
-    }
+                this.drawFichas();
+            };
+
+            this.mouseOffsetX = 0;
+            this.mouseOffsetY = 0;
+        }
 
     }
 
@@ -44,17 +46,17 @@ class Juego {
             this.setNumtokens(21);
             this.setTokeWidth(60);
             this.setTokeHeigth(55);
-        }else if (this.tipoJuego === '5-en-linea') {
+        } else if (this.tipoJuego === '5-en-linea') {
             this.board = new Tablero(9, 9, 70, this.ctx, this.imageCell, this.imageIndicador);
             this.setNumtokens(36);
             this.setTokeWidth(50);
             this.setTokeHeigth(50);
-        }else if (this.tipoJuego === '6-en-linea') {
-            this.board = new Tablero(10, 10, 60, this.ctx,this.imageCell, this.imageIndicador);
+        } else if (this.tipoJuego === '6-en-linea') {
+            this.board = new Tablero(10, 10, 60, this.ctx, this.imageCell, this.imageIndicador);
             this.setNumtokens(45);
             this.setTokeWidth(40);
             this.setTokeHeigth(40);
-        }else if (this.tipoJuego === '7-en-linea') {
+        } else if (this.tipoJuego === '7-en-linea') {
             this.board = new Tablero(11, 11, 60, this.ctx, this.imageCell, this.imageIndicador);
             this.setNumtokens(55);
             this.setTokeWidth(40);
@@ -68,25 +70,24 @@ class Juego {
         this.setupEventListeners();
     }
 
-    
 
-    setNumtokens(numtokens){
+    setNumtokens(numtokens) {
         this.numTokens = numtokens;
     }
 
-    setTokeWidth(tokenWidth){
+    setTokeWidth(tokenWidth) {
         this.tokenWidth = tokenWidth;
     }
 
-    setTokeHeigth(tokenHeight){
+    setTokeHeigth(tokenHeight) {
         this.tokenHeight = tokenHeight;
     }
 
     generateFichas() {
         for (let i = 0; i <= this.numTokens; i++) {
             const ficha1 = new Ficha(50, 650 - i * 10, this.ctx, this.imagenFichaJ1, { x: 50, y: 650 - i * 10 }, 'Jugador 1', this.board, this.tokenWidth, this.tokenHeight);
-            const ficha2 = new Ficha(970, 650 - i * 10, this.ctx, this.imagenFichaJ2, { x: 970, y: 650 - i * 10 }, 'Jugador 2',  this.board, this.tokenWidth, this.tokenHeight);
-            
+            const ficha2 = new Ficha(970, 650 - i * 10, this.ctx, this.imagenFichaJ2, { x: 970, y: 650 - i * 10 }, 'Jugador 2', this.board, this.tokenWidth, this.tokenHeight);
+
             this.fichasj1.push(ficha1);
             this.fichasj2.push(ficha2);
         }
@@ -107,6 +108,10 @@ class Juego {
         let clickedFigure = this.findClickedFigure(event.layerX, event.layerY);
         if (clickedFigure != null) {
             this.lastClickedFigure = clickedFigure;
+
+            // Calcula el desplazamiento entre el mouse y el centro de la ficha
+            this.mouseOffsetX = event.layerX - (clickedFigure.posX + clickedFigure.width / 2);
+            this.mouseOffsetY = event.layerY - (clickedFigure.posY + clickedFigure.height / 2);
         }
 
         this.draw();
@@ -114,20 +119,23 @@ class Juego {
 
     onMouseMove(event) {
         if (this.isMouseDown && this.lastClickedFigure != null) {
-            this.lastClickedFigure.setPosition(event.layerX, event.layerY);
+            // Mueve la ficha considerando el desplazamiento calculado
+            this.lastClickedFigure.posX = event.layerX - this.mouseOffsetX - this.lastClickedFigure.width / 2;
+            this.lastClickedFigure.posY = event.layerY - this.mouseOffsetY - this.lastClickedFigure.height / 2;
+
             this.draw();
         }
     }
 
     onMouseUp(event) {
         this.isMouseDown = false;
-    
+
         if (this.lastClickedFigure != null) {
             // Verificar si el mouse está dentro de los límites del tablero
             const mouseX = event.layerX;
             const mouseY = event.layerY;
-    
-         // Verificar si el mouse está sobre el tablero
+
+            // Verificar si el mouse está sobre el tablero
             const isInsideBoard = (
                 mouseX >= this.board.boardX &&
                 mouseX <= (this.board.boardX + this.board.boardWidth) &&
@@ -137,61 +145,88 @@ class Juego {
 
             const row = Math.floor((mouseY - this.board.boardY) / this.board.cellSize);
             const isInTopRow = row === 0;
-    
+
             if (isInTopRow && isInsideBoard) {
                 // Determina la columna donde se suelta la ficha
                 const col = Math.floor((mouseX - this.board.boardX) / this.board.cellSize);
-                
+
                 // Llama a la función para hacer caer la ficha
                 this.makeTokenDrop(this.lastClickedFigure, col);
-    
-                // Cambiar el turno de jugador si es necesario
-                this.turnoJugador = this.turnoJugador === 1 ? 2 : 1;
-    
+
+
                 // Limpiar la última ficha seleccionada
                 this.lastClickedFigure = null;
             } else {
                 // Si la ficha se suelta fuera del tablero, devolverla a su posición inicial
                 this.lastClickedFigure.resetPosition();
             }
-    
+
             // Dibujar el estado actualizado del juego
             this.draw();
         }
     }
 
     makeTokenDrop(ficha, col) {
-        const targetY = this.board.boardY + this.board.boardHeight; // Y final (fuera del tablero)
-        const dropAnimation = (startY) => {
-            // Si la ficha no está en la posición objetivo
+        // Encuentra la primera fila vacía en la columna
+        const targetRow = this.findAvailableRow(col);
+        if (targetRow === -1) {
+            console.log("Columna llena");
+            ficha.resetPosition();
+            ficha.setColocada(false);
+            return; // Detener si la columna está llena
+        }
+
+        // Calcula la posición Y de la celda de destino
+        const targetY = this.board.boardY + targetRow * this.board.cellSize + (this.board.cellSize - ficha.height) / 2;
+        const targetX = this.board.boardX + col * this.board.cellSize + (this.board.cellSize - ficha.width) / 2;
+
+
+
+        const dropAnimation = () => {
+            // Si la ficha no ha alcanzado su posición objetivo
             if (ficha.posY < targetY) {
-                // Aumenta la posición Y de la ficha
-                ficha.posY += 5; // Controla la velocidad de caída
-                requestAnimationFrame(() => dropAnimation(ficha.posY));
+                // Mueve la ficha hacia abajo incrementando su posición Y
+                ficha.posY += 5; // Ajusta la velocidad de caída
+                if (ficha.posX < targetX) {
+                    ficha.posX += 1;
+                }
+                if (ficha.posX > targetX) {
+                    ficha.posX -= 1;
+                }
+
+                requestAnimationFrame(dropAnimation);
             } else {
-                // La ficha se coloca en la posición correcta de la columna
-                ficha.posY = this.calculateFinalPositionInColumn(col);
-                ficha.setColocada(true); // Marca la ficha como colocada
+                // Ajusta la posición Y para que la ficha quede en la celda objetivo
+                ficha.posY = targetY;
+                ficha.posX = targetX;
+                ficha.setColocada(true); // Marca la ficha como colocada en el tablero
+                if(this.verificarCuatroEnLinea(targetRow, col)) return;
+                this.turnoJugador = this.turnoJugador === 1 ? 2 : 1;
+            
+                // Actualiza la matriz del tablero para reflejar la ficha colocada
+                this.board.cells[targetRow][col] = ficha;
             }
-    
-            this.draw(); // Redibuja el tablero en cada frame
+
+            // Redibuja el tablero en cada frame
+            this.draw();
         };
-    
-        dropAnimation(ficha.posY);
+
+        // animacion de caida
+        requestAnimationFrame(dropAnimation);
     }
-    
-    // Calcula la posición final en la columna donde la ficha debe caer
-    calculateFinalPositionInColumn(col) {
-        // Busca la celda correspondiente en la columna
-        for (let row = this.board.rows - 1; row >= 0; row--) {
-            const cell = this.board.cells[row * this.board.cols + col];
-            if (!cell.isOccupied) { // Verifica si la celda está ocupada
-                cell.isOccupied = true; // Marca la celda como ocupada
-                return cell.y; // Devuelve la Y de la celda
+
+    // encontrar la primera fila vacia en una columna
+    findAvailableRow(col) {
+        for (let row = this.board.rows - 1; row > 0; row--) {
+            if (!this.board.cells[row][col]) {
+                return row;
             }
         }
-        return this.board.boardY + this.board.boardHeight; // Si está ocupada, vuelve a la posición inicial
+        return -1; // Si no hay celdas disponibles, devuelve -1
     }
+
+
+
 
     findClickedFigure(x, y) {
         const fichasActuales = this.turnoJugador === 1 ? this.fichasj1 : this.fichasj2;
@@ -206,6 +241,59 @@ class Juego {
     drawFichas() {
         this.draw();
     }
+
+
+    verificarCuatroEnLinea(fila, columna) {
+        console.log("Fila:", fila);
+        console.log("Columna:", columna);
+    
+        const jugador = this.board.getCells()[fila][columna]; // Llamada a getCells como función
+        console.log("Jugador en la posición:", jugador); // Verifica el jugador
+        if (!jugador) return false;
+    
+        // Direcciones en las que se revisará (filaDelta, columnaDelta)
+        const direcciones = [
+            { df: 0, dc: 1 },    // Horizontal
+            { df: 1, dc: 0 },    // Vertical
+            { df: 1, dc: 1 },    // Diagonal hacia abajo
+            { df: 1, dc: -1 }    // Diagonal hacia arriba
+        ];
+    
+        // Función para contar fichas consecutivas en una dirección
+        const contarFichas = (df, dc) => {
+            let cuenta = 0;
+            let f = fila + df;
+            let c = columna + dc;
+            const cells = this.board.getCells(); // Usamos getCells para obtener la matriz
+    
+            while (f >= 0 && f < this.filas && c >= 0 && c < this.columnas) {
+                console.log(`Verificando celda [${f}][${c}]:`, cells[f][c]); // Imprime la celda actual
+                if (cells[f][c] === jugador) {
+                    cuenta++;
+                    console.log("Ficha encontrada. Cuenta actual:", cuenta);
+                    f += df;
+                    c += dc;
+                } else {
+                    break; // Salir del bucle si la ficha no coincide
+                }
+            }
+    
+            return cuenta;
+        };
+    
+        // Verificar en cada dirección si se logra conectar cuatro en línea
+        for (const { df, dc } of direcciones) {
+            const total = 1 + contarFichas(df, dc) + contarFichas(-df, -dc); // La ficha actual más ambas direcciones
+            console.log(`Total en dirección [${df}, ${dc}]:`, total); // Imprime el total de fichas encontradas
+            if (total >= 4) {
+                console.log("¡Ganaste!");
+                return true;
+            }
+        }
+    
+        return false;
+    }
+    
     
 
     draw() {
@@ -216,5 +304,4 @@ class Juego {
     }
 }
 
-    
-    
+
