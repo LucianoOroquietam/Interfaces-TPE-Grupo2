@@ -25,38 +25,37 @@ class Juego {
         this.imagenFichaJ1.src = '././img/ficha-gallo.jpg';
         this.imagenFichaJ2.src = '././img/ficha-gatito.jpg';
         this.imageCell= '././img/ImgCelda.svg';
+        this.imageIndicador = '././img/indicador.svg';
 
-       
         if (this.imagenFichaJ1.complete && this.imagenFichaJ2.complete) {
             this.drawFichas(); 
-         } else {
-                this.imagenFichaJ1.onload = this.imagenFichaJ2.onload = () => {
-                this.drawFichas(); 
-            };
-}
+        } else {
+            this.imagenFichaJ1.onload = this.imagenFichaJ2.onload = () => {
+            this.drawFichas(); 
+        };
+    }
 
     }
 
-   
 
     initGame() {
         if (this.tipoJuego === '4-en-linea') {
-            this.board = new Tablero(7, 6, 80, this.ctx, this.imageCell);
+            this.board = new Tablero(7, 7, 80, this.ctx, this.imageCell, this.imageIndicador);
             this.setNumtokens(21);
             this.setTokeWidth(60);
             this.setTokeHeigth(55);
-        } else if (this.tipoJuego === '5-en-linea') {
-            this.board = new Tablero(9, 8, 70, this.ctx, this.imageCell);
+        }else if (this.tipoJuego === '5-en-linea') {
+            this.board = new Tablero(9, 9, 70, this.ctx, this.imageCell, this.imageIndicador);
             this.setNumtokens(36);
             this.setTokeWidth(50);
             this.setTokeHeigth(50);
         }else if (this.tipoJuego === '6-en-linea') {
-            this.board = new Tablero(10, 9, 60, this.ctx,this.imageCell);
+            this.board = new Tablero(10, 10, 60, this.ctx,this.imageCell, this.imageIndicador);
             this.setNumtokens(45);
             this.setTokeWidth(40);
             this.setTokeHeigth(40);
         }else if (this.tipoJuego === '7-en-linea') {
-            this.board = new Tablero(11, 10, 60, this.ctx, this.imageCell);
+            this.board = new Tablero(11, 11, 60, this.ctx, this.imageCell, this.imageIndicador);
             this.setNumtokens(55);
             this.setTokeWidth(40);
             this.setTokeHeigth(40);
@@ -68,6 +67,8 @@ class Juego {
         this.generateFichas();
         this.setupEventListeners();
     }
+
+    
 
     setNumtokens(numtokens){
         this.numTokens = numtokens;
@@ -120,14 +121,29 @@ class Juego {
 
     onMouseUp(event) {
         this.isMouseDown = false;
-
-        if (this.lastClickedFigure != null) {
-            // Llamar a soltarFicha en Tablero para verificar la posición de la ficha
-            const celda = this.board.soltarFicha(event.layerX, event.layerY);
     
-            if (celda) {
-                // Lógica adicional si la ficha cae dentro del tablero
-                console.log(`Ficha colocada en la celda: [${celda.row}, ${celda.col}]`);
+        if (this.lastClickedFigure != null) {
+            // Verificar si el mouse está dentro de los límites del tablero
+            const mouseX = event.layerX;
+            const mouseY = event.layerY;
+    
+         // Verificar si el mouse está sobre el tablero
+            const isInsideBoard = (
+                mouseX >= this.board.boardX &&
+                mouseX <= (this.board.boardX + this.board.boardWidth) &&
+                mouseY >= this.board.boardY &&
+                mouseY <= (this.board.boardY + this.board.boardHeight)
+            );
+
+            const row = Math.floor((mouseY - this.board.boardY) / this.board.cellSize);
+            const isInTopRow = row === 0;
+    
+            if (isInTopRow && isInsideBoard) {
+                // Determina la columna donde se suelta la ficha
+                const col = Math.floor((mouseX - this.board.boardX) / this.board.cellSize);
+                
+                // Llama a la función para hacer caer la ficha
+                this.makeTokenDrop(this.lastClickedFigure, col);
     
                 // Cambiar el turno de jugador si es necesario
                 this.turnoJugador = this.turnoJugador === 1 ? 2 : 1;
@@ -138,10 +154,43 @@ class Juego {
                 // Si la ficha se suelta fuera del tablero, devolverla a su posición inicial
                 this.lastClickedFigure.resetPosition();
             }
-        }
     
-        // Dibujar el estado actualizado del juego
-        this.draw();
+            // Dibujar el estado actualizado del juego
+            this.draw();
+        }
+    }
+
+    makeTokenDrop(ficha, col) {
+        const targetY = this.board.boardY + this.board.boardHeight; // Y final (fuera del tablero)
+        const dropAnimation = (startY) => {
+            // Si la ficha no está en la posición objetivo
+            if (ficha.posY < targetY) {
+                // Aumenta la posición Y de la ficha
+                ficha.posY += 5; // Controla la velocidad de caída
+                requestAnimationFrame(() => dropAnimation(ficha.posY));
+            } else {
+                // La ficha se coloca en la posición correcta de la columna
+                ficha.posY = this.calculateFinalPositionInColumn(col);
+                ficha.setColocada(true); // Marca la ficha como colocada
+            }
+    
+            this.draw(); // Redibuja el tablero en cada frame
+        };
+    
+        dropAnimation(ficha.posY);
+    }
+    
+    // Calcula la posición final en la columna donde la ficha debe caer
+    calculateFinalPositionInColumn(col) {
+        // Busca la celda correspondiente en la columna
+        for (let row = this.board.rows - 1; row >= 0; row--) {
+            const cell = this.board.cells[row * this.board.cols + col];
+            if (!cell.isOccupied) { // Verifica si la celda está ocupada
+                cell.isOccupied = true; // Marca la celda como ocupada
+                return cell.y; // Devuelve la Y de la celda
+            }
+        }
+        return this.board.boardY + this.board.boardHeight; // Si está ocupada, vuelve a la posición inicial
     }
 
     findClickedFigure(x, y) {

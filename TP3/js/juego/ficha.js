@@ -10,7 +10,6 @@ class Ficha {
         this.tablero = tablero;
         this.width = width;
         this.height = height;
-         
     }
 
 

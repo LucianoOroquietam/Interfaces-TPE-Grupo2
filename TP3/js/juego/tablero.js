@@ -1,6 +1,6 @@
 class Tablero {
 
-    constructor(cols, rows, cellSize, ctx, svgSrc) {
+    constructor(cols, rows, cellSize, ctx, svgSrc, imageIndicador) {
         this.cols = cols;
         this.rows = rows;
         this.cellSize = cellSize;
@@ -10,12 +10,24 @@ class Tablero {
         this.boardY = 0;
         this.ctx = ctx;
         this.cells = [];
-        this.svgSrc = svgSrc;   
+        this.svgSrc = svgSrc; 
+        this.imageIndicador = imageIndicador;  
     }
 
     createCells() {
         for (let row = 0; row < this.rows; row++) {
-            for (let col = 0; col < this.cols; col++) {
+            if(row === 0){
+                for (let col = 0; col < this.cols; col++) {
+                    const cell = new Cell({
+                        x: this.boardX + col * this.cellSize,
+                        y: this.boardY + row * this.cellSize,
+                        size: this.cellSize,
+                        svgSrc: this.imageIndicador  
+                    });
+                    this.cells.push(cell);
+                }
+            } else {
+                for (let col = 0; col < this.cols; col++) {
                 const cell = new Cell({
                     x: this.boardX + col * this.cellSize,
                     y: this.boardY + row * this.cellSize,
@@ -23,7 +35,8 @@ class Tablero {
                     svgSrc: this.svgSrc  // Pasamos el SVG para cada celda
                 });
                 this.cells.push(cell);
-            }
+            }}
+            
         }
     }
 
