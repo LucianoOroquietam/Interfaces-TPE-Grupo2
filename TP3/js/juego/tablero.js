@@ -24,7 +24,8 @@ class Tablero {
                         x: this.boardX + col * this.cellSize,
                         y: this.boardY + row * this.cellSize,
                         size: this.cellSize,
-                        svgSrc: this.imageIndicador  
+                        svgSrc: this.imageIndicador,
+                        opacity: 0 
                     });
                     this.cells.push(cell);
                 }
@@ -34,7 +35,8 @@ class Tablero {
                     x: this.boardX + col * this.cellSize,
                     y: this.boardY + row * this.cellSize,
                     size: this.cellSize,
-                    svgSrc: this.svgSrc  // Pasamos el SVG para cada celda
+                    svgSrc: this.svgSrc,  // Pasamos el SVG para cada celda
+                    opacity: 1.5
                 });
                 this.cells.push(cell);
             }}
@@ -91,6 +93,10 @@ class Tablero {
 
     setBoardHeight(boardHeight) {
         this.boardHeight = boardHeight;
+    }
+
+    getBoardY(){
+        return this.boardY;
     }
 
 

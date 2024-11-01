@@ -152,13 +152,52 @@
 		</ul>
 	</div>
 
+
 	<div class="game">
+		
 		<div class="game__four-in-line">
 			
-			<canvas id="canvas" width="1080" height="726"></canvas>
-		<!--<img src="img/4_en_linea.svg" class="game__four-in-line-img">
-			<button class="button button__orange">Jugar</button>
-		-->
+			<canvas id="canvas" class="fondo__canvas hidden" width="1080" height="726"></canvas>
+		<!--<img id="prueba2" src="img/4_en_linea.svg" class="game__four-in-line-img">
+			<button id="prueba" class="button button__orange">Jugar</button>-->	
+
+
+			<div id="prueba2">
+
+				<div class="popup-content-juego">
+					<h1>Selecciona el modo de juego</h1>
+					<div class="contenedor_modo_juego">
+						<p>4 en linea</p>
+						<p>5 en linea</p>
+						<p>6 en linea</p>
+						<p>7 en linea</p>
+					</div>
+					<h1>Selecciona con que fichas quieres jugar</h1>
+					<p>Fichas del gallito</p>
+					<div class="popup-img-container">
+						
+						<img src="img/ficha-gallo.jpg" alt="">
+						<img src="img/ficha-gallo.jpg" alt="">
+						<img src="img/ficha-gallo.jpg" alt="">
+						<img src="img/ficha-gallo.jpg" alt="">
+					</div>
+					<p>Fichas del gato</p>
+					<div class="popup-img-container">
+						
+		
+						<img src="img/ficha-gatito.jpg" alt="">
+						<img src="img/ficha-gatito.jpg" alt="">
+						<img src="img/ficha-gatito.jpg" alt="">
+						<img src="img/ficha-gatito.jpg" alt="">
+					</div>
+					<div class="contenedor_play">
+		
+						<button id="prueba" class="button button__orange">Jugar</button>
+					</div>
+				</div>
+		
+			</div>
+		
 			
 
 		</div>
@@ -393,13 +432,13 @@
 
 </main>
 	
-	
+	<script src="js/juego/main.js"></script>
 	<script src="js/juego/tablero.js"></script>
 	<script src="js/juego/ficha.js"></script>
-	<script src="js/juego/main.js"></script>
 	<script src="js/juego/cell.js"></script>
 	<script src="js/juego/juego.js"></script>
 
+	<script src="js/prueba.js"></script>
 	<script src="js/menu-desplegable.js"></script>
 	<script src="js/popup.js"></script>
 	<script src="js/carrito-iteraccion.js"></script>

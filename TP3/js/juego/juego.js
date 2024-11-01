@@ -24,40 +24,47 @@ class Juego {
         this.imagenFichaJ1.src = '././img/ficha-gallo.jpg';
         this.imagenFichaJ2.src = '././img/ficha-gatito.jpg';
         this.imageCell = '././img/ImgCelda.svg';
-        this.imageIndicador = '././img/prueba2.svg';
+        this.imageIndicador1 = '././img/juego/indicadorOpaco.svg';
+        this.imageIndicador2 = '././img/juego/indicadorFichaSoltada.svg';
 
-        if (this.imagenFichaJ1.complete && this.imagenFichaJ2.complete) {
+    /*    if (this.imagenFichaJ1.complete && this.imagenFichaJ2.complete) {
             this.drawFichas();
         } else {
             this.imagenFichaJ1.onload = this.imagenFichaJ2.onload = () => {
                 this.drawFichas();
             };
+*/
+
+            this.imagenFichaJ1.onload = this.imagenFichaJ2.onload = () => {
+                this.initGame(); // Llama a `initGame` cuando las imágenes se hayan cargado.
+                this.drawFichas(); // Luego llama a `drawFichas`.
+            };
 
             this.mouseOffsetX = 0;
             this.mouseOffsetY = 0;
-        }
+        
 
     }
 
 
     initGame() {
         if (this.tipoJuego === 4) {
-            this.board = new Tablero(7, 7, 80, this.ctx, this.imageCell, this.imageIndicador);
+            this.board = new Tablero(7, 7, 80, this.ctx, this.imageCell, this.imageIndicador1);
             this.setNumtokens(21);
             this.setTokeWidth(60);
             this.setTokeHeigth(55);
         } else if (this.tipoJuego === 5) {
-            this.board = new Tablero(9, 9, 70, this.ctx, this.imageCell, this.imageIndicador);
+            this.board = new Tablero(9, 9, 70, this.ctx, this.imageCell, this.imageIndicador1);
             this.setNumtokens(36);
             this.setTokeWidth(50);
             this.setTokeHeigth(50);
         } else if (this.tipoJuego === 6) {
-            this.board = new Tablero(10, 10, 60, this.ctx, this.imageCell, this.imageIndicador);
+            this.board = new Tablero(10, 10, 60, this.ctx, this.imageCell, this.imageIndicador1);
             this.setNumtokens(45);
             this.setTokeWidth(40);
             this.setTokeHeigth(40);
         } else if (this.tipoJuego === 7) {
-            this.board = new Tablero(11, 11, 60, this.ctx, this.imageCell, this.imageIndicador);
+            this.board = new Tablero(11, 11, 60, this.ctx, this.imageCell, this.imageIndicador1);
             this.setNumtokens(55);
             this.setTokeWidth(40);
             this.setTokeHeigth(40);
@@ -101,14 +108,22 @@ class Juego {
 
     onMouseDown(event) {
         this.isMouseDown = true;
+        
         if (this.lastClickedFigure != null) {
             this.lastClickedFigure = null;
         }
 
         let clickedFigure = this.findClickedFigure(event.layerX, event.layerY);
         if (clickedFigure != null) {
+            // Animar y dibujar los hints (flechas) en la fila 0
+            this.board.cells.forEach(cell => {
+                if (cell.y === this.board.getBoardY()) { // Solo la fila 0
+                    console.log("entro al if")
+                    cell.animateHint(this.imageIndicador2);
+                    cell.draw(this.ctx);
+                }
+            });
             this.lastClickedFigure = clickedFigure;
-
             // Calcula el desplazamiento entre el mouse y el centro de la ficha
             this.mouseOffsetX = event.layerX - (clickedFigure.posX + clickedFigure.width / 2);
             this.mouseOffsetY = event.layerY - (clickedFigure.posY + clickedFigure.height / 2);
@@ -119,6 +134,7 @@ class Juego {
 
     onMouseMove(event) {
         if (this.isMouseDown && this.lastClickedFigure != null) {
+            
             // Mueve la ficha considerando el desplazamiento calculado
             this.lastClickedFigure.posX = event.layerX - this.mouseOffsetX - this.lastClickedFigure.width / 2;
             this.lastClickedFigure.posY = event.layerY - this.mouseOffsetY - this.lastClickedFigure.height / 2;
@@ -160,7 +176,13 @@ class Juego {
                 // Si la ficha se suelta fuera del tablero, devolverla a su posición inicial
                 this.lastClickedFigure.resetPosition();
             }
-
+            this.board.cells.forEach(cell => {
+                if (cell.y === this.board.getBoardY()) { // Solo la fila 0
+                    console.log("entro al if")
+                    cell.animateCancel(this.imageIndicador1);
+                    cell.draw(this.ctx);
+                }
+            });
             // Dibujar el estado actualizado del juego
             this.draw();
         }
@@ -203,6 +225,8 @@ class Juego {
                 this.board.completeMx(targetRow, col, ficha.getJugador());
                 if(this.verificarCuatroEnLinea(targetRow, col)){
                     this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
+                    //aca llamar al boton restart
+                    //detener el uso de fichas turno jugador = 0
                     return;
                 } 
                     
@@ -290,14 +314,25 @@ class Juego {
     }
     
     
-
     draw() {
-        this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
         
+        
+    
+
+        this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
+    
+        // Dibujar el resto del tablero y las fichas
+        this.board.drawBoard();
         this.fichasj1.forEach(ficha => ficha.draw());
         this.fichasj2.forEach(ficha => ficha.draw());
-        this.board.drawBoard();
+        
+    
+        // Solicitar el siguiente cuadro para la animación
+      //  requestAnimationFrame(() => this.draw());
     }
+    
+
+        
 }
 
 

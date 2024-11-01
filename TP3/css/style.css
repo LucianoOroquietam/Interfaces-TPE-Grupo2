@@ -79,9 +79,38 @@ body {
     --font-size-montserrat-large: 4rem;
     --font-size-montserrat-small: 3.2rem;
 }
+.contenedor_modo_juego, .popup-img-container{
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+}
 
 
+.contenedor_play{
+    display: flex;
+    justify-content: center;
+}
 
+.popup-content-juego{
+    background-color: rgb(246, 148, 2);
+    width: 1080px;
+    height: 726px;
+}
+
+button {
+    border-radius: 20px;
+    background-color: rgb(30, 30, 168);
+    font-size: 20px;
+    margin-bottom: 1rem;
+}
+
+
+.fondo__canvas{
+    background-image: url(../img/juego/fondocanvas.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
 
 /*Loading */
 .loading-container {
@@ -414,20 +443,19 @@ header .nav-perfil--active {
 
 
 .button__orange {
-    position: absolute;
+    
     top: 32rem;
     left: 38rem;
-    width: 24rem;
-    height: 9rem;
+    width: 14rem;
+    height: 4rem;
     border-radius: 1rem;
     background-color: var(--secondary-color-1);
-    font-size: var(--font-size-h1-small);
+    font-size: var(--font-size-h3-large);
     color: var(--black-color);
     font-weight: bold;
-    background-image: url(../img/icons8-flecha-derecha-48\ \(1\).png);
-    background-repeat: no-repeat;
-    background-position: 17rem;
+    background-position: 8rem;
     box-shadow: var(--shadow-intense-black);
+    margin-bottom: 2rem;
 
 }
 
