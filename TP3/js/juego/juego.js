@@ -24,7 +24,7 @@ class Juego {
         this.imagenFichaJ1.src = '././img/ficha-gallo.jpg';
         this.imagenFichaJ2.src = '././img/ficha-gatito.jpg';
         this.imageCell = '././img/ImgCelda.svg';
-        this.imageIndicador = '././img/indicador.svg';
+        this.imageIndicador = '././img/prueba2.svg';
 
         if (this.imagenFichaJ1.complete && this.imagenFichaJ2.complete) {
             this.drawFichas();
@@ -41,22 +41,22 @@ class Juego {
 
 
     initGame() {
-        if (this.tipoJuego === '4-en-linea') {
+        if (this.tipoJuego === 4) {
             this.board = new Tablero(7, 7, 80, this.ctx, this.imageCell, this.imageIndicador);
             this.setNumtokens(21);
             this.setTokeWidth(60);
             this.setTokeHeigth(55);
-        } else if (this.tipoJuego === '5-en-linea') {
+        } else if (this.tipoJuego === 5) {
             this.board = new Tablero(9, 9, 70, this.ctx, this.imageCell, this.imageIndicador);
             this.setNumtokens(36);
             this.setTokeWidth(50);
             this.setTokeHeigth(50);
-        } else if (this.tipoJuego === '6-en-linea') {
+        } else if (this.tipoJuego === 6) {
             this.board = new Tablero(10, 10, 60, this.ctx, this.imageCell, this.imageIndicador);
             this.setNumtokens(45);
             this.setTokeWidth(40);
             this.setTokeHeigth(40);
-        } else if (this.tipoJuego === '7-en-linea') {
+        } else if (this.tipoJuego === 7) {
             this.board = new Tablero(11, 11, 60, this.ctx, this.imageCell, this.imageIndicador);
             this.setNumtokens(55);
             this.setTokeWidth(40);
@@ -200,7 +200,12 @@ class Juego {
                 ficha.posY = targetY;
                 ficha.posX = targetX;
                 ficha.setColocada(true); // Marca la ficha como colocada en el tablero
-                if(this.verificarCuatroEnLinea(targetRow, col)) return;
+                this.board.completeMx(targetRow, col, ficha.getJugador());
+                if(this.verificarCuatroEnLinea(targetRow, col)){
+                    this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
+                    return;
+                } 
+                    
                 this.turnoJugador = this.turnoJugador === 1 ? 2 : 1;
             
                 // Actualiza la matriz del tablero para reflejar la ficha colocada
@@ -244,14 +249,10 @@ class Juego {
 
 
     verificarCuatroEnLinea(fila, columna) {
-        console.log("Fila:", fila);
-        console.log("Columna:", columna);
-    
-        const jugador = this.board.getCells()[fila][columna]; // Llamada a getCells como función
-        console.log("Jugador en la posición:", jugador); // Verifica el jugador
+        const p = this.board.getMatriz();
+        const jugador = p[fila][columna];
         if (!jugador) return false;
     
-        // Direcciones en las que se revisará (filaDelta, columnaDelta)
         const direcciones = [
             { df: 0, dc: 1 },    // Horizontal
             { df: 1, dc: 0 },    // Vertical
@@ -259,33 +260,27 @@ class Juego {
             { df: 1, dc: -1 }    // Diagonal hacia arriba
         ];
     
-        // Función para contar fichas consecutivas en una dirección
         const contarFichas = (df, dc) => {
             let cuenta = 0;
             let f = fila + df;
             let c = columna + dc;
-            const cells = this.board.getCells(); // Usamos getCells para obtener la matriz
+            const cells = this.board.getMatriz();
     
-            while (f >= 0 && f < this.filas && c >= 0 && c < this.columnas) {
-                console.log(`Verificando celda [${f}][${c}]:`, cells[f][c]); // Imprime la celda actual
+            while (f >= 0 && f < this.board.rows && c >= 0 && c < this.board.cols) {
                 if (cells[f][c] === jugador) {
                     cuenta++;
-                    console.log("Ficha encontrada. Cuenta actual:", cuenta);
                     f += df;
                     c += dc;
                 } else {
-                    break; // Salir del bucle si la ficha no coincide
+                    break;
                 }
             }
-    
             return cuenta;
         };
     
-        // Verificar en cada dirección si se logra conectar cuatro en línea
         for (const { df, dc } of direcciones) {
-            const total = 1 + contarFichas(df, dc) + contarFichas(-df, -dc); // La ficha actual más ambas direcciones
-            console.log(`Total en dirección [${df}, ${dc}]:`, total); // Imprime el total de fichas encontradas
-            if (total >= 4) {
+            const total = 1 + contarFichas(df, dc) + contarFichas(-df, -dc);
+            if (total == this.tipoJuego) {
                 console.log("¡Ganaste!");
                 return true;
             }
@@ -298,9 +293,10 @@ class Juego {
 
     draw() {
         this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
-        this.board.drawBoard();
+        
         this.fichasj1.forEach(ficha => ficha.draw());
         this.fichasj2.forEach(ficha => ficha.draw());
+        this.board.drawBoard();
     }
 }
 

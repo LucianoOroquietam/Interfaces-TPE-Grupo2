@@ -49,6 +49,10 @@ class Ficha {
         this.renderToken(); 
     }
 
+    getJugador(){
+        return this.jugador;
+    }
+
     clickedMe(x, y) {
         if (!this.colocada) {
             // Verifica si las coordenadas (x, y) estan dentro de los limites de la ficha

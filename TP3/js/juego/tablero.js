@@ -13,7 +13,7 @@ class Tablero {
         this.svgSrc = svgSrc; 
         this.imageIndicador = imageIndicador;  
 
-        
+        this.matriz = new Array(rows).fill(0).map(() => new Array(cols).fill(0));
     }
 
     createCells() {
@@ -42,6 +42,10 @@ class Tablero {
         }
     }
 
+    completeMx(row, col, value){
+        this.matriz[row][col] = value;
+    }
+
 
     drawBoard() {
         // Dibuja cada celda en el tablero usando el SVG
@@ -66,6 +70,9 @@ class Tablero {
         
     }
 
+    getMatriz(){
+        return this.matriz;
+    }
 
     getCells(){
         return this.cells;

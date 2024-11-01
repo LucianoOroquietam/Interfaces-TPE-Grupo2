@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let canvasWidth = canvas.width;
     let canvasHeight = canvas.height;
 
-    let juego = new Juego(ctx, canvasWidth, canvasHeight, '4-en-linea');
+    let juego = new Juego(ctx, canvasWidth, canvasHeight, 4);
     
     juego.initGame();
     juego.draw();
