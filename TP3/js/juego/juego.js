@@ -26,15 +26,7 @@ class Juego {
         this.imageCell = '././img/ImgCelda.svg';
         this.imageIndicador1 = '././img/juego/indicadorOpaco.svg';
         this.imageIndicador2 = '././img/juego/indicadorFichaSoltada.svg';
-
-    /*    if (this.imagenFichaJ1.complete && this.imagenFichaJ2.complete) {
-            this.drawFichas();
-        } else {
-            this.imagenFichaJ1.onload = this.imagenFichaJ2.onload = () => {
-                this.drawFichas();
-            };
-*/
-
+        
             this.imagenFichaJ1.onload = this.imagenFichaJ2.onload = () => {
                 this.initGame(); // Llama a `initGame` cuando las imágenes se hayan cargado.
                 this.drawFichas(); // Luego llama a `drawFichas`.
@@ -48,7 +40,10 @@ class Juego {
 
 
     initGame() {
+
+        console.log("entre ")
         if (this.tipoJuego === 4) {
+            console.log("entre al 4 en llinea")
             this.board = new Tablero(7, 7, 80, this.ctx, this.imageCell, this.imageIndicador1);
             this.setNumtokens(21);
             this.setTokeWidth(60);
@@ -69,6 +64,7 @@ class Juego {
             this.setTokeWidth(40);
             this.setTokeHeigth(40);
         }
+
         this.board.setBoardX(this.canvasWidth);
         this.board.setBoardY(this.canvasHeight);
         this.board.createCells();
