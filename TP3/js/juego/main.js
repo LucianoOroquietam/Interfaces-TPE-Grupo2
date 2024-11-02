@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     let modoJuego;
-
+    let fichaj1;
+    let fichaj2;
+    const img = document.querySelector("#prueba2");
+    const boton = document.querySelector("#prueba");
+    const mensajeError = document.querySelector('#mensajeError');
+    const canvas = document.querySelector('#canvas');
+    
     // Seleccionar todos los elementos con la clase "modalidad-juego"
     const modos = document.querySelectorAll("#modalidad-juego");
 
@@ -12,24 +18,56 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    let play = document.querySelector("#prueba");
+    // Seleccionar fichas de jugador 1 y jugador 2
+    const fichaJ1 = document.querySelectorAll("#ficha-j1");
+    const fichaJ2 = document.querySelectorAll("#ficha-j2");
 
-    play.addEventListener("click", () => {
+    fichaJ1.forEach((ficha) => {
+        ficha.addEventListener("click", () => {
+            fichaj1 = ficha.getAttribute("data-value");
+            console.log("Ficha Seleccionada Jugador 1:", fichaj1);
+        });
+    });
+
+    fichaJ2.forEach((ficha) => {
+        ficha.addEventListener("click", () => {
+            fichaj2 = ficha.getAttribute("data-value");
+            console.log("Ficha Seleccionada Jugador 2:", fichaj2);
+        });
+    });
+
+
+    // Configurar evento del botón de "Jugar"
+    boton.addEventListener("click", () => {
+        mensajeError.innerHTML = ""; 
+        
+        if(!modoJuego && (!fichaj1 || !fichaj2) ){
+            mensajeError.innerHTML = "Selecciona la modalidad de juego y las fichas de ambos jugadores.";
+            return; 
+        }
+
         if (!modoJuego) {
-            console.log("Selecciona una modalidad de juego antes de iniciar.");
+            mensajeError.innerHTML = "Selecciona una modalidad de juego antes de iniciar.";
             return;
         }
 
-        let canvas = document.querySelector('#canvas');
-        let ctx = canvas.getContext('2d');
-        let canvasWidth = canvas.width;
-        let canvasHeight = canvas.height;
+        if (!fichaj1 || !fichaj2) {
+            mensajeError.innerHTML = "Selecciona fichas para ambos jugadores antes de iniciar.";
+            return;
+        }
 
-        // Pasar el modoJuego seleccionado al iniciar el juego
-        let juego = new Juego(ctx, canvasWidth, canvasHeight, modoJuego);
-        console.log(canvasWidth, canvasHeight);
-        
-        juego.initGame();
-        juego.draw();
+        canvas.classList.remove("hidden");
+        boton.classList.add("hidden");
+        img.classList.add("hidden");
+
+        const ctx = canvas.getContext('2d');
+        const canvasWidth = canvas.width;
+        const canvasHeight = canvas.height;
+
+        // Iniciar el juego con las configuraciones seleccionadas
+        new Juego(ctx, canvasWidth, canvasHeight, modoJuego, fichaj1, fichaj2);
+
+
     });
 });
+

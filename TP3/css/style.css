@@ -54,7 +54,12 @@ body {
     --table-game-color:#FFCB01;
 
     --shadow-intense-black: 0px 0px 9.2px 9px var(--black-color);
+    --shadow-intense-white: 0px 0px 9.2px 9px var(--white-color);
+    --shadow-medium-white: 0px 0px 1.2px 2px var(--white-color);
+
+
     --shadow-medium-black: 0px 0px 4.2px 6px var(--black-color);
+    
 
 
     /*Fuentes*/
@@ -79,144 +84,7 @@ body {
     --font-size-montserrat-large: 4rem;
     --font-size-montserrat-small: 3.2rem;
 }
-.contenedor_modo_juego, .popup-img-container-canvas{
-    display: flex;
-    justify-content: space-around;
-    padding: 2rem;
-}
 
-.contenedor_modo_juego p, .popup-content-juego p{
-    font-family: var(--font-family-noto-sans);
-    color: var(--white-color);
-    font-weight:bold;
-    cursor: pointer;
-}
-
-.contenedor_modo_juego button{
-    font-size: var(--font-size-h3-large);
-    background: none;
-    border: none;
-
-}
-
-.contenedor_modo_juego button:focus,
-.contenedor_modo_juego button:active {
-    font-weight: bold;
-    color: var(--white-color); /* Color del texto iluminado */
-    text-shadow:
-        0 0 5px var(--secondary-color-1),
-        0 0 10px var(--secondary-color-1),
-        0 0 15px var(--secondary-color-1),
-        0 0 20px var(--secondary-color-1),
-        0 0 30px var(--secondary-color-1);
-}
-
-
-.popup-img-container-canvas img {
-    border: 4px solid transparent; 
-    transition: border-color 0.3s; 
-}
-
-
-.gallito-fichas img.selected {
-    border-color: var(--acent-color-3); 
-}
-
-
-.gato-fichas img.selected {
-    border-color: var(--primary-color-4);
-}
-
-
-.popup-content-juego p{
-    font-size: var(--font-size-h3-large);
-    text-align: start;
-    margin-left: 2rem;
-
-}
-
-.popup-img-container-canvas img{
-    
-    object-fit: cover;
-    
-}
-.popup-content-juego .game__h1-game{
-    text-align: center;
-    font-family: var(--font-family-montserrat);
-    color: var(--white-color);
-    padding: 2rem;
-    font-size: var(--font-size-h2-large);
-}
-
-
-.contenedor_play{
-    display: flex;
-    justify-content: center;
-}
-
-.player-nick {
-    width: 100%;
-    max-width: 300px;
-    padding: 10px 20px;
-    border: 2px solid var(--black-color-4); 
-    border-radius: 8px;
-    background-color: #1a1a1a;  
-    font-size: 18px;
-    font-family: var(--font-family-noto-sans); 
-    text-align: center;
-    outline: none;
-    transition: 0.3s ease;
-}
-
-.player-nick::placeholder {
-    color: var(--white-color); 
-    
-}
-
-.player-nick:focus {
-    border-color: var(--secondary-color-1); 
-    color: var(--secondary-color-1); 
-    background-color: #1f1f1f;
-}
-
-.container-nickname{
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.popup-content-juego {
-    position: relative; /* Necesario para el posicionamiento del pseudo-elemento */
-    background-image: url(../img/juego/fondo-popup.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 1080px;
-    height: 726px;
-    overflow: hidden; /* Para asegurarte de que nada se desborde */
-}
-
-.popup-content-juego::before {
-    content: ""; /* Pseudo-elemento vacío */
-    position: absolute; /* Posiciona el pseudo-elemento */
-    top: 0; /* Alineado al principio del contenedor */
-    left: 0; /* Alineado al principio del contenedor */
-    right: 0; /* Alineado al final del contenedor */
-    bottom: 0; /* Alineado al final del contenedor */
-    background-color: rgba(0, 0, 0, 0.5); /* Color negro con opacidad */
-    z-index: 1; /* Asegúrate de que el pseudo-elemento esté por encima de la imagen de fondo */
-}
-
-.popup-content-juego > * {
-    position: relative; /* Asegura que el contenido tenga un índice z mayor */
-    z-index: 2; /* Asegura que el contenido esté por encima del difuminado */
-}
-
-.fondo__canvas{
-    background-image: url(../img/juego/fondocanvas.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
 
 /*Loading */
 .loading-container {
@@ -228,7 +96,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
-    /* Se oculta inicialmente */
     background-color: var(--primary-color);
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -559,7 +426,7 @@ header .nav-perfil--active {
     color: var(--black-color);
     font-weight: bold;
     background-position: 8rem;
-    box-shadow: var(--shadow-intense-black);
+    box-shadow: var(--shadow-medium-white);
     margin-top: 3rem;
 
 }
@@ -2667,6 +2534,155 @@ section {
         z-index: 120;
     }
 
+    /*Juego 4 en linea*/
+    .contenedor_modo_juego, .popup-img-container-canvas{
+        display: flex;
+        justify-content: space-around;
+        padding: 2rem;
+    }
+    
+    .contenedor_modo_juego p, .popup-content-juego p{
+        font-family: var(--font-family-noto-sans);
+        color: var(--white-color);
+        font-weight:bold;
+        cursor: pointer;
+    }
+    
+    .contenedor_modo_juego button{
+        font-size: var(--font-size-h3-large);
+        background: none;
+        border: none;
+    
+    }
+    
+
+    .contenedor_modo_juego button.selectedgame {
+        font-weight: bold;
+        color: var(--white-color); 
+        text-shadow:
+            0 0 5px var(--secondary-color-1),
+            0 0 10px var(--secondary-color-1),
+            0 0 15px var(--secondary-color-1),
+            0 0 20px var(--secondary-color-1),
+            0 0 30px var(--secondary-color-1);
+    }
+    
+    
+    .popup-img-container-canvas img {
+        border: 4px solid transparent; 
+        transition: border-color 0.3s; 
+    }
+    
+    
+    .gallito-fichas img.selected {
+        border-color: var(--acent-color-3); 
+    }
+    
+    
+    .gato-fichas img.selected {
+        border-color: var(--primary-color-4);
+    }
+    
+    
+    .popup-content-juego p{
+        font-size: var(--font-size-h3-large);
+        text-align: start;
+        margin-left: 2rem;
+    
+    }
+    
+    .popup-img-container-canvas img{
+        cursor: pointer;
+        object-fit: cover;
+        
+    }
+    .popup-content-juego .game__h1-game{
+        text-align: center;
+        font-family: var(--font-family-montserrat);
+        color: var(--white-color);
+        padding: 2rem;
+        font-size: var(--font-size-h2-large);
+    }
+    
+    
+    .contenedor_play{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .player-nick {
+        width: 100%;
+        max-width: 300px;
+        padding: 10px 20px;
+        border: 2px solid var(--black-color-4); 
+        border-radius: 8px;
+        background-color: #1a1a1a;  
+        font-size: 18px;
+        font-family: var(--font-family-noto-sans); 
+        text-align: center;
+        outline: none;
+        transition: 0.3s ease;
+    }
+    
+    .player-nick::placeholder {
+        color: var(--white-color); 
+        
+    }
+    
+    .player-nick:focus {
+        border-color: var(--secondary-color-1); 
+        color: var(--secondary-color-1); 
+        background-color: #1f1f1f;
+    }
+    
+    .container-nickname{
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+    }
+    
+    .popup-content-juego {
+        position: relative; 
+        background-image: url(../img/juego/fondo-popup.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 1080px;
+        height: 726px;
+        overflow: hidden; 
+    }
+    
+    .popup-content-juego::before {
+        content: "";
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        right: 0; 
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5); 
+        z-index: 1; 
+    }
+    
+    .popup-content-juego > * {
+        position: relative; 
+        z-index: 2; 
+    }
+    
+    .fondo__canvas{
+        background-image: url(../img/juego/fondocanvas.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+    }
+
+    .mensajeError{
+        text-align: center;
+        margin-top: 1rem;
+        font-size: var(--font-size-h2-small);
+        font-family: var(--font-family-noto-sans);
+        font-weight: bold;
+    }
+
+
     
 }
 
@@ -2744,4 +2760,5 @@ section {
         z-index: 500;
     }
 
+    
 }

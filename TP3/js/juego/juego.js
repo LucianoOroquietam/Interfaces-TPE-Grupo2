@@ -1,5 +1,5 @@
 class Juego {
-    constructor(ctx, canvasWidth, canvasHeight, tipoJuego) {
+    constructor(ctx, canvasWidth, canvasHeight, tipoJuego, imgfichaj1, imgfichaj2) {
         this.ctx = ctx;
         this.canvasWidth = canvasWidth;
         this.canvasHeight = canvasHeight;
@@ -21,29 +21,35 @@ class Juego {
         this.imagenFichaJ2 = new Image();
         this.imagenesCargadas = false;
 
-        this.imagenFichaJ1.src = '././img/ficha-gallo.jpg';
-        this.imagenFichaJ2.src = '././img/ficha-gatito.jpg';
+
+        // Variables para el temporizador
+        this.startTime = 0;
+        this.elapsedTime = 0; // Tiempo transcurrido en segundos
+        this.timerInterval = null; // Inicializa el intervalo del cronómetro
+
+
+        this.imagenFichaJ1.src = imgfichaj1;
+        this.imagenFichaJ2.src = imgfichaj2;
         this.imageCell = '././img/ImgCelda.svg';
         this.imageIndicador1 = '././img/juego/indicadorOpaco.svg';
         this.imageIndicador2 = '././img/juego/indicadorFichaSoltada.svg';
-        
-            this.imagenFichaJ1.onload = this.imagenFichaJ2.onload = () => {
-                this.initGame(); // Llama a `initGame` cuando las imágenes se hayan cargado.
-                this.drawFichas(); // Luego llama a `drawFichas`.
-            };
 
-            this.mouseOffsetX = 0;
-            this.mouseOffsetY = 0;
-        
+        this.resetButton = new Reset(canvasWidth - 50, 10, ctx, canvasWidth, canvasHeight, tipoJuego, imgfichaj1, imgfichaj2);
+
+        this.imagenFichaJ1.onload = this.imagenFichaJ2.onload = () => {
+            this.initGame();
+            this.drawFichas();
+           // this.startTimer(); // Iniciar el temporizador cuando el juego comience
+        };
+
+        this.mouseOffsetX = 0;
+        this.mouseOffsetY = 0;
+
 
     }
 
-
     initGame() {
-
-        console.log("entre ")
         if (this.tipoJuego === 4) {
-            console.log("entre al 4 en llinea")
             this.board = new Tablero(7, 7, 80, this.ctx, this.imageCell, this.imageIndicador1);
             this.setNumtokens(21);
             this.setTokeWidth(60);
@@ -71,8 +77,27 @@ class Juego {
 
         this.generateFichas();
         this.setupEventListeners();
+
+        console.log("Juego inicializado");
+        //this.startTimer(); // Inicia el cronómetro cuando se inicializa el juego
     }
 
+ /*   startTimer() {
+        this.startTime = Date.now(); // Guardar el tiempo de inicio
+        this.timerInterval = setInterval(() => {
+            this.elapsedTime = Math.floor((Date.now() - this.startTime) / 1000); // Calcular tiempo transcurrido en segundos
+            if (this.elapsedTime >= 1 * 60) { // Si han pasado 10 minutos
+                this.stopTimer();
+                // Aquí puedes agregar código para manejar el fin del tiempo, como mostrar un mensaje de "Tiempo agotado"
+            }
+            this.draw(); // Dibuja el estado actual del juego, incluyendo el cronómetro
+        }, 1000);
+    }
+
+    stopTimer() {
+        clearInterval(this.timerInterval); // Detiene el cronómetro
+        
+    }*/
 
     setNumtokens(numtokens) {
         this.numTokens = numtokens;
@@ -100,18 +125,28 @@ class Juego {
         canvas.addEventListener('mousedown', this.onMouseDown.bind(this), false);
         canvas.addEventListener('mousemove', this.onMouseMove.bind(this), false);
         canvas.addEventListener('mouseup', this.onMouseUp.bind(this), false);
+        canvas.addEventListener('click', this.onClick.bind(this), false);
+    }
+
+    onClick(event) {
+        const x = event.layerX;
+        const y = event.layerY;
+
+        if (this.resetButton.isClicked(x, y)) {
+            this.resetButton.resetear();
+        }
     }
 
     onMouseDown(event) {
         this.isMouseDown = true;
-        
+
         if (this.lastClickedFigure != null) {
             this.lastClickedFigure = null;
         }
 
         let clickedFigure = this.findClickedFigure(event.layerX, event.layerY);
         if (clickedFigure != null) {
-            // Animar y dibujar los hints (flechas) en la fila 0
+            // Animar y dibujar los hints en la fila 0
             this.board.cells.forEach(cell => {
                 if (cell.y === this.board.getBoardY()) { // Solo la fila 0
                     console.log("entro al if")
@@ -130,12 +165,15 @@ class Juego {
 
     onMouseMove(event) {
         if (this.isMouseDown && this.lastClickedFigure != null) {
-            
-            // Mueve la ficha considerando el desplazamiento calculado
-            this.lastClickedFigure.posX = event.layerX - this.mouseOffsetX - this.lastClickedFigure.width / 2;
-            this.lastClickedFigure.posY = event.layerY - this.mouseOffsetY - this.lastClickedFigure.height / 2;
-
-            this.draw();
+            const newPosX = event.layerX - this.mouseOffsetX - this.lastClickedFigure.width / 2;
+            const newPosY = event.layerY - this.mouseOffsetY - this.lastClickedFigure.height / 2;
+    
+            // Solo actualizar y redibujar si la posición cambia significativamente
+            if (Math.abs(newPosX - this.lastClickedFigure.posX) > 2 || Math.abs(newPosY - this.lastClickedFigure.posY) > 2) {
+                this.lastClickedFigure.posX = newPosX;
+                this.lastClickedFigure.posY = newPosY;
+                this.draw(); // Dibuja solo si se detecta un cambio de posición significativo
+            }
         }
     }
 
@@ -174,7 +212,6 @@ class Juego {
             }
             this.board.cells.forEach(cell => {
                 if (cell.y === this.board.getBoardY()) { // Solo la fila 0
-                    console.log("entro al if")
                     cell.animateCancel(this.imageIndicador1);
                     cell.draw(this.ctx);
                 }
@@ -185,7 +222,6 @@ class Juego {
     }
 
     makeTokenDrop(ficha, col) {
-        // Encuentra la primera fila vacía en la columna
         const targetRow = this.findAvailableRow(col);
         if (targetRow === -1) {
             console.log("Columna llena");
@@ -193,52 +229,65 @@ class Juego {
             ficha.setColocada(false);
             return; // Detener si la columna está llena
         }
-
-        // Calcula la posición Y de la celda de destino
-        const targetY = this.board.boardY + targetRow * this.board.cellSize + (this.board.cellSize - ficha.height) / 2;
-        const targetX = this.board.boardX + col * this.board.cellSize + (this.board.cellSize - ficha.width) / 2;
-
-
-
+    
+        const targetY = this.calculateTargetY(targetRow, ficha);
+        const targetX = this.calculateTargetX(col, ficha);
+    
+        this.animateTokenDrop(ficha, targetY, targetX, targetRow, col);
+    }
+    
+    calculateTargetY(targetRow, ficha) {
+        return this.board.boardY + targetRow * this.board.cellSize + (this.board.cellSize - ficha.height) / 2;
+    }
+    
+    calculateTargetX(col, ficha) {
+        return this.board.boardX + col * this.board.cellSize + (this.board.cellSize - ficha.width) / 2;
+    }
+    
+    animateTokenDrop(ficha, targetY, targetX, targetRow, col) {
         const dropAnimation = () => {
-            // Si la ficha no ha alcanzado su posición objetivo
             if (ficha.posY < targetY) {
-                // Mueve la ficha hacia abajo incrementando su posición Y
-                ficha.posY += 5; // Ajusta la velocidad de caída
-                if (ficha.posX < targetX) {
-                    ficha.posX += 1;
-                }
-                if (ficha.posX > targetX) {
-                    ficha.posX -= 1;
-                }
-
+                ficha.posY += 8; // Ajusta la velocidad de caída
+                ficha.posX = this.adjustPositionX(ficha.posX, targetX);
                 requestAnimationFrame(dropAnimation);
             } else {
-                // Ajusta la posición Y para que la ficha quede en la celda objetivo
-                ficha.posY = targetY;
-                ficha.posX = targetX;
-                ficha.setColocada(true); // Marca la ficha como colocada en el tablero
-                this.board.completeMx(targetRow, col, ficha.getJugador());
-                if(this.verificarCuatroEnLinea(targetRow, col)){
-                    this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
-                    //aca llamar al boton restart
-                    //detener el uso de fichas turno jugador = 0
-                    return;
-                } 
-                    
-                this.turnoJugador = this.turnoJugador === 1 ? 2 : 1;
-            
-                // Actualiza la matriz del tablero para reflejar la ficha colocada
-                this.board.cells[targetRow][col] = ficha;
+                this.finalizeTokenDrop(ficha, targetY, targetX, targetRow, col);
             }
-
-            // Redibuja el tablero en cada frame
+    
             this.draw();
         };
-
-        // animacion de caida
+    
         requestAnimationFrame(dropAnimation);
     }
+    
+    adjustPositionX(currentX, targetX) {
+        if (currentX < targetX) {
+            return currentX + 1;
+        }
+        if (currentX > targetX) {
+            return currentX - 1;
+        }
+        return currentX;
+    }
+    
+    finalizeTokenDrop(ficha, targetY, targetX, targetRow, col) {
+        ficha.posY = targetY;
+        ficha.posX = targetX;
+        ficha.setColocada(true); // Marca la ficha como colocada en el tablero
+        this.board.completeMx(targetRow, col, ficha.getJugador());
+        if (this.verificarCuatroEnLinea(targetRow, col)) {
+            this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
+            this.resetButton.resetear();
+            this.turnoJugador = 1; // Restablece el turno del jugador
+            return;
+        }
+    
+        this.turnoJugador = this.turnoJugador === 1 ? 2 : 1;
+    
+        // Actualiza la matriz del tablero para reflejar la ficha colocada
+        this.board.cells[targetRow][col] = ficha;
+    }
+    
 
     // encontrar la primera fila vacia en una columna
     findAvailableRow(col) {
@@ -272,20 +321,20 @@ class Juego {
         const p = this.board.getMatriz();
         const jugador = p[fila][columna];
         if (!jugador) return false;
-    
+
         const direcciones = [
             { df: 0, dc: 1 },    // Horizontal
             { df: 1, dc: 0 },    // Vertical
             { df: 1, dc: 1 },    // Diagonal hacia abajo
             { df: 1, dc: -1 }    // Diagonal hacia arriba
         ];
-    
+
         const contarFichas = (df, dc) => {
             let cuenta = 0;
             let f = fila + df;
             let c = columna + dc;
             const cells = this.board.getMatriz();
-    
+
             while (f >= 0 && f < this.board.rows && c >= 0 && c < this.board.cols) {
                 if (cells[f][c] === jugador) {
                     cuenta++;
@@ -297,7 +346,7 @@ class Juego {
             }
             return cuenta;
         };
-    
+
         for (const { df, dc } of direcciones) {
             const total = 1 + contarFichas(df, dc) + contarFichas(-df, -dc);
             if (total == this.tipoJuego) {
@@ -305,30 +354,36 @@ class Juego {
                 return true;
             }
         }
-    
+
         return false;
     }
-    
-    
-    draw() {
-        
-        
-    
 
+
+    draw() {
         this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
-    
+
         // Dibujar el resto del tablero y las fichas
         this.board.drawBoard();
+        this.resetButton.draw();
         this.fichasj1.forEach(ficha => ficha.draw());
         this.fichasj2.forEach(ficha => ficha.draw());
-        
-    
-        // Solicitar el siguiente cuadro para la animación
-      //  requestAnimationFrame(() => this.draw());
-    }
-    
+        // Dibuja el temporizador en el canvas
+      //  this.drawTimer();
 
-        
+    }
+
+ /*   drawTimer() {
+        // Dibuja el cronómetro
+        const minutes = Math.floor(this.elapsedTime / 60);
+        const seconds = this.elapsedTime % 60;
+        this.ctx.fillStyle = "white";
+    
+        this.ctx.font = "20px Arial";
+        this.ctx.fillText(`Tiempo: ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`, 10, 30);
+    }
+*/
+
+
 }
 
 

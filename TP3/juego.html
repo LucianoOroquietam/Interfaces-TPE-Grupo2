@@ -160,25 +160,26 @@
 				<div class="popup-content-juego">
 					<h1 class="game__h1-game">Selecciona el modo de juego</h1>
 					<div class="contenedor_modo_juego">
-						<button><p id="modalidad-juego" data-value="4">4 en linea</p></button>
-						<button><p id="modalidad-juego" data-value="5">5 en linea</p></button>
-						<button><p id="modalidad-juego" data-value="6">6 en linea</p></button>
-						<button><p id="modalidad-juego" data-value="7">7 en linea</p></button>    
+						<button><p class="modalidad-juego" id="modalidad-juego" data-value="4">4 en linea</p></button>
+						<button><p class="modalidad-juego" id="modalidad-juego" data-value="5">5 en linea</p></button>
+						<button><p class="modalidad-juego" id="modalidad-juego" data-value="6">6 en linea</p></button>
+						<button><p class="modalidad-juego" id="modalidad-juego" data-value="7">7 en linea</p></button>    
 					</div>
 					<h1 class="game__h1-game">Selecciona con que fichas quieres jugar</h1>
+					
 					<p>Jugador 1</p>
 					<div class="popup-img-container-canvas gallito-fichas">
-						<img  width="100" height="100" src="img/juego/ficha-gallito.svg" alt="">
-						<img  width="100" height="100"  src="img/juego/gallo-king.svg" alt="">
-						<img width="100" height="100"  src="img/juego/gallo-f1.svg" alt="">
-						<img  width="100" height="100" src="img/juego/gallo-superman.svg" alt="">
+						<img id="ficha-j1" width="100" height="100" src="img/juego/ficha-gallito.svg" alt="" data-value="././img/juego/ficha-gallito.svg">
+						<img id="ficha-j1" width="100" height="100"  src="img/juego/gallo-king.svg" alt="" data-value="././img/juego/gallo-king.svg">
+						<img id="ficha-j1" width="100" height="100"  src="img/juego/gallo-f1.svg" alt="" data-value="././img/juego/gallo-f1.svg">
+						<img id="ficha-j1" width="100" height="100" src="img/juego/gallo-superman.svg" alt="" data-value="././img/juego/gallo-superman.svg">
 					</div>
 					<p>Jugador 2</p>
 					<div class="popup-img-container-canvas gato-fichas">
-						<img width="100" height="100" src="img/juego/ficha-gato.svg" alt="">
-						<img width="100" height="100" src="img/juego/ficha-gatito-gris.svg" alt="">
-						<img width="100" height="100" src="img/juego/ficha-gato.svg" alt="">
-						<img width="100" height="100" src="img/juego/ficha-gato.svg" alt="">
+						<img id="ficha-j2" width="100" height="100" src="img/juego/ficha-gato.svg" alt="" data-value="././img/juego/ficha-gato.svg">
+						<img id="ficha-j2" width="100" height="100" src="img/juego/ficha-gatito-gris.svg" alt="" data-value="././img/juego/ficha-gatito-gris.svg">
+						<img id="ficha-j2" width="100" height="100" src="img/juego/ficha-gato.svg" alt="" data-value="././img/juego/ficha-gato.svg">
+						<img id="ficha-j2" width="100" height="100" src="img/juego/ficha-gato.svg" alt="" data-value="././img/juego/ficha-gato.svg">
 					</div>
 					<div class="container-nickname">
 						<input class="player-nick" type="text" placeholder="Ingrese Username Jugador 1">
@@ -188,6 +189,8 @@
 					<div class="contenedor_play">
 						<button id="prueba" class="button button__orange">Jugar</button>
 					</div>
+					<div id="mensajeError" class="mensajeError" style="color: red;"></div>
+
 				</div>
 			</div>
 		</div>
@@ -428,9 +431,11 @@
 	<script src="js/juego/ficha.js"></script>
 	<script src="js/juego/cell.js"></script>
 	<script src="js/juego/juego.js"></script>
+	<script src="js/juego/reset.js"></script>
+
+	<script src="js/breadcrum.js"></script>
 
 	<script src="js/seleccion-ficha.js"></script>
-	<script src="js/prueba.js"></script>
 	<script src="js/menu-desplegable.js"></script>
 	<script src="js/popup.js"></script>
 	<script src="js/carrito-iteraccion.js"></script>

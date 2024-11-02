@@ -33,4 +33,19 @@ document.addEventListener("DOMContentLoaded", () => {
             img.classList.add('selected'); // Agrega la clase 'selected' a la imagen clickeada
         });
     });
+
+
+    document.querySelectorAll('.contenedor_modo_juego button').forEach(button => {
+        button.addEventListener('click', () => {
+            // Elimina la clase 'selectedgame' de todos los botones
+            document.querySelectorAll('.contenedor_modo_juego button').forEach(btn => btn.classList.remove('selectedgame'));
+            
+            // Agrega la clase 'selectedgame' solo al botón clicado
+            button.classList.add('selectedgame');
+        });
+    });
+    
 });
+
+
+

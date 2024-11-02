@@ -1,3 +1,5 @@
+
+
 class Ficha {
     constructor(posX, posY, contexto, imageSrc, posInicial, jugador, tablero, width, height) {
         this.posInicial = posInicial;
@@ -10,38 +12,31 @@ class Ficha {
         this.tablero = tablero;
         this.width = width;
         this.height = height;
+        this.radio = Math.min(this.width, this.height) / 2; // Calcular el radio una vez
     }
 
-
     isInsideBoard(x, y) {
-        return (x >= this.tablero.x && x <= this.tablero.x + this.tablero.width &&
-                y >= this.tablero.y && y <= this.tablero.y + this.tablero.height);
+        const { x: boardX, y: boardY, width: boardWidth, height: boardHeight } = this.tablero;
+        return (x >= boardX && x <= boardX + boardWidth &&
+                y >= boardY && y <= boardY + boardHeight);
     }
 
     resetPosition() {
         this.posX = this.posInicial.x;
         this.posY = this.posInicial.y;
     }
-    
+
     renderToken() {
-
-        this.contexto.imageSmoothingEnabled = true;
-
-        // Calcular el radio de acuerdo con el ancho o el alto (asumiendo que width y height sean iguales para un circulo perfecto)
-        let radio = Math.min(this.width, this.height) / 2;
+        this.contexto.imageSmoothingEnabled = false;
 
         this.contexto.beginPath();
-        this.contexto.arc(this.posX + this.width / 2, this.posY + this.height / 2, radio, 0, Math.PI * 2);
+        this.contexto.arc(this.posX + this.width / 2, this.posY + this.height / 2, this.radio, 0, Math.PI * 2);
         this.contexto.closePath();
 
-        // Aplicar recorte
+        // Aplicar recorte y dibujar la imagen dentro del área recortada
         this.contexto.save();
         this.contexto.clip();
-
-        // Dibujar la imagen dentro del área recortada
         this.contexto.drawImage(this.image, this.posX, this.posY, this.width, this.height);
-
-        
         this.contexto.restore();
     }
 
@@ -49,29 +44,21 @@ class Ficha {
         this.renderToken(); 
     }
 
-    getJugador(){
-        return this.jugador;
-    }
-
     clickedMe(x, y) {
         if (!this.colocada) {
-            // Verifica si las coordenadas (x, y) estan dentro de los limites de la ficha
-            let inX = x > this.posX && x < this.posX + this.width;
-            let inY = y > this.posY && y < this.posY + this.height;
-
-            return inX && inY; 
+            return this.isPointFigure(x, y); // Reutiliza la función isPointFigure
         }
         return false;
     }
 
     setPosition(x, y) {
-        if (!this.isInsideBoard(x, y)) {
+        if (this.isInsideBoard(x, y)) {
             this.posX = x;
             this.posY = y;
         }
     }
 
-    isPointFigure(x,y){
+    isPointFigure(x, y) {
         return (
             x >= this.posX &&
             x <= this.posX + this.width && 
@@ -80,24 +67,18 @@ class Ficha {
         );
     }
 
-
     getPosition() {
-        return { "x": this.posX, "y": this.posY };
+        return { x: this.posX, y: this.posY };
     }
 
     getPositionInicial() {
         return this.posInicial;
     }
 
-    
     getImage() {
         return this.image;
     }
 
-
-    
-
-    // Metodo auxiliar para renderizar un circulo de prueba
     getColocada() {
         return this.colocada;
     }
@@ -106,7 +87,6 @@ class Ficha {
         this.colocada = v;
     }
 
-    
     getJugador() {
         return this.jugador;
     }
