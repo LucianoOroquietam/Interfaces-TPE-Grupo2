@@ -32,4 +32,9 @@ class Reset {
             y <= this.posY + this.buttonHeight
         );
     }
+
+
+    getImage(){
+        return this.image;
+    }
 }
