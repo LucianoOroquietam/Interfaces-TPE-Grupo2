@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const canvasHeight = canvas.height;
 
         // Iniciar el juego con las configuraciones seleccionadas
-        new Juego(ctx, canvasWidth, canvasHeight, modoJuego, fichaj1, fichaj2);
+        const juego = new Juego(ctx, canvasWidth, canvasHeight, modoJuego, fichaj1, fichaj2);
 
 
     });

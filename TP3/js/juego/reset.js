@@ -1,5 +1,5 @@
 class Reset {
-    constructor(x, y, ctx, canvasWidth, canvasHeight, tipoJuego, imgfichaj1, imgfichaj2) {
+    constructor(x, y, ctx, canvasWidth, canvasHeight, tipoJuego, imgfichaj1, imgfichaj2, juegoThis) {
         this.posX = x;
         this.posY = y;
         this.ctx = ctx;
@@ -12,6 +12,8 @@ class Reset {
         this.buttonHeight = 40;
         this.image = new Image();
         this.image.src = '././img/juego/restart.png';
+        this.juego = juegoThis;
+        
     }
 
     draw() {
@@ -19,8 +21,7 @@ class Reset {
     }
 
     resetear() {
-        this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
-        this.juego = new Juego(this.ctx, this.canvasWidth, this.canvasHeight, this.tipoJuego, this.imgfichaj1, this.imgfichaj2);
+        this.juego.reset(); // Llama al método reset en lugar de crear una nueva instancia de Juego
     }
 
     isClicked(x, y) {

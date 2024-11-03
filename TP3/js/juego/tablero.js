@@ -44,6 +44,8 @@ class Tablero {
         }
     }
 
+    
+
     completeMx(row, col, value){
         this.matriz[row][col] = value;
     }

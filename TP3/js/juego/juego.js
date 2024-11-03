@@ -34,19 +34,50 @@ class Juego {
         this.imageIndicador1 = '././img/juego/indicadorOpaco.svg';
         this.imageIndicador2 = '././img/juego/indicadorFichaSoltada.svg';
 
-        this.resetButton = new Reset(canvasWidth - 50, 10, ctx, canvasWidth, canvasHeight, tipoJuego, imgfichaj1, imgfichaj2);
-
-        this.imagenFichaJ1.onload = this.imagenFichaJ2.onload = () => {
-            this.initGame();
-            this.drawFichas();
-           // this.startTimer(); // Iniciar el temporizador cuando el juego comience
-        };
+        this.resetButton = new Reset(canvasWidth - 50, 10, ctx, canvasWidth, canvasHeight, tipoJuego, imgfichaj1, imgfichaj2, this);
 
         this.mouseOffsetX = 0;
         this.mouseOffsetY = 0;
 
+        // Variables para verificar si las imágenes están cargadas
+        this.imagenJ1Cargada = false;
+        this.imagenJ2Cargada = false;
+
+        // Establece el evento onload para la imagen del jugador 1
+        this.imagenFichaJ1.onload = () => {
+            this.imagenJ1Cargada = true;
+            verificarCargaImagenes();
+        };
+
+        // Establece el evento onload para la imagen del jugador 2
+        this.imagenFichaJ2.onload = () => {
+            this.imagenJ2Cargada = true;
+            verificarCargaImagenes();
+        };
+        // Función para verificar si ambas imágenes están cargadas
+        const verificarCargaImagenes = () => {
+            if (this.imagenJ1Cargada && this.imagenJ2Cargada) {
+                this.initGame();
+                this.drawFichas();
+                // this.startTimer(); // Iniciar el temporizador cuando el juego comience
+            }
+        };
+
+        
+
+
+
 
     }
+
+    onloadImages() {
+        this.imagenFichaJ1.onload = this.imagenFichaJ2.onload = () => {
+            console.log("hola");
+        };
+
+    }
+
+
 
     initGame() {
         if (this.tipoJuego === 4) {
@@ -77,27 +108,39 @@ class Juego {
 
         this.generateFichas();
         this.setupEventListeners();
+        console.log("entro al initGame");
 
-        console.log("Juego inicializado");
         //this.startTimer(); // Inicia el cronómetro cuando se inicializa el juego
     }
 
- /*   startTimer() {
-        this.startTime = Date.now(); // Guardar el tiempo de inicio
-        this.timerInterval = setInterval(() => {
-            this.elapsedTime = Math.floor((Date.now() - this.startTime) / 1000); // Calcular tiempo transcurrido en segundos
-            if (this.elapsedTime >= 1 * 60) { // Si han pasado 10 minutos
-                this.stopTimer();
-                // Aquí puedes agregar código para manejar el fin del tiempo, como mostrar un mensaje de "Tiempo agotado"
-            }
-            this.draw(); // Dibuja el estado actual del juego, incluyendo el cronómetro
-        }, 1000);
+
+
+    reset() {
+        this.fichasj1 = [];
+        this.fichasj2 = [];
+        this.turnoJugador = 1;
+        this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
+        this.initGame();
+        this.draw(); // Redibuja el juego después de reiniciar
     }
 
-    stopTimer() {
-        clearInterval(this.timerInterval); // Detiene el cronómetro
-        
-    }*/
+
+    /*   startTimer() {
+           this.startTime = Date.now(); // Guardar el tiempo de inicio
+           this.timerInterval = setInterval(() => {
+               this.elapsedTime = Math.floor((Date.now() - this.startTime) / 1000); // Calcular tiempo transcurrido en segundos
+               if (this.elapsedTime >= 1 * 60) { // Si han pasado 10 minutos
+                   this.stopTimer();
+                   // Aquí puedes agregar código para manejar el fin del tiempo, como mostrar un mensaje de "Tiempo agotado"
+               }
+               this.draw(); // Dibuja el estado actual del juego, incluyendo el cronómetro
+           }, 1000);
+       }
+   
+       stopTimer() {
+           clearInterval(this.timerInterval); // Detiene el cronómetro
+           
+       }*/
 
     setNumtokens(numtokens) {
         this.numTokens = numtokens;
@@ -112,16 +155,26 @@ class Juego {
     }
 
     generateFichas() {
+
         for (let i = 0; i <= this.numTokens; i++) {
             const ficha1 = new Ficha(50, 650 - i * 10, this.ctx, this.imagenFichaJ1, { x: 50, y: 650 - i * 10 }, 'Jugador 1', this.board, this.tokenWidth, this.tokenHeight);
             const ficha2 = new Ficha(970, 650 - i * 10, this.ctx, this.imagenFichaJ2, { x: 970, y: 650 - i * 10 }, 'Jugador 2', this.board, this.tokenWidth, this.tokenHeight);
 
             this.fichasj1.push(ficha1);
             this.fichasj2.push(ficha2);
+
         }
+
+
     }
 
     setupEventListeners() {
+        // Elimina los listeners previos para evitar duplicación
+        canvas.removeEventListener('mousedown', this.onMouseDown);
+        canvas.removeEventListener('mousemove', this.onMouseMove);
+        canvas.removeEventListener('mouseup', this.onMouseUp);
+        canvas.removeEventListener('click', this.onClick);
+        
         canvas.addEventListener('mousedown', this.onMouseDown.bind(this), false);
         canvas.addEventListener('mousemove', this.onMouseMove.bind(this), false);
         canvas.addEventListener('mouseup', this.onMouseUp.bind(this), false);
@@ -133,6 +186,7 @@ class Juego {
         const y = event.layerY;
 
         if (this.resetButton.isClicked(x, y)) {
+            this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
             this.resetButton.resetear();
         }
     }
@@ -167,7 +221,7 @@ class Juego {
         if (this.isMouseDown && this.lastClickedFigure != null) {
             const newPosX = event.layerX - this.mouseOffsetX - this.lastClickedFigure.width / 2;
             const newPosY = event.layerY - this.mouseOffsetY - this.lastClickedFigure.height / 2;
-    
+
             // Solo actualizar y redibujar si la posición cambia significativamente
             if (Math.abs(newPosX - this.lastClickedFigure.posX) > 2 || Math.abs(newPosY - this.lastClickedFigure.posY) > 2) {
                 this.lastClickedFigure.posX = newPosX;
@@ -213,7 +267,7 @@ class Juego {
             this.board.cells.forEach(cell => {
                 if (cell.y === this.board.getBoardY()) { // Solo la fila 0
                     cell.animateCancel(this.imageIndicador1);
-                    cell.draw(this.ctx);
+                    //cell.draw(this.ctx);
                 }
             });
             // Dibujar el estado actualizado del juego
@@ -229,21 +283,21 @@ class Juego {
             ficha.setColocada(false);
             return; // Detener si la columna está llena
         }
-    
+
         const targetY = this.calculateTargetY(targetRow, ficha);
         const targetX = this.calculateTargetX(col, ficha);
-    
+
         this.animateTokenDrop(ficha, targetY, targetX, targetRow, col);
     }
-    
+
     calculateTargetY(targetRow, ficha) {
         return this.board.boardY + targetRow * this.board.cellSize + (this.board.cellSize - ficha.height) / 2;
     }
-    
+
     calculateTargetX(col, ficha) {
         return this.board.boardX + col * this.board.cellSize + (this.board.cellSize - ficha.width) / 2;
     }
-    
+
     animateTokenDrop(ficha, targetY, targetX, targetRow, col) {
         const dropAnimation = () => {
             if (ficha.posY < targetY) {
@@ -253,13 +307,13 @@ class Juego {
             } else {
                 this.finalizeTokenDrop(ficha, targetY, targetX, targetRow, col);
             }
-    
+
             this.draw();
         };
-    
+
         requestAnimationFrame(dropAnimation);
     }
-    
+
     adjustPositionX(currentX, targetX) {
         if (currentX < targetX) {
             return currentX + 1;
@@ -269,7 +323,7 @@ class Juego {
         }
         return currentX;
     }
-    
+
     finalizeTokenDrop(ficha, targetY, targetX, targetRow, col) {
         ficha.posY = targetY;
         ficha.posX = targetX;
@@ -277,17 +331,17 @@ class Juego {
         this.board.completeMx(targetRow, col, ficha.getJugador());
         if (this.verificarCuatroEnLinea(targetRow, col)) {
             this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
-            this.resetButton.resetear();
+            //this.resetButton.resetear();
             this.turnoJugador = 1; // Restablece el turno del jugador
             return;
         }
-    
+
         this.turnoJugador = this.turnoJugador === 1 ? 2 : 1;
-    
+
         // Actualiza la matriz del tablero para reflejar la ficha colocada
         this.board.cells[targetRow][col] = ficha;
     }
-    
+
 
     // encontrar la primera fila vacia en una columna
     findAvailableRow(col) {
@@ -361,27 +415,25 @@ class Juego {
 
     draw() {
         this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
-
-        // Dibujar el resto del tablero y las fichas
         this.board.drawBoard();
         this.resetButton.draw();
         this.fichasj1.forEach(ficha => ficha.draw());
         this.fichasj2.forEach(ficha => ficha.draw());
         // Dibuja el temporizador en el canvas
-      //  this.drawTimer();
+        //  this.drawTimer();
 
     }
 
- /*   drawTimer() {
-        // Dibuja el cronómetro
-        const minutes = Math.floor(this.elapsedTime / 60);
-        const seconds = this.elapsedTime % 60;
-        this.ctx.fillStyle = "white";
-    
-        this.ctx.font = "20px Arial";
-        this.ctx.fillText(`Tiempo: ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`, 10, 30);
-    }
-*/
+    /*   drawTimer() {
+           // Dibuja el cronómetro
+           const minutes = Math.floor(this.elapsedTime / 60);
+           const seconds = this.elapsedTime % 60;
+           this.ctx.fillStyle = "white";
+       
+           this.ctx.font = "20px Arial";
+           this.ctx.fillText(`Tiempo: ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`, 10, 30);
+       }
+   */
 
 
 }

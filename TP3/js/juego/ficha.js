@@ -27,7 +27,7 @@ class Ficha {
     }
 
     renderToken() {
-        this.contexto.imageSmoothingEnabled = false;
+        this.contexto.imageSmoothingEnabled = true;
 
         this.contexto.beginPath();
         this.contexto.arc(this.posX + this.width / 2, this.posY + this.height / 2, this.radio, 0, Math.PI * 2);
