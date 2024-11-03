@@ -32,6 +32,9 @@ class Juego {
         this.imagenFichaJ2.src = imgfichaj2;
         this.imageCell = '././img/ImgCelda.svg';
         this.imageIndicador1 = '././img/juego/indicadorOpaco.svg';
+        if(!this.imageIndicador1){
+            this.imageIndicador1 = '././img/indicadorOpaco.svg';
+        }
         this.imageIndicador2 = '././img/juego/indicadorFichaSoltada.svg';
 
         this.resetButton = new Reset(canvasWidth - 50, 10, ctx, canvasWidth, canvasHeight, tipoJuego, imgfichaj1, imgfichaj2, this);
