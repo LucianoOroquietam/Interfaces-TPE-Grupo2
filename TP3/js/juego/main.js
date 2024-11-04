@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     modos.forEach((modo) => {
         modo.addEventListener("click", () => {
             modoJuego = Number(modo.getAttribute("data-value"));
-            console.log("Modalidad seleccionada:", modoJuego);
         });
     });
 
@@ -25,14 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
     fichaJ1.forEach((ficha) => {
         ficha.addEventListener("click", () => {
             fichaj1 = ficha.getAttribute("data-value");
-            console.log("Ficha Seleccionada Jugador 1:", fichaj1);
         });
     });
 
     fichaJ2.forEach((ficha) => {
         ficha.addEventListener("click", () => {
             fichaj2 = ficha.getAttribute("data-value");
-            console.log("Ficha Seleccionada Jugador 2:", fichaj2);
         });
     });
 
@@ -59,13 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
         canvas.classList.remove("hidden");
         boton.classList.add("hidden");
         img.classList.add("hidden");
+        
 
         const ctx = canvas.getContext('2d');
         const canvasWidth = canvas.width;
         const canvasHeight = canvas.height;
 
         // Iniciar el juego con las configuraciones seleccionadas
-        const juego = new Juego(ctx, canvasWidth, canvasHeight, modoJuego, fichaj1, fichaj2);
+        const juego = new Juego(ctx, canvasWidth, canvasHeight, modoJuego, fichaj1, fichaj2, canvas, boton, img);
 
 
     });

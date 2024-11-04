@@ -5,7 +5,10 @@ class Juego {
         canvasHeight,
         tipoJuego,
         imgfichaj1,
-        imgfichaj2
+        imgfichaj2,
+        canvas,
+        botonMenu,
+        imgMenu
     ) {
         this.ctx = ctx;
         this.canvasWidth = canvasWidth;
@@ -23,6 +26,11 @@ class Juego {
         this.isMouseDown = false;
         this.turnoJugador = 1;
 
+        this.canvas = canvas;
+        this.botonMenu = botonMenu;
+        this.imgMenu = imgMenu;
+        this.animationActive = false;
+
         // Precargar imagenes de las fichas
         this.imagenFichaJ1 = new Image();
         this.imagenFichaJ2 = new Image();
@@ -36,7 +44,6 @@ class Juego {
 
         this.imagenFichaJ1.src = imgfichaj1;
         this.imagenFichaJ2.src = imgfichaj2;
-        this.imagenGanador.src = "././img/juego/win.jpeg";
         this.imageCell = "././img/ImgCelda.svg";
         this.imageIndicador1 = "././img/juego/indicadorOpaco.svg";
         this.imageIndicador2 = "././img/juego/indicadorFichaSoltada.svg";
@@ -81,13 +88,6 @@ class Juego {
                 this.startTimer();
             }
         };
-
-        this.imagenGanador.onload = () => {
-            console.log("Imagen cargada correctamente");
-        };
-        this.imagenGanador.onerror = () => {
-            console.error("Error al cargar la imagen");
-        };
     }
 
     initGame() {
@@ -100,7 +100,7 @@ class Juego {
                 this.imageCell,
                 this.imageIndicador1
             );
-            this.setNumtokens(21);
+            this.setNumtokens(20);
             this.setTokeWidth(60);
             this.setTokeHeigth(55);
         } else if (this.tipoJuego === 5) {
@@ -147,8 +147,6 @@ class Juego {
 
         this.generateFichas();
         this.setupEventListeners();
-        console.log("entro al initGame");
-
         this.startTimer(); // Inicia el cronómetro cuando se inicializa el juego
     }
 
@@ -156,6 +154,10 @@ class Juego {
         this.fichasj1 = [];
         this.fichasj2 = [];
         this.turnoJugador = 1;
+        this.board = null;
+        this.lastClickedFigure = null;
+        this.isMouseDown = false;
+        this.isTimeUp = false;
         this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
         this.stopTimer();
         this.startTimer();
@@ -165,7 +167,7 @@ class Juego {
 
     startTimer() {
         if (this.timerInterval) return; // Si ya hay un intervalo en ejecucion, que haga nada, porque bajaba de 2 seg
-        this.remainingTime = 0.5 * 60;
+        this.remainingTime = 5 * 60;
         this.isTimeUp = false;
         this.timerInterval = setInterval(() => {
             if (this.remainingTime > 0) {
@@ -173,6 +175,7 @@ class Juego {
             } else {
                 this.stopTimer();
                 this.isTimeUp = true;
+
             }
             this.draw();
         }, 1000);
@@ -261,7 +264,6 @@ class Juego {
             this.board.cells.forEach((cell) => {
                 if (cell.y === this.board.getBoardY()) {
                     // Solo la fila 0
-                    console.log("entro al if");
                     cell.animateHint(this.imageIndicador2);
                     cell.draw(this.ctx);
                 }
@@ -346,7 +348,6 @@ class Juego {
     makeTokenDrop(ficha, col) {
         const targetRow = this.findAvailableRow(col);
         if (targetRow === -1) {
-            console.log("Columna llena");
             ficha.resetPosition();
             ficha.setColocada(false);
             return; // Detener si la columna está llena
@@ -407,12 +408,10 @@ class Juego {
         this.board.completeMx(targetRow, col, ficha.getJugador());
         if (this.verificarCuatroEnLinea(targetRow, col)) {
             this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
-            //this.resetButton.resetear();
-            this.turnoJugador = 1; // Restablece el turno del jugador
             return;
         }
-
         this.turnoJugador = this.turnoJugador === 1 ? 2 : 1;
+        
 
         // Actualiza la matriz del tablero para reflejar la ficha colocada
         this.board.cells[targetRow][col] = ficha;
@@ -476,10 +475,13 @@ class Juego {
         for (const { df, dc } of direcciones) {
             const total = 1 + contarFichas(df, dc) + contarFichas(-df, -dc);
             if (total == this.tipoJuego) {
-                console.log("¡Ganaste!");
                 this.mostrarGanador(jugador); // Llama al método para mostrar el ganador
                 return true;
             }
+        }
+
+        if(this.board.matrizllena()){
+            console.log("empate");
         }
 
         return false;
@@ -493,27 +495,21 @@ class Juego {
         this.ctx.fillStyle = "rgba(0, 0, 0, 0.7)"; // Negro con opacidad
         this.ctx.fillRect(0, 0, this.canvasWidth, this.canvasHeight);
 
-        // Dibuja la imagen del ganador
-        this.ctx.drawImage(
-            this.imagenGanador,
-            this.canvasWidth / 2 - this.imagenGanador.width / 2,
-            this.canvasHeight / 2 - this.imagenGanador.height / 2
-        );
-
-        // Texto del ganador
-        this.ctx.fillStyle = "white";
-        this.ctx.font = "30px Arial";
-        this.ctx.fillText(
-            `${jugador} ha ganado!`,
-            this.canvasWidth / 2 - 100,
-            this.canvasHeight / 2 + this.imagenGanador.height / 2 + 30
-        );
         this.generateConfetti(jugador);
+        setTimeout(() => {
+            this.stopConfetti();
+            this.canvas.classList.add("hidden");
+            this.imgMenu.classList.remove("hidden");
+            this.botonMenu.classList.remove("hidden");
+
+        }, 3000);
     }
 
     generateConfetti(jugador) {
         const particles = [];
         const colors = ["#FF5733", "#33FF57", "#3357FF", "#F0E68C", "#FF69B4"];
+        this.animationActive = true; // Activar la animación
+
 
         // Generar partículas
         for (let i = 0; i < 100; i++) {
@@ -528,10 +524,16 @@ class Juego {
 
         // Función para dibujar y mover las partículas
         const animateConfetti = () => {
+            if (!this.animationActive) return; // Detener la animación si es `false`
             this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
             this.ctx.fillStyle = "rgba(0, 0, 0, 0.7)"; // Fondo oscuro
             this.ctx.fillRect(0, 0, this.canvasWidth, this.canvasHeight);
 
+            if (jugador == 'Jugador 1') {
+                this.imagenGanador = this.imagenFichaJ1;
+            } else {
+                this.imagenGanador = this.imagenFichaJ2;
+            }
             // Dibuja la imagen del ganador
             this.ctx.drawImage(
                 this.imagenGanador,
@@ -539,13 +541,15 @@ class Juego {
                 this.canvasHeight / 2 - this.imagenGanador.height / 2
             );
 
+
+
             // Texto del ganador
             this.ctx.fillStyle = "white";
             this.ctx.font = "30px Arial";
             this.ctx.fillText(
-                `${jugador} ha ganado!`,
-                this.canvasWidth / 2 - 100,
-                this.canvasHeight / 2 + this.imagenGanador.height / 2 + 30
+                `Felicitaciones ${jugador} has ganado la partida!` ,
+                this.canvasWidth / 5,
+                this.canvasHeight / 2 + this.imagenGanador.height
             );
 
             // Dibuja cada partícula de confeti
@@ -568,18 +572,22 @@ class Juego {
         animateConfetti(); // Iniciar la animación de confeti
     }
 
+    stopConfetti() {
+        this.animationActive = false;
+    }
+
     draw() {
         this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
         this.board.drawBoard();
         this.resetButton.draw();
-        this.fichasj1.forEach((ficha) => ficha.draw());
-        this.fichasj2.forEach((ficha) => ficha.draw());
         this.drawTimer();
         if (this.isTimeUp) {
+
+            this.fichasj1 = [];
+            this.fichasj2 = [];
             // Define el texto y las propiedades
             const message = "¡Tiempo agotado!";
             this.ctx.font = "30px Arial";
-
             // Mide el ancho del texto
             const textWidth = this.ctx.measureText(message).width;
             const textHeight = 30; // Altura del texto (30px, según la fuente utilizada)
@@ -601,6 +609,9 @@ class Juego {
                 this.canvasHeight / 2 + textHeight / 2 / 3
             );
             // Ajusta la posición Y para centrar el texto verticalmente
+        } else {
+            this.fichasj1.forEach((ficha) => ficha.draw());
+            this.fichasj2.forEach((ficha) => ficha.draw());
         }
     }
 

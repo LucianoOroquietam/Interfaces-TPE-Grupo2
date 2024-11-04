@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 otherImg.classList.remove('selected'); // Quita la selección de otras imágenes en el grupo
             });
             img.classList.add('selected'); // Agrega la clase 'selected' a la imagen clickeada
+            
         });
     });
 
@@ -44,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
             button.classList.add('selectedgame');
         });
     });
-    
 });
 
 

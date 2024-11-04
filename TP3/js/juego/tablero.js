@@ -50,6 +50,17 @@ class Tablero {
         this.matriz[row][col] = value;
     }
 
+    matrizllena() {
+        for (let row = 0; row < this.rows; row++) {
+            for (let col = 0; col < this.cols; col++) {
+                if (this.matriz[row][col] === 0) {
+                    return false; // Hay al menos un espacio vacío
+                }
+            }
+        }
+        return true; // No se encontró ningún espacio vacío, la matriz está llena
+    }
+
 
     drawBoard() {
         // Dibuja cada celda en el tablero usando el SVG
@@ -108,6 +119,10 @@ class Tablero {
 
     setBoardY(canvasWidth) {
         this.boardY = (canvasWidth - this.boardHeight) / 2;
+    }
+
+    getCols(){
+        return this.cols;
     }
 
 }

@@ -2610,36 +2610,7 @@ section {
         justify-content: center;
     }
     
-    .player-nick {
-        width: 100%;
-        max-width: 300px;
-        padding: 10px 20px;
-        border: 2px solid var(--black-color-4); 
-        border-radius: 8px;
-        background-color: #1a1a1a;  
-        font-size: 18px;
-        font-family: var(--font-family-noto-sans); 
-        text-align: center;
-        outline: none;
-        transition: 0.3s ease;
-    }
-    
-    .player-nick::placeholder {
-        color: var(--white-color); 
-        
-    }
-    
-    .player-nick:focus {
-        border-color: var(--secondary-color-1); 
-        color: var(--secondary-color-1); 
-        background-color: #1f1f1f;
-    }
-    
-    .container-nickname{
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-    }
+   
     
     .popup-content-juego {
         position: relative; 
@@ -2681,7 +2652,6 @@ section {
         font-family: var(--font-family-noto-sans);
         font-weight: bold;
     }
-
 
     
 }
