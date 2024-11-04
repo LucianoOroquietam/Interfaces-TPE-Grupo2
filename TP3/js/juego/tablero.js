@@ -51,7 +51,7 @@ class Tablero {
     }
 
     matrizllena() {
-        for (let row = 0; row < this.rows; row++) {
+        for (let row = 1; row < this.rows; row++) {
             for (let col = 0; col < this.cols; col++) {
                 if (this.matriz[row][col] === 0) {
                     return false; // Hay al menos un espacio vacío
@@ -59,6 +59,14 @@ class Tablero {
             }
         }
         return true; // No se encontró ningún espacio vacío, la matriz está llena
+    }
+
+    clearMx() {
+        for (let row = 0; row < this.rows; row++) {
+            for (let col = 0; col < this.cols; col++) {
+                this.matriz[row][col] = 0; // Reinicia cada celda a 0
+            }
+        }
     }
 
 

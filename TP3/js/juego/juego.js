@@ -482,6 +482,7 @@ class Juego {
 
         if(this.board.matrizllena()){
             console.log("empate");
+            this.stopTimer();
         }
 
         return false;
@@ -496,12 +497,13 @@ class Juego {
         this.ctx.fillRect(0, 0, this.canvasWidth, this.canvasHeight);
 
         this.generateConfetti(jugador);
+        this.board.clearMx();
         setTimeout(() => {
             this.stopConfetti();
             this.canvas.classList.add("hidden");
             this.imgMenu.classList.remove("hidden");
             this.botonMenu.classList.remove("hidden");
-
+            
         }, 3000);
     }
 
@@ -596,7 +598,7 @@ class Juego {
             this.ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
             this.ctx.fillRect(
                 this.canvasWidth / 2 - textWidth / 2 - 10,
-                this.canvasHeight / 2 - textHeight / 2 - 10,
+                0,
                 textWidth + 20,
                 textHeight + 20
             );
@@ -606,7 +608,7 @@ class Juego {
             this.ctx.fillText(
                 message,
                 this.canvasWidth / 2 - textWidth / 2,
-                this.canvasHeight / 2 + textHeight / 2 / 3
+                35
             );
             // Ajusta la posición Y para centrar el texto verticalmente
         } else {
