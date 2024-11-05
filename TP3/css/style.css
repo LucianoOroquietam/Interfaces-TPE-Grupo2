@@ -2662,6 +2662,8 @@ section {
         height: calc(45vh - -2rem);
         width: auto;
     }
+    
+
 
     .slide .btn-content {
         top: 24rem;
