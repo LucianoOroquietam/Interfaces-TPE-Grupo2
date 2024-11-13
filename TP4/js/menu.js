@@ -19,6 +19,17 @@ menuHamburguesa.addEventListener('click', () => {
     }
 });
 
+window.addEventListener("scroll", function() {
+    const header = document.querySelector("header");
+    const logo = document.getElementById("logo");
+
+    if (window.scrollY > 100) {
+        logo.classList.add("shrink-logo");
+    } else {
+        logo.classList.remove("shrink-logo");
+    }
+});
+
 
 
 

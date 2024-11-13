@@ -24,19 +24,28 @@ header {
     top: 0;
 }
 
+.hero {
+    height: 5000px; /*solo para probar el efecto de scrolling*/
+}
 
 /*Seccion Header*/
 .container-logo {
     position: absolute;
-    top: 100px;
+    top:100px;
     left: 50%;
     transform: translateX(-50%);
     transition: all 0.3s ease;
 }
+  
+.shrink-logo {
+    top:10px;
+    position: fixed;  
+}
 
-.logo img {
+.shrink-logo img {
     width: 150px;
-    transition: all 0.3s ease;
+    height: 86px;
+    transform: translateX(-200%)
 }
 
 .green-button{
