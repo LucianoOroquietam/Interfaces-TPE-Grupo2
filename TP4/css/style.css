@@ -176,13 +176,18 @@ nav {
 /*Seccion Hero*/
 .hero {
     position: relative;
-    width: 100%;
-    max-width: 1080px;
+    width: 1280px;
     margin-bottom: -3px;
+    background-image: url("../img/ff.png");
+    overflow: hidden;
+    height: 959px;
 }
 
 .hero-content {
     position: relative;
+    width: 1080px;
+    height: 959px;
+    padding-left: 100px;
 }
 
 .parallax-capa {
@@ -192,7 +197,6 @@ nav {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain; 
-    will-change: transform;
 }
 
 .capa-1 {
