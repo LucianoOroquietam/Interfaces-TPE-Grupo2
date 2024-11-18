@@ -15,3 +15,17 @@ parallaxLayers.forEach(layer => {
         window.addEventListener('scroll', handleParallax);
     });
 });
+
+
+document.addEventListener("mousemove", (e) => {
+    const { clientX, clientY } = e; // pos del mouse
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    const imgDescarga = document.querySelector(".img-descarga"); 
+    const depth = 0.2; // controla la profundidad del efecto parallax
+    const movementX = -(clientX / width - 0.5) * depth * 30; // Mov horizontal invertido
+    const movementY = -(clientY / height - 0.5) * depth * 30; // Mov vertical invertido
+
+    imgDescarga.style.transform = `translate(${movementX}px, ${movementY}px)`;
+});

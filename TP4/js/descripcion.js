@@ -18,3 +18,22 @@ function changeBackground() {
 }
 
 setInterval(changeBackground, 3000);
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cols = document.querySelectorAll(".col");
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Añadir clase visible con desfase en tiempo
+                setTimeout(() => {
+                    entry.target.classList.add("visible");
+                }, index * 300); 
+            } else {
+                // eliminar la clase visible cuando salga del viewport
+                entry.target.classList.remove("visible");
+            }
+        });
+    }, { threshold: 0.1 });
+
+    cols.forEach(col => observer.observe(col));
+});
