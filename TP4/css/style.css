@@ -603,6 +603,55 @@ nav {
     height: 767px; 
 }
 
+/* Seccion video */
+
+.video {
+    width: 1280px;
+    height: 1443.83px;
+    background-image: url("../img/Rectangle 25.png");
+    background-repeat: no-repeat;
+}
+
+.video_container {
+    position: relative;
+    width: 100%;
+    max-width: 1080px;
+    height: 1443.83px;
+    padding-left: 100px;
+}
+
+.video p {
+    position: absolute;
+    top: 469px;
+    width: 802px;
+    color: #FFF;
+    font-family: Lato;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 94.5%; /* 56.7px */
+}
+
+.reproductor_video {
+    position: absolute;
+    top: 680px;
+    width: 746px;
+    height: 394px;
+    background-color: #00d1d5;
+    border-radius: 45px;
+    border: 29px solid #FFF;
+}
+
+.video img {
+    position: absolute;
+    top: 700px;
+    left: 731px;
+    width: 549px;
+    height: 989px;
+    z-index: 10;
+    /* permirte que al hacer click la imagen ignore el evento y la traspase */
+    pointer-events: none;
+}
 
 /* Footer  */
 .footer-container {
