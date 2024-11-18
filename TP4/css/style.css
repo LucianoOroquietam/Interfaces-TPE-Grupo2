@@ -1,4 +1,8 @@
 /*Variables globales*/
+*{
+    margin: 0;
+}
+
 body {
     padding: 0;
     width: 100%;
@@ -54,25 +58,30 @@ nav {
 }
 
 /*button header*/
+
 .green-button {
-    position: absolute;
-    width: 200px;
-    height: 50px;
     box-shadow: 4px 5px 0px #02187e;
     border-radius: 111px;
     background-color: #83c252;
     border: 8px solid #ffff;
-    left: 980px;
-    top: 20px;
     cursor: pointer;
     color: #fff;
-    font-weight: 900;
     font-style: normal;
     text-align: center;
     animation: slide-in 0.6s ease-out;
     /* Transiciones para el hover, podria agregar para cualquier campo que defina en hover */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.button-compra {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    left: 980px;
+    top: 20px;
+    font-weight: 900;
+}
+
 
 .green-button:hover {
     transform: scale(1.1);
@@ -197,6 +206,22 @@ nav {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain; 
+    will-change: transform; /* optimiza el movimiento */
+    transition: transform 0.1s ease-out;
+    animation: fadeInUp 1s ease;
+}
+
+
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(100px); 
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1; 
+    }
 }
 
 .capa-1 {
@@ -206,6 +231,7 @@ nav {
     top: -1px;
     left: -76px;    
     z-index: 30;
+    animation-delay: 0s;
 }
 
 .capa-2{
@@ -215,6 +241,7 @@ nav {
     height: 114.44px;
     top: 717.97px;
     left: 161.38px;
+    animation-delay: 0.2s;
 }
 
 .capa-3{
@@ -224,6 +251,7 @@ nav {
     height: 78.091px;
     top: 793.37px;
     left: 129.07px;
+    animation-delay: 0.4s;
 }
 
 .capa-4{
@@ -233,6 +261,7 @@ nav {
     height: 102.33px;
     top: 821.65px;
     left: 197.06px;
+    animation-delay: 0.6s;
 }
 
 .capa-5{
@@ -244,6 +273,7 @@ nav {
     left: 422px;
     right: 593.66px;
     bottom: 119.25px;
+    animation-delay: 0.10s;
 }
 
 .capa-6{
@@ -253,6 +283,8 @@ nav {
     height: 270px;
     top: 426.04px;
     left: 536px;
+    animation-delay: 0.12s;
+
 }
 
 .capa-7{
@@ -264,6 +296,8 @@ nav {
     left: 674.18px;
     right: 354.65px;
     bottom: 215px;
+    animation-delay: 0.14s;
+
 }
 
 .capa-8{
@@ -274,6 +308,8 @@ nav {
     left: 881.03px;
     right: 43.8px;
     top: 108px;
+    animation-delay: 0.14s;
+
 }
 
 
@@ -286,6 +322,8 @@ nav {
     left: 1035.38px;
     right: 177.05px;
     bottom: 164.93px;
+    animation-delay: 0.16s;
+
 }
 
 .capa-10{
@@ -296,6 +334,8 @@ nav {
     top: 737.82px;
     left: 1072.4px;
     bottom: 147.43px;
+    animation-delay: 0.18s;
+
 }
 
 
@@ -308,6 +348,8 @@ nav {
     left: 1042.78px;
     right: 177.05px;
     bottom: 137.33px;
+    animation-delay: 0.20s;
+
 }
 
 
@@ -320,6 +362,8 @@ nav {
     left: 1056px;
     right: 10.1px;
     bottom: 9.42px;
+    animation-delay: 0.22s;
+
 }
 
 
@@ -330,6 +374,8 @@ nav {
     height: 430.846px;
     left: 1039.21px;
     top: 278.38px;
+    animation-delay: 0.24s;
+
 }
 
 .capa-14{
@@ -339,9 +385,20 @@ nav {
     height: 63.28px;
     top: 630.46px;
     left: 1028.46px;
+    animation-delay: 0.26s;
+
 }
 
+
+
 /* Seccion Descripcion */
+
+.section-descripcion{
+    width: 1280px;
+    height: 1852px;
+    background-image: url("../img/Rectangle_8.png");
+    background-repeat: no-repeat;
+}
 
 .descripcion {
     position: relative;
@@ -351,18 +408,11 @@ nav {
     padding-left: 100px;
 }
 
-.section-descripcion{
-    width: 1280px;
-    background-image: url("../img/Rectangle_8.png");
-    background-repeat: no-repeat;
-
-}
-
 .descripcion h2 {
     position: absolute;
     width: 508px;
     height: 132px;
-    top: 30px;
+    top: 55px;
     line-height: 94.5%;
     font-size: 47px;
     font-weight: 600;
@@ -377,16 +427,15 @@ nav {
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    top: 200px;
-
+    top: 209px;
 }
 
 .descripcion_images {
     position: absolute;
-    top: 336px;
+    top: 331px;
     left: 236px;
-    width: 518px;
-    height: 266px;
+    width: 518.38px;
+    height: 266.35px;
     border-radius: 77px;
     background-image: url("../img/unnamed_1.png");
     background-size: cover;
@@ -412,58 +461,183 @@ nav {
 
 .cuatro_descripcion {
     position: absolute;
-    width: 602px;
+    width: 601.64px;
     height: 603px;
-    top: 537px;
+    top: 532px;
     left: 60px;
+}
 
+.col {
+    top: 1215px;
 }
 
 .cuadro {
-    position: absolute;
-    top: 1220px;
-    width: 333px;
-    height: 303px;
+    width: 332.96px;
+    height: 302.69px;
     background-repeat: no-repeat;
     border-radius: 44px;
     box-shadow: 4px 5px 0px 0px #02187E;
 }
 
-.cuadro_uno {
-    position: absolute;
-    left: 100px;
-    background-image: url("../img/image_13.png");
-}
-
-.cuadro_dos {
-    background-image: url("../img/image_8.png");
-    left: 474px;
-}
-
-.cuadro_tres {
-    left: 847px;
-    background-image: url("../img/image_24.png");
-}
-
 .texto_cuadro {
     position: absolute;
-    top: 1546px;
+    top: 326px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+}
+
+.col-uno {
+    position: absolute;
+    left: 100px;
+}
+.cuadro_uno {
+    background-image: url("../img/image_13.png");
+}
+.texto_uno {
+    height: 218px;
     width: 333px;
+}
+
+.col-dos {
+    position: absolute;
+    left: 474px;
+}
+.cuadro_dos {
+    background-image: url("../img/image_8.png");
+}
+.texto_dos {
+    width: 332px;
+    height: 217px;
+}
+
+.col-tres {
+    position: absolute;
+    left: 847px;
+}
+.cuadro_tres {
+    background-image: url("../img/image_24.png");
+}
+.texto_tres {
+    height: 189px;
+}
+
+/* Seccion descarga */
+
+.descarga {
+    width: 1280px;
+    height: 1157px;
+    background-image: url("../img/Rectangle 26.png");
+    background-repeat: no-repeat;
+}
+
+.descarga_container {
+    position: relative;
+    width: 100%;
+    max-width: 1080px;
+    height: 1157px;
+    padding-left: 100px;
+}
+
+.descarga p {
+    position: relative;
+    top: 175px;
+    left: 65px;
+    width: 950px;
+    height: 153px;
+    color: #FFF;
+    text-align: center;
+    font-family: Lato;
+    font-size: 61.14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%;
+}
+
+.button-descarga {
+    position: absolute;
+    width: 540px;
+    height: 66px;
+    top: 390px;
+    left: 370px;
+    color: #FFF;
+    font-family: Lato;
+    font-size: 31.14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    z-index: 10;
+}
+
+.img-descarga {
+    position: relative;
+    top: 236px;
+    left: -100px;
+    width: 1280px;
+    height: 767px; 
+}
+
+
+/* Footer  */
+.footer-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* Footer juego */
+.footer-juego {
+    width: 1280px;
+    height: 80px;
+    background-color: #242424;
+}
+
+.footer-juego img {
+    display: block;
+    width: 1080px;
+    height: 75px;
+    margin: 0 auto;
+}
+
+/* Footer texto */
+.footer-texto {
+    position: relative;
+    width: 1280px;
+    background-color: #5E5E5D;
+    padding-top: 35px;
+    margin-bottom: 119px;
+}
+.footer-texto p, .footer-links a{
+    color: #FFFFFF;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
 }
-
-.texto_uno {
-    height: 218px;
+.footer-texto p {
+    line-height: 18.9px;
+    letter-spacing: 2.2px;
+    padding-left: 100px;
+    padding-right: 360px;
 }
 
-.texto_dos {
-    height: 217px;
-    left: 474px;
+.footer-links {
+    margin-top: 20px;
+    margin-left: 100px;
+    display: flex;
+    gap: 5px; 
 }
 
-.texto_tres {
-    height: 189px;
-    left: 847px;
+.footer-links a {
+    text-decoration: underline;
 }
+
+/* Footer redes sociales */
+.footer-redes {
+    width: 212px;
+    height: 41px;
+    margin-left: 100px;
+    margin-top: 35px;
+    margin-bottom: 48px;
+}
+
