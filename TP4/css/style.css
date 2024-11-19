@@ -653,6 +653,55 @@ nav {
     pointer-events: none;
 }
 
+
+/*Seccion 3D*/
+
+.efecto_3d{
+    width: 1280px;
+    height: 1034px;
+}
+
+
+.container_efecto_3d{
+    width: 1080px;
+    height: 1034px;
+    position: relative;
+    padding-left: 100px;
+    
+}
+
+.container_efecto_3d h2{
+    position:absolute;
+    font-size: 60px;
+    top: 220px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 56.7px;
+    width: 746px;
+    color: #9D2121;
+}
+
+
+.container_efecto_3d p{
+    position: absolute;
+    color: #000;
+    font-size: 20px;
+    top: 548px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18.9px;
+    width: 467px;
+}
+
+.container_efecto_3d .modelo_3d{
+    position: absolute;
+    width: 667px;
+    height: 973px;
+    top: 7px;
+    left: 599px;
+    bottom: 54px;
+}
+
 /* Footer  */
 .footer-container {
     width: 100%;
