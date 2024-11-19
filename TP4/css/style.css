@@ -781,8 +781,41 @@ nav {
 
 .form_container img {
     position: absolute;
+}
+
+.restriccion {
     top: 375px;
 }
+
+.pasto {
+    bottom: 0px;
+    left: 0px;
+}
+
+.gif_tres {
+    position: absolute;
+    top: 745px;
+    left: 407px;
+    width: 509px;
+    height: 509px;
+}
+
+.gif_siete {
+    position: absolute;
+    top: 339px;
+    left: 756px;
+    width: 561px;
+    height: 997px;
+}
+
+.gif_dos {
+    position: absolute;
+    top: 774px;
+    left: 65px;
+    width: 480px;
+    height: 480px;
+}
+
 
 /* Footer  */
 .footer-container {
