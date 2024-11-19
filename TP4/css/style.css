@@ -705,26 +705,84 @@ nav {
 
 /*Prefooter*/
 
-.parallax-infinito{
+.parallax-infinito {
     width: 1280px;
     background-image: url("../img/gradiante_gift.png");
-    background-size: contain;
+    background-repeat: no-repeat;
     height: 1296px;
     margin-top: 274px;
 }
 
-.form-container{
+.form_container {
     position: relative;
-    width: 1080px;
+    width: 100%;
+    max-width: 1080px;
+    height: 1296px;
     padding-left: 100px;
 }
 
-.form-container h2{
+.form_container h2 {
     position: absolute;
     top: -84px;
+    width: 816px;
+    color: #000;
+    font-size: 60px;    
+    font-weight: 600;
+    line-height: 94.5%; /* 56.7px */
 }
 
+.form_container input {
+    position: absolute;
+    top: 123px;
+    left: 100px;
+    width: 497.6px;
+    height: 80.4px;
+    border-radius: 50px 0px 0px 50px;
+    border-top: 9px solid #FFF;
+    border-bottom: 9px solid #FFF;
+    border-left: 9px solid #FFF;
+    background: #ECECEC;
+    box-shadow: 4px 5px 0px 0px #02187E;
+    padding-left: 52px;
+    color: rgba(0, 0, 0, 0.39);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 94.5%; /* 18.9px */
+    letter-spacing: 2.2px;
+}
 
+.button-form {
+    position: absolute;
+    top: 123px;
+    left: 661px;
+    width: 218px;
+    height: 100px;
+    border-radius: 0px 50px 50px 0px; 
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 94.5%; /* 18.9px */
+    letter-spacing: 2.2px;
+}
+
+.form_container p {
+    position: absolute;
+    top: 269px;
+    width: 578px;
+    height: 95px;
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 94.5%; /* 18.9px */
+}
+
+.form_container span{
+    text-decoration: underline;
+} 
+
+.form_container img {
+    position: absolute;
+    top: 375px;
+}
 
 /* Footer  */
 .footer-container {
