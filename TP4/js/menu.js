@@ -36,6 +36,33 @@ window.addEventListener("scroll", function() {
     }
 });
 
+const rows = document.querySelectorAll('.row');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Agregar la clase 'active' para animar la fila visible
+      entry.target.classList.add('active');
+
+      // Remover la clase 'active' de las otras filas
+      /*rows.forEach(row => {
+        if (row !== entry.target) {
+          row.classList.remove('active');
+        }
+      });*/
+    } else {
+      
+        entry.target.classList.remove('active');
+      
+    }
+  });
+}, {
+  threshold: 0.5 // Disparar cuando el 50% del elemento está en vista
+});
+
+// Observar cada fila
+rows.forEach(row => observer.observe(row));
+
 
 
 
