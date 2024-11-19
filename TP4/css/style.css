@@ -702,6 +702,30 @@ nav {
     bottom: 54px;
 }
 
+
+/*Prefooter*/
+
+.parallax-infinito{
+    width: 1280px;
+    background-image: url("../img/gradiante_gift.png");
+    background-size: contain;
+    height: 1296px;
+    margin-top: 274px;
+}
+
+.form-container{
+    position: relative;
+    width: 1080px;
+    padding-left: 100px;
+}
+
+.form-container h2{
+    position: absolute;
+    top: -84px;
+}
+
+
+
 /* Footer  */
 .footer-container {
     width: 100%;
