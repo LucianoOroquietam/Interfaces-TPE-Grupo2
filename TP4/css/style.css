@@ -173,6 +173,85 @@ nav {
     text-shadow: 1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black;
 }
 
+/* Seccion Mas Amigos */
+.mas-amigos {
+    width: 1280px;
+    height: 7200px;
+}
+.mas-amigos-container {
+    position: relative;
+    width: 100%;
+    max-width: 1080px;
+    height: 7200px;
+    margin: 0 auto;
+}
+
+.mas-amigos-container h1 {
+    position: absolute;
+    font-size: 60px;
+    margin-top: 174px;
+}
+
+.mas-amigos-container h2 {
+    font-size: 40px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.mas-amigos-container p {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.mas-amigos .row:first-of-type .image img {
+    margin-top: 299px;
+}
+
+.row {
+    display: flex;
+    margin-top: 0;
+    justify-content: space-between;
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.paragraph {
+    text-align: left;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    margin-left: 613px;
+    position: absolute;
+}
+
+.row:first-of-type .paragraph{
+    margin-top: 390px;
+}
+
+.row:not(:first-of-type) .paragraph{
+    margin-top: 89px;
+}
+
+.image {
+    transform: scale(0.9);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.image img {
+    margin-left: 143px;
+    margin-bottom: 89px;
+}
+.row.active {
+    opacity: 1;
+}
+
+.row.active .paragraph {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+.row.active .image {
+    opacity: 1;
+    transform: scale(1);
+}
+
 /*animacion menu desplegable*/
 @keyframes aparecer {
     to {
@@ -408,7 +487,6 @@ nav {
 }
 
 .descripcion h2 {
-    position: absolute;
     width: 508px;
     height: 132px;
     top: 55px;
@@ -419,7 +497,6 @@ nav {
 }
 
 .descripcion_inicial {
-    position: absolute;
     width: 704px;
     height: 154px;
     color: #1B428F;
@@ -430,7 +507,6 @@ nav {
 }
 
 .descripcion_images {
-    position: absolute;
     top: 331px;
     left: 236px;
     width: 518.38px;
@@ -445,7 +521,6 @@ nav {
 }
 
 .cinco_descripcion {
-    position: absolute;
     top: -87px;
     left: 787px;
     width: 492px;
@@ -459,7 +534,6 @@ nav {
 }
 
 .cuatro_descripcion {
-    position: absolute;
     width: 601.64px;
     height: 603px;
     top: 532px;
@@ -597,7 +671,7 @@ nav {
 
 .img-descarga {
     position: relative;
-    top: 240px;
+    top: 237px;
     left: -100px;
     width: 1280px;
     height: 767px; 
@@ -620,8 +694,7 @@ nav {
     padding-left: 100px;
 }
 
-.video p {
-    position: absolute;
+.video_container p {
     top: 469px;
     width: 802px;
     color: #FFF;
@@ -633,7 +706,6 @@ nav {
 }
 
 .reproductor_video {
-    position: absolute;
     top: 680px;
     width: 746px;
     height: 394px;
@@ -642,8 +714,7 @@ nav {
     border: 29px solid #FFF;
 }
 
-.video img {
-    position: absolute;
+.video_container img {
     top: 700px;
     left: 731px;
     width: 549px;
