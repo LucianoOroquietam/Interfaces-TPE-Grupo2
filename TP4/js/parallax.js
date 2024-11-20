@@ -18,14 +18,30 @@ parallaxLayers.forEach(layer => {
 
 
 document.addEventListener("mousemove", (e) => {
-    const { clientX, clientY } = e; // pos del mouse
+    const { clientX, clientY } = e; // Posición del mouse
     const width = window.innerWidth;
     const height = window.innerHeight;
+    const div = document.querySelector(".descarga");
+    const imgDescarga = document.querySelector(".img-descarga");
 
-    const imgDescarga = document.querySelector(".img-descarga"); 
-    const depth = 0.2; // controla la profundidad del efecto parallax
-    const movementX = -(clientX / width - 0.5) * depth * 30; // Mov horizontal invertido
-    const movementY = -(clientY / height - 0.5) * depth * 30; // Mov vertical invertido
+    // Obtener las coordenadas del elemento
+    const rect = div.getBoundingClientRect();
 
-    imgDescarga.style.transform = `translate(${movementX}px, ${movementY}px)`;
+    // Verificar si el mouse está dentro del elemento
+    if (
+        clientX >= rect.left &&
+        clientX <= rect.right &&
+        clientY >= rect.top &&
+        clientY <= rect.bottom
+    ) {
+        const depth = 2; // Controla la profundidad del efecto parallax
+        const movementX = -(clientX / width - 0.5) * depth * 30; // Mov horizontal invertido
+        const movementY = -(clientY / height - 0.5) * depth * 30; // Mov vertical invertido
+        imgDescarga.style.transform = `translate(${movementX}px, ${movementY}px) scale(1.05)`; // Escalado
+        imgDescarga.style.transition = "transform 0.1s ease-out"; // Suavizar animación
+    } else {
+        // Restablecer posición y escala de la imagen
+        imgDescarga.style.transform = "translate(0, 0) scale(1)";
+        imgDescarga.style.transition = "transform 0.3s ease-out"; // Suavizar al volver
+    }
 });
