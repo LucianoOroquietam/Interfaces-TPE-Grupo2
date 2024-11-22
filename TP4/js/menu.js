@@ -10,7 +10,7 @@ menuHamburguesa.addEventListener('click', () => {
 
     if (menu.classList.contains('activo')) {
         menuItems.forEach((item, index) => {
-            item.style.animation = `aparecer 0.5s forwards ${index + 0.1} s`;
+            item.style.animation = `aparecer 0.5s forwards ${index + 0.1}s`;
             header.style.backgroundColor = "#00d1d5";
         });
     } else {

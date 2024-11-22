@@ -723,19 +723,19 @@ nav {
 
 .video p {
     position: absolute;
-    top: 469px;
+    top: 780px;
     width: 802px;
     color: #FFF;
     font-family: Lato;
     font-size: 60px;
     font-style: normal;
     font-weight: 600;
-    line-height: 94.5%; /* 56.7px */
+    line-height: 94.5%; 
 }
 
 .reproductor_video {
     position: absolute;
-    top: 680px;
+    top: 1000px;
     width: 746px;
     height: 394px;
     background-color: #00d1d5;
@@ -745,7 +745,7 @@ nav {
 
 .video img {
     position: absolute;
-    top: 700px;
+    top: 1800px;
     left: 731px;
     width: 549px;
     height: 989px;
@@ -1044,3 +1044,50 @@ nav {
     margin-bottom: 48px;
 }
 
+.layer {
+    position: absolute;
+    background-repeat: no-repeat; /* Sin repetición */
+    background-size: contain; /* Ajusta el tamaño de las nubes */
+}
+
+/* Animaciones para cada capa */
+.layer-3 {
+    background-image: url("../img/nube_izquierda.png");
+    width: 387px;
+    height: 181px;
+    top: 545px;
+    animation: scroll 10s infinite linear;
+}
+
+.layer-2 {
+    background-image: url("../img/nube_chica_medio.png");
+    animation: scroll 15s infinite linear;
+    width: 265px;
+    height: 124px;
+    top: 243px;  
+}
+
+.layer-1 {
+    background-image: url("../img/nube_derecha.png");
+    animation: scroll 20s infinite linear;
+    width: 387px;
+    height: 181px;
+    top: 286px; 
+}
+
+.parallax-contain {
+    position: relative;
+    width: 1280px;
+    height: 1000px; /* Ajusta según el alto del footer */
+    margin-left: -100px;
+    overflow: hidden; 
+}
+/* Animación de desplazamiento */
+@keyframes scroll {
+    0% {
+        transform: translateX(1300px); /* Empieza fuera del rango del contenedor */
+    }
+    100% {
+        transform: translateX(-400px); /* Termina fuera del rango del contenedor */
+    }
+}
