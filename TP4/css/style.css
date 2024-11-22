@@ -988,6 +988,11 @@ nav {
     height: 480px;
 }
 
+p span a{
+    color: inherit;
+}
+
+
 
 /* Footer  */
 .footer-container {
@@ -1150,6 +1155,6 @@ nav {
     100% { background-position:-34600px}
 }
 
-p span a{
-    color: inherit;
-}
+
+
+

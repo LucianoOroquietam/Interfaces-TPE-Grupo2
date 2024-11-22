@@ -1,11 +1,11 @@
 const parallaxLayers = document.querySelectorAll('.parallax-capa');
 
 function handleParallax() {
-    const scrollY = window.scrollY;
+    const scrollY = window.scrollY; 
     parallaxLayers.forEach(layer => {
-        const speed = layer.dataset.speed;
-        const yOffset = scrollY * (speed / 194);
-        layer.style.transform = `translateY(-${yOffset}px)`;
+        const speed = layer.dataset.speed; // Obtiene el valor de velocidad de la capa desde el atributo data-speed
+        const yOffset = scrollY * (speed / 194); // Calcula el desplazamiento vertical basado en el scroll y la velocidad
+        layer.style.transform = `translateY(-${yOffset}px)`; // Aplica una transformacion en el eje Y para mover la capa
     });
 }
 
