@@ -6,8 +6,6 @@ const images = [
 ];
 
 let index = 1;
-
-console.log(images);
 function changeBackground() {
     const img = document.getElementById("descripcion_images");
 

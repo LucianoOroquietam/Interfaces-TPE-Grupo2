@@ -603,6 +603,107 @@ nav {
     height: 767px; 
 }
 
+/* Seccion Mas Amigos */
+.mas-amigos {
+    width: 1280px;
+    height: 5421px;
+}
+.mas-amigos-container {
+    position: relative;
+    width: 100%;
+    max-width: 1080px;
+    height: 5421px;
+    margin: 0 auto;
+}
+
+.container-img-paragraph {
+    position: relative;
+}
+
+.fixed-image {
+    position: sticky;
+    width: auto;
+    height: 200px;
+    top: 0%;
+    left: 50px;
+    z-index: 10;
+
+}
+
+.fixed-image img { 
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: scale(0.9);
+    opacity: 1;
+    margin-top: 299px;
+    margin-left: 143px;
+    margin-bottom: 189px;
+}
+.mas-amigos .row {
+    padding: 50px 0;
+    position: relative;
+}
+
+.mas-amigos-container h1 {
+    position: absolute;
+    font-size: 60px;
+    margin-top: 174px;
+}
+
+.mas-amigos-container h2 {
+    font-size: 40px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.mas-amigos-container p {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+
+
+.row {
+    display: flex;
+
+    justify-content: space-between;
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.paragraph {
+    text-align: left;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    margin-left: 613px;
+    position: absolute;
+}
+
+
+.mas-amigos-container .first-row {
+    margin-top: 159px;
+}
+
+.row {
+    margin-bottom: 267px;
+}
+
+
+.row.active {
+    opacity: 1;
+}
+
+.row.active .paragraph {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+.row.active .image {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+
+
 /* Seccion video */
 
 .video {
@@ -701,6 +802,71 @@ nav {
     left: 599px;
     bottom: 54px;
 }
+
+/*Grilla de colores*/
+
+.grilla_colores{
+    width: 1280px;
+    height: 729px;
+    overflow: hidden;
+    background-image: url(../img/455.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.fondo-grilla_colores1,.fondo-grilla_colores2,.fondo-grilla_colores3,.fondo-grilla_colores4,.fondo-grilla_colores5,.fondo-grilla_colores6,.fondo-grilla_colores8,.fondo-grilla_colores9{
+    margin-bottom: 30px;
+    box-shadow: inset 0px 4px 50px rgba(0, 0, 0, 0.5);
+}
+
+.fondo-grilla_colores1{
+    background-color: #AA1819;
+}
+
+.fondo-grilla_colores2{
+    background-color: #D58530;
+}
+
+.fondo-grilla_colores3{
+    background-color: #B8A40D;
+}
+.fondo-grilla_colores4{
+    background-color: #38AE00;
+}
+.fondo-grilla_colores5{
+    background-color: #1AA3AD;
+}
+.fondo-grilla_colores6{
+    background-color: #421B90;
+}
+.fondo-grilla_colores7{
+    background-image: url(../img/FondoMixColores.png);   
+}
+.fondo-grilla_colores8{
+    background-color: #AC1E72;
+}
+.fondo-grilla_colores9{
+    background-color: #6C6764;
+}
+.fondo-grilla_colores10{
+    background-color: #fff;
+}
+
+/*button header*/
+
+.scale-img:hover {
+    transform: scale(1.1) translateY(-20px);
+    filter: brightness(1.1);
+    transition: transform 0.3s ease, filter 0.3s ease; 
+    filter: drop-shadow(0 0 20px rgb(252, 243, 67));
+}
+
+
+
 
 
 /*Prefooter*/
@@ -804,7 +970,7 @@ nav {
     position: absolute;
     top: 339px;
     left: 756px;
-    width: 561px;
+    width: 522px;
     height: 997px;
 }
 
@@ -844,7 +1010,6 @@ nav {
     width: 1280px;
     background-color: #5E5E5D;
     padding-top: 35px;
-    margin-bottom: 119px;
 }
 .footer-texto p, .footer-links a{
     color: #FFFFFF;
