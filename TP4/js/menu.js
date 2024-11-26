@@ -14,7 +14,7 @@ menuHamburguesa.addEventListener('click', () => {
     if (menu.classList.contains('activo')) {
         // Si el menu esta activo, animamos los items y cambiamos el color del fondo del header
         menuItems.forEach((item, index) => {
-            item.style.animation = `aparecer 0.5s forwards ${index + 0.1}s`;
+            item.style.animation = `aparecer 0.5s forwards ${index * 0.5}s`;
             header.style.backgroundColor = "#00d1d5"; // Fondo solido
         });
     } else {
