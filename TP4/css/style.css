@@ -37,6 +37,8 @@ nav {
     height: 100%; 
     background-color: #00d1d5;
     z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Controla la transición */
 }
 
 .logo-loading{
@@ -60,9 +62,6 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #83c252;
-    border: 2px solid #fff;
-    color: #fff;
     font-size: 20px;
     font-weight: bold;
     border-radius: 8px;
@@ -114,9 +113,12 @@ nav {
 }
 
 .progress-bar-filled {
+    width: 0%;
     height: 100%;
+    background-color: #4caf50;
     border-radius: 5px;
 }
+
 
 
 /*Seccion Header*/
@@ -284,6 +286,7 @@ nav {
     background-image: url("../img/ff.png");
     overflow: hidden;
     height: 959px;
+    display: none; /* Inicialmente oculto */
 }
 
 .hero-content {

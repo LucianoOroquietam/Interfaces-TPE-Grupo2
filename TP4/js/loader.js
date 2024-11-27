@@ -1,30 +1,29 @@
-/*window.addEventListener("load", () => {
-    const loader = document.getElementById("loader");
-    const content = document.getElementById("content");
-    setTimeout(() => {
-        loader.style.display = "none";
-        content.style.display = "block";
-    }, 2000); 
-});
-*/
-
-let progress = 0;
-const progressBar = document.getElementById('progress');
-const loader = document.getElementById("loader");
-const content = document.getElementById("content");
-
-// Función para aumentar el progreso de la barra
 function simulateLoading() {
-    if (progress < 100) {
-        progress += 1;
-        progressBar.style.width = progress + '%';
-        progressBar.style.background = "#4caf50";
-    } else {
-        setTimeout(() => {
-            loader.style.display = "none";
-            content.style.display = "block";
-        }, 500); 
-    }
+    const loader = document.querySelector('.loader');
+    const progressBarFilled = document.querySelector('.progress-bar-filled');
+    let progress = 0;
+    const hero = document.querySelector('.hero');  
+
+    const interval = setInterval(() => {
+        progress += 1; 
+        progressBarFilled.style.width = `${progress}%`;  
+
+        if (progress >= 100) {
+            clearInterval(interval);
+            progressBarFilled.style.width = '100%';
+
+            // Cuando la barra de carga llega al 100%, muestra el hero inmediatamente
+            loader.style.opacity = '0'; 
+
+            // Esto elimina el loader inmediatamente, sin demora
+            setTimeout(() => {
+                loader.style.display = 'none';  
+                hero.style.display = 'block';   
+            }, 200); // tuve que ajustar este valor para que el contenido(hero) se vea más rápido
+        }
+    }, 30); // El intervalo es de 30ms para un movimiento más fluido y constante
 }
 
-setInterval(simulateLoading, 50);
+window.addEventListener('load', () => {
+    simulateLoading();
+});
