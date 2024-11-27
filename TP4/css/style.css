@@ -370,7 +370,7 @@ nav {
     z-index: 50;
     width: 240.4px;
     height: 314.48px;
-    top: 500.33px;
+    top: 490.33px;
     left: 411px;
     right: 593.66px;
     bottom: 119.25px;
@@ -382,8 +382,8 @@ nav {
     z-index: 30;
     width: 197px;
     height: 270px;
-    top: 403px;
-    left: 536px;
+    top: 407px;
+    left: 521px;
     right: 516px;
     bottom: 265px;
     animation-delay: 0.12s;
@@ -394,8 +394,8 @@ nav {
     z-index: 20;
     width: 174px;
     height: 384px;
-    top: 338px;
-    left: 694px;
+    top: 344px;
+    left: 661px;
     right: 355px;
     bottom: 215px;
     animation-delay: 0.14s;
@@ -459,7 +459,7 @@ nav {
     width: 244.37px;
     height: 107.71px;
     top: 662.1px;
-    left: 1056px;
+    left: 1057px;
     right: 10.1px;
     bottom: 9.42px;
     animation-delay: 0.22s;
@@ -1039,7 +1039,6 @@ nav {
     font-size: 20px;
     font-weight: 400;
     line-height: 94.5%;
-    /* 18.9px */
     letter-spacing: 2.2px;
 }
 
@@ -1053,7 +1052,6 @@ nav {
     font-size: 20px;
     font-weight: 900;
     line-height: 94.5%;
-    /* 18.9px */
     letter-spacing: 2.2px;
 }
 
@@ -1066,7 +1064,6 @@ nav {
     font-size: 20px;
     font-weight: 400;
     line-height: 94.5%;
-    /* 18.9px */
 }
 
 .form_container span {

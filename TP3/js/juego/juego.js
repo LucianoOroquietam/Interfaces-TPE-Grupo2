@@ -63,7 +63,7 @@ class Juego {
         this.mouseOffsetX = 0;
         this.mouseOffsetY = 0;
 
-        this.isTimeUp = false; // Agrega esta variable en tu constructor
+        this.isTimeUp = false;
 
         // Variables para verificar si las imágenes están cargadas
         this.imagenJ1Cargada = false;

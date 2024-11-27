@@ -21,7 +21,7 @@ class Reset {
     }
 
     resetear() {
-        this.juego.reset(); // Llama al método reset en lugar de crear una nueva instancia de Juego
+        this.juego.reset(); 
     }
 
     isClicked(x, y) {

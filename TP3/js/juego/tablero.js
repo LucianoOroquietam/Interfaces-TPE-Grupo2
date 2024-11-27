@@ -83,7 +83,6 @@ class Tablero {
         // Verificar si la celda es válida dentro de los límites del tablero
         if (col >= 0 && col < this.cols && row >= 0 && row < this.rows) {
             console.log(`Ficha soltada en celda: [${row}, ${col}]`);
-            // Aquí puedes añadir la lógica para colocar la ficha en el tablero
             return { row, col };
         } else {
             console.log("Ficha soltada fuera del tablero.");

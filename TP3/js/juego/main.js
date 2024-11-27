@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // Configurar evento del botón de "Jugar"
+    
     boton.addEventListener("click", () => {
         mensajeError.innerHTML = ""; 
         
