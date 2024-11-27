@@ -3,6 +3,7 @@ function simulateLoading() {
     const progressBarFilled = document.querySelector('.progress-bar-filled');
     let progress = 0;
     const hero = document.querySelector('.hero');  
+    document.body.style.overflow = 'hidden';
 
     const interval = setInterval(() => {
         progress += 1; 
@@ -18,7 +19,8 @@ function simulateLoading() {
             // Esto elimina el loader inmediatamente, sin demora
             setTimeout(() => {
                 loader.style.display = 'none';  
-                hero.style.display = 'block';   
+                hero.style.display = 'block';
+                document.body.style.overflow = '';
             }, 200); // tuve que ajustar este valor para que el contenido(hero) se vea más rápido
         }
     }, 30); // El intervalo es de 30ms para un movimiento más fluido y constante
