@@ -1183,9 +1183,7 @@ p span a {
 .layer {
     position: absolute;
     background-repeat: no-repeat;
-    /* Sin repetición */
     background-size: contain;
-    /* Ajusta el tamaño de las nubes */
 }
 
 /* Animaciones para cada capa */
@@ -1217,7 +1215,6 @@ p span a {
     position: relative;
     width: 1280px;
     height: 1000px;
-    /* Ajusta según el alto del footer */
     margin-left: -100px;
     overflow: hidden;
 }
