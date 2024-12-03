@@ -13,7 +13,7 @@ Este repositorio contiene una serie de entregas orientadas al diseño frontend, 
 ---
 
 ### **TP2 - Maqueta en Código**
-- **Acceso**: [https://lucianooroquietam.github.io/Proyecto-Frontend-UX-UI-Animaciones-Juego-interactivo-/TP2](https://lucianooroquietam.github.io/Proyecto-Frontend-UX-UI-Animaciones-Juego-interactivo-/TP2/form/login)
+- **Acceso**: [https://lucianooroquietam.github.io/Proyecto-Frontend-UX-UI-Animaciones-Juego-interactivo-/TP2/form/login](https://lucianooroquietam.github.io/Proyecto-Frontend-UX-UI-Animaciones-Juego-interactivo-/TP2/form/login)
 - **Descripción**: Conversión del prototipo de Figma a una página estática utilizando HTML, CSS y JavaScript, respetando los estilos y funcionalidad previstos en el diseño.
 
 ---
