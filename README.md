@@ -13,13 +13,13 @@ Este repositorio contiene una serie de entregas orientadas al diseño frontend, 
 ---
 
 ### **TP2 - Maqueta en Código**
-- **Acceso**: [https://lucianooroquietam.github.io/Proyecto-Frontend-UX-UI-Animaciones-Juego-interactivo-/TP2](https://lucianooroquietam.github.io/Proyecto-Frontend-UX-UI-Animaciones-Juego-interactivo-/TP2)
+- **Acceso**: [https://lucianooroquietam.github.io/Proyecto-Frontend-UX-UI-Animaciones-Juego-interactivo-/TP2](https://lucianooroquietam.github.io/Proyecto-Frontend-UX-UI-Animaciones-Juego-interactivo-/TP2/form/login)
 - **Descripción**: Conversión del prototipo de Figma a una página estática utilizando HTML, CSS y JavaScript, respetando los estilos y funcionalidad previstos en el diseño.
 
 ---
 
 ### **TP3 - Juego Interactivo (4-7 en Línea)**
-- **Acceso**: [https://lucianooroquietam.github.io/Proyecto-Frontend-UX-UI-Animaciones-Juego-interactivo-/TP3](https://lucianooroquietam.github.io/Proyecto-Frontend-UX-UI-Animaciones-Juego-interactivo-/TP3)
+- **Acceso**: [https://lucianooroquietam.github.io/Proyecto-Frontend-UX-UI-Animaciones-Juego-interactivo-/TP3/juego](https://lucianooroquietam.github.io/Proyecto-Frontend-UX-UI-Animaciones-Juego-interactivo-/TP3/juego)
 - **Descripción**:
   - Implementación de un juego interactivo de **4 en línea** (y extensible hasta 7 en línea).
   - Lógica personalizada para el manejo de turnos, verificación de ganador y manejo del estado del tablero.
